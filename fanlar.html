@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LEGISTZONE — Fanlar</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            color: #111827;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #0f172a;
+            color: white;
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* HERO */
+
+        .page-hero {
+            padding: 80px 7%;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(37,99,235,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(124,58,237,0.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #eef5ff,
+                    #ffffff
+                );
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border-radius: 30px;
+
+            background: #dbeafe;
+
+            color: #2563eb;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 {
+            font-size: 48px;
+
+            margin-bottom: 15px;
+        }
+
+        .page-hero h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #7c3aed,
+                    #06b6d4
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-hero p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #64748b;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        /* SUBJECT SECTION */
+
+        .subjects {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 25px;
+        }
+
+
+        .card {
+            position: relative;
+
+            padding: 30px;
+
+            background: white;
+
+            border-radius: 22px;
+
+            border: 1px solid #e2e8f0;
+
+            box-shadow:
+                0 8px 25px rgba(15,23,42,0.07);
+
+            transition: 0.35s;
+
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+
+            position: absolute;
+
+            height: 5px;
+
+            width: 100%;
+
+            top: 0;
+            left: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #7c3aed
+                );
+        }
+
+        .card:hover {
+            transform: translateY(-9px);
+
+            box-shadow:
+                0 20px 45px rgba(15,23,42,0.14);
+        }
+
+
+        /* ICON */
+
+        .icon {
+            width: 65px;
+            height: 65px;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+        }
+
+        .blue {
+            background: #dbeafe;
+        }
+
+        .red {
+            background: #fee2e2;
+        }
+
+        .orange {
+            background: #ffedd5;
+        }
+
+        .green {
+            background: #dcfce7;
+        }
+
+        .purple {
+            background: #ede9fe;
+        }
+
+        .cyan {
+            background: #cffafe;
+        }
+
+        .yellow {
+            background: #fef3c7;
+        }
+
+        .pink {
+            background: #fce7f3;
+        }
+
+        .indigo {
+            background: #e0e7ff;
+        }
+
+
+        /* TEXT */
+
+        .card h3 {
+            font-size: 20px;
+
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+
+            line-height: 1.6;
+
+            min-height: 75px;
+        }
+
+
+        /* BUTTON */
+
+        .card a {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 11px 18px;
+
+            border-radius: 10px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            background: #2563eb;
+
+            color: white;
+        }
+
+
+        /* BACK BUTTON */
+
+        .back {
+            text-align: center;
+
+            margin-top: 45px;
+        }
+
+        .back a {
+            display: inline-block;
+
+            padding: 13px 24px;
+
+            border-radius: 12px;
+
+            background: #0f172a;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .back a:hover {
+            background: #1e293b;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 40px;
+
+            padding: 40px 7%;
+
+            background: #0f172a;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        footer p {
+            color: #94a3b8;
+
+            margin-top: 10px;
+
+            font-size: 14px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 18px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .page-hero h1 {
+                font-size: 38px;
+            }
+
+            .page-hero p {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        ⚖️ LEGI<span>STZONE</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">🏠 Bosh sahifa</a>
+
+        <a href="fanlar.html">📚 Fanlar</a>
+
+        <a href="#">📝 Testlar</a>
+
+        <a href="#">📖 Kitoblar</a>
+
+        <a href="#">☎️ Aloqa</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- PAGE HERO -->
+
+<section class="page-hero">
+
+    <div class="badge">
+        📚 LEGISTZONE ACADEMY
+    </div>
+
+    <h1>
+        Barcha <span>fanlar</span>
+    </h1>
+
+    <p>
+        O‘zingizga kerakli fanni tanlang va
+        ma'ruzalar, seminarlar, testlar hamda
+        o‘quv materiallarini o‘rganishni boshlang.
+    </p>
+
+</section>
+
+
+
+<!-- SUBJECTS -->
+
+<section class="subjects">
+
+    <div class="section-title">
+
+        <h2>
+            🎓 Fanlar katalogi
+        </h2>
+
+        <p>
+            Bilimingizni rivojlantirish uchun fanlardan birini tanlang
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <!-- 1 -->
+
+        <div class="card">
+
+            <div class="icon blue">
+                ⚖️
+            </div>
+
+            <h3>
+                Konstitutsiyaviy huquq
+            </h3>
+
+            <p>
+                Konstitutsiya, inson huquqlari,
+                davlat hokimiyati va
+                konstitutsiyaviy tuzum.
+            </p>
+
+            <a href="#">
+                Kirish →
+            </a>
+
+        </div>
+
+
+        <!-- 2 -->
+
+        <div class="card">
+
+            <div class="icon red">
+                🔴
+            </div>
+
+            <h3>
+                Jinoyat huquqi
+            </h3>
+
+            <p>
+                Jinoyat tushunchasi, tarkibi,
+                jinoiy javobgarlik va
+                jazo tizimi.
+            </p>
+
+            <a href="#">
+                Kirish →
+            </a>
+
+        </div>
+
+
+        <!-- 3 -->
+
+        <div class="card">
+
+            <div class="icon orange">
+                🟠
+            </div>
+
+            <h3>
+                Jinoyat-protsessual huquq
+            </h3>
+
+            <p>
+                Jinoyat ishlarini yuritish,
+                protsessual harakatlar va
+                ishtirokchilar.
+            </p>
+
+            <a href="#">
+                Kirish →
+            </a>
+
+        </div>
+
+
+        <!-- 4 -->
+
+        <div class="card">
+
+            <div class="icon green">
+                🟢
+            </div>
+
+            <h3>
+                Ma'muriy huquq
+            </h3>
+
+            <p>
+                Davlat boshqaruvi,
+                ma'muriy javobgarlik va
+                huquqiy munosabatlar.
+            </p>
+
+            <a href="#">
+                Kirish →
+            </a>
+
+        </div>
+
+
+        <!-- 5 -->
+
+        <div class="card">
+
+            <div class="icon purple">
+                📜
+            </div>
+
+            <h3>
+                Fuqarolik huquqi
+            </h3>
+
+            <p>
+                Mulkiy va shaxsiy nomulkiy
+                munosabatlar hamda
+                fuqarolik-huquqiy institutlar.
+            </p>
+
+            <a href="#">
+                Kirish →
+            </a>
+
+        </div>
+
+
+        <!-- 6 -->
+
+        <div class="card">
+
+            <div class="icon cyan">
+                🏛️
+            </div>
+
+            <h3>
+                Davlat va huquq nazariyasi
+            </h3>
+
+            <p>
+                Davlat, huquq, huquqiy tizim
+                va davlat-huquq hodisalarining
+                nazariy asoslari.
+            </p>
+
+            <a href="#">
+                Kirish →
+            </a>
+
+        </div>
+
+
+        <!-- 7 -->
+
+        <div class="card">
+
+            <div class="icon indigo">
+                🌐
+            </div>
+
+            <h3>
+                Xalqaro huquq
+            </h3>
+
+            <p>
+                Xalqaro huquq prinsiplari,
+                davlatlararo munosabatlar
+                va xalqaro tashkilotlar.
+            </p>
+
+            <a href="#">
+                Kirish →
+            </a>
+
+        </div>
+
+
+        <!-- 8 -->
+
+        <div class="card">
+
+            <div class="icon yellow">
+                🧠
+            </div>
+
+            <h3>
+                Matematik mantiq
+            </h3>
+
+            <p>
+                To‘plamlar, mantiqiy amallar,
+                formulalar va mantiqiy
+                masalalar.
+            </p>
+
+            <a href="#">
+                Kirish →
+            </a>
+
+        </div>
+
+
+        <!-- 9 -->
+
+        <div class="card">
+
+            <div class="icon pink">
+                🇬🇧
+            </div>
+
+            <h3>
+                Ingliz tili
+            </h3>
+
+            <p>
+                Grammar, vocabulary,
+                speaking va akademik
+                ingliz tilini rivojlantirish.
+            </p>
+
+            <a href="#">
+                Kirish →
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="back">
+
+        <a href="index.html">
+            ← Bosh sahifaga qaytish
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>
+        ⚖️ LEGISTZONE
+    </h2>
+
+    <p>
+        Talabalar uchun zamonaviy ta'lim platformasi
+    </p>
+
+    <p>
+        © 2026 LEGISTZONE
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
