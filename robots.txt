@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alisher-legistzone.github.io/LEGISTZONE/sitemap.xml
+Sitemap: https://legistzone.uz/sitemap.xml
