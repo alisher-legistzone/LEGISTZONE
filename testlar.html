@@ -1,349 +1,81 @@
 <!DOCTYPE html>
-
 <html lang="uz">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0" name="viewport"/>
-<title>Interaktiv testlar — Konstitutsiyaviy huquq | LEGISTZONE</title>
-<meta content="LEGISTZONE Konstitutsiyaviy huquq bo‘yicha interaktiv testlar: tasodifiy savollar, vaqt hisoblagich, avtomatik baholash va huquqiy tushuntirishlar." name="description"/>
-<meta content="index,follow" name="robots"/><meta content="LEGISTZONE" name="author"/>
-<link href="https://alisher-legistzone.github.io/LEGISTZONE/testlar.html" rel="canonical"/>
-<meta content="Interaktiv testlar — LEGISTZONE" property="og:title"/><meta content="Tasodifiy savollar, timer, natija va tushuntirishlar bilan konstitutsiyaviy huquq testi." property="og:description"/><meta content="website" property="og:type"/><meta content="assets/og-image.png" property="og:image"/>
-<link href="assets/favicon.png" rel="icon" type="image/png"/><link href="assets/favicon.png" rel="apple-touch-icon"/><link href="site.webmanifest" rel="manifest"/><meta content="#0b1728" name="theme-color"/><link href="assets/style.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testlar — LEGISTZONE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="header"><div class="container nav"><a class="brand" href="index.html">LEGIST<span>ZONE</span></a><button aria-expanded="false" aria-label="Menyu" class="menu-btn">☰</button><ul class="nav-links"><li><a href="index.html">Bosh sahifa</a></li><li><a href="fanlar.html">Fanlar</a></li><li><a href="maruzalar.html">Ma’ruzalar</a></li><li><a href="seminarlar.html">Seminarlar</a></li><li><a class="active" href="testlar.html">Testlar</a></li><li><a href="videolar.html">Videolar</a></li><li><a href="qidiruv.html">Qidiruv</a></li><li><a href="aloqa.html">Aloqa</a></li></ul></div></header>
-<main>
-<section class="page-hero"><div class="container"><div class="box reveal"><div class="breadcrumbs"><a href="konstitutsiya.html">Konstitutsiyaviy huquq</a><span>›</span><span>Testlar</span></div><div class="eyebrow">Interaktiv baholash</div><h1>Konstitutsiyaviy huquq testi</h1><p>24 savoldan har safar 12 tasi tasodifiy tanlanadi. Vaqt, progress, avtomatik baholash, xatolar tahlili va qayta ishlash mavjud.</p><div class="content-actions"><span class="tag active">12 savol</span><span class="tag">10 daqiqa</span><span class="tag">Tasodifiy variant</span><span class="tag">Natija saqlanadi</span></div></div></div></section>
-<section class="section" style="padding-top:28px"><div class="container test-wrap">
-<div class="test-setup reveal">
-<div class="setup-field"><label for="difficulty">Daraja</label><select data-test-difficulty="" id="difficulty"><option value="all">Aralash</option><option value="Boshlang‘ich">Boshlang‘ich</option><option value="O‘rta">O‘rta</option><option value="Yuqori">Yuqori</option></select></div>
-<div class="setup-field"><label for="questionCount">Savollar soni</label><select data-test-count="" id="questionCount"><option value="10">10 ta</option><option selected="" value="12">12 ta</option><option value="15">15 ta</option><option value="20">20 ta</option></select></div>
-<button class="btn btn-primary" data-start-test="" type="button">Testni boshlash</button>
-</div>
-<div class="test-toolbar reveal"><div><strong>Test jarayoni</strong><div class="progress-track"><div class="progress-bar" data-test-progress=""></div></div><span class="muted" data-test-progress-text="">0/12 javob berildi</span></div><div class="test-timer" data-test-timer="">10:00</div></div>
-<div class="test-scoreline reveal"><span>Eng yaxshi natija: <strong data-highscore="">—</strong></span><span class="muted" data-test-meta="">Testni boshlash uchun parametrlarni tanlang.</span><button class="btn btn-secondary" data-reset-test="" type="button">Natijani tozalash</button></div>
-<div aria-label="Savollar navigatori" class="question-nav reveal" data-question-nav=""></div>
-<form data-questions="12" data-test-form="" data-time-limit="600">
-<div id="quiz-root"></div>
-<script id="quiz-data" type="application/json">
-[
-{
-"q": "O‘zbekiston qanday davlat sifatida belgilangan?",
-"options": [
-"Suveren, demokratik, huquqiy, ijtimoiy va dunyoviy davlat",
-"Federal davlat",
-"Diniy davlat",
-"Monarxiya"
-],
-"answer": "a",
-"level": "Boshlang‘ich",
-"explain": "1-modda O‘zbekistonni boshqaruvning respublika shakliga ega bo‘lgan suveren, demokratik, huquqiy, ijtimoiy va dunyoviy davlat deb belgilaydi.",
-"source": "Konstitutsiya, 1-modda"
-},
-{
-"q": "Davlat organlari va mansabdor shaxslar kim oldida mas’ul?",
-"options": [
-"Faqat siyosiy partiyalar oldida",
-"Faqat sud oldida",
-"Jamiyat va fuqarolar oldida",
-"Faqat mahalliy hokimiyat oldida"
-],
-"answer": "c",
-"level": "Boshlang‘ich",
-"explain": "2-modda davlat organlari va mansabdor shaxslarning jamiyat va fuqarolar oldidagi mas’uliyatini belgilaydi.",
-"source": "Konstitutsiya, 2-modda"
-},
-{
-"q": "O‘zbekistonning davlat chegarasi va hududi qanday?",
-"options": [
-"Bo‘linishi mumkin",
-"Daxlsiz va bo‘linmas",
-"Faqat mahalliy organlar belgilaydi",
-"Faqat referendum bilan mavjud"
-],
-"answer": "b",
-"level": "Boshlang‘ich",
-"explain": "3-modda O‘zbekistonning davlat chegarasi va hududi daxlsiz va bo‘linmasligini belgilaydi.",
-"source": "Konstitutsiya, 3-modda"
-},
-{
-"q": "Davlat hokimiyati tizimi qaysi prinsipga asoslanadi?",
-"options": [
-"Faqat ijro hokimiyatiga",
-"Qonun chiqaruvchi, ijro etuvchi va sud hokimiyatiga bo‘linishiga",
-"Faqat mahalliy boshqaruvga",
-"Harbiy boshqaruvga"
-],
-"answer": "b",
-"level": "O‘rta",
-"explain": "11-modda davlat hokimiyati tizimi qonun chiqaruvchi, ijro etuvchi va sud hokimiyatiga bo‘linish prinsipiga asoslanishini belgilaydi.",
-"source": "Konstitutsiya, 11-modda"
-},
-{
-"q": "Jamiyat va davlat hayotining eng muhim masalalari xalq muhokamasi va referendumga qo‘yilishi mumkinmi?",
-"options": [
-"Ha",
-"Yo‘q, faqat sud hal qiladi",
-"Faqat vazirlik hal qiladi",
-"Faqat mahalla hal qiladi"
-],
-"answer": "a",
-"level": "Boshlang‘ich",
-"explain": "9-modda eng muhim masalalarni xalq muhokamasiga, shuningdek referendumga qo‘yish imkonini nazarda tutadi.",
-"source": "Konstitutsiya, 9-modda"
-},
-{
-"q": "O‘zbekiston xalqi nomidan kimlar ish olib borishi mumkin?",
-"options": [
-"Har qanday jamoat tashkiloti",
-"Xalq saylagan Oliy Majlis va Prezident",
-"Istalgan siyosiy partiya",
-"Har qanday alohida shaxs"
-],
-"answer": "b",
-"level": "O‘rta",
-"explain": "10-modda xalq nomidan faqat u saylagan Oliy Majlis va Prezident ish olib borishi mumkinligini belgilaydi.",
-"source": "Konstitutsiya, 10-modda"
-},
-{
-"q": "Ijtimoiy hayot qaysi asosda rivojlanadi?",
-"options": [
-"Faqat bitta mafkura asosida",
-"Faqat davlat organlari ko‘rsatmasi asosida",
-"Siyosiy institutlar, mafkuralar va fikrlar xilma-xilligi asosida",
-"Faqat iqtisodiy manfaatlar asosida"
-],
-"answer": "c",
-"level": "O‘rta",
-"explain": "12-modda ijtimoiy hayotni siyosiy institutlar, mafkuralar va fikrlar xilma-xilligi asosida rivojlantirishni belgilaydi.",
-"source": "Konstitutsiya, 12-modda"
-},
-{
-"q": "Inson, uning hayoti, erkinligi, sha’ni va qadr-qimmati qanday maqomga ega?",
-"options": [
-"Oddiy manfaat",
-"Oliy qadriyat",
-"Faqat sudning qaroriga bog‘liq",
-"Faqat iqtisodiy qadriyat"
-],
-"answer": "b",
-"level": "Boshlang‘ich",
-"explain": "13-modda insonning hayoti, erkinligi, sha’ni va qadr-qimmatini oliy qadriyat sifatida belgilaydi.",
-"source": "Konstitutsiya, 13-modda"
-},
-{
-"q": "Davlat o‘z faoliyatini qaysi prinsiplar asosida amalga oshiradi?",
-"options": [
-"Faqat iqtisodiy foyda",
-"Faqat markazlashuv",
-"Faqat siyosiy raqobat",
-"Qonuniylik, ijtimoiy adolat va birdamlik"
-],
-"answer": "d",
-"level": "Boshlang‘ich",
-"explain": "14-modda davlat faoliyatini qonuniylik, ijtimoiy adolat va birdamlik prinsiplari asosida amalga oshirishni belgilaydi.",
-"source": "Konstitutsiya, 14-modda"
-},
-{
-"q": "Yangi tahrirdagi O‘zbekiston Respublikasi Konstitutsiyasi qachon qabul qilingan?",
-"options": [
-"2023-yil 30-aprel",
-"2024-yil 1-yanvar",
-"1991-yil 31-avgust",
-"1992-yil 8-dekabr"
-],
-"answer": "a",
-"level": "Boshlang‘ich",
-"explain": "Yangi tahrirdagi Konstitutsiya 2023-yil 30-apreldagi referendumda umumxalq ovoz berish orqali qabul qilingan.",
-"source": "LexUZ — Konstitutsiya"
-},
-{
-"q": "Yangi tahrirdagi Konstitutsiya qachondan kuchga kirgan?",
-"options": [
-"2023-yil 30-apreldan",
-"2022-yil 8-dekabrdan",
-"2023-yil 1-maydan",
-"2024-yil 1-maydan"
-],
-"answer": "c",
-"level": "Boshlang‘ich",
-"explain": "LexUZ hujjatida yangi tahrirdagi Konstitutsiyaning kuchga kirish sanasi 2023-yil 1-may deb ko‘rsatilgan.",
-"source": "LexUZ — Konstitutsiya"
-},
-{
-"q": "Konstitutsiyaga o‘zgartirish va qo‘shimchalar qanday usullardan biri bilan kiritilishi mumkin?",
-"options": [
-"Faqat vazir buyrug‘i bilan",
-"Konstitutsiyaviy qonun yoki referendum bilan",
-"Faqat mahalla qarori bilan",
-"Faqat sud qarori bilan"
-],
-"answer": "b",
-"level": "Yuqori",
-"explain": "154-modda Konstitutsiyaga o‘zgartirish va qo‘shimchalar kiritishning konstitutsiyaviy qonun yoki referendum mexanizmlarini nazarda tutadi.",
-"source": "Konstitutsiya, 154-modda"
-},
-{
-"q": "Konstitutsiya va qonun ustunligi to‘g‘risidagi qoidaning asosiy mazmuni nima?",
-"options": [
-"Konstitutsiya oddiy hujjat",
-"Konstitutsiya oliy yuridik kuchga ega",
-"Konstitutsiya faqat tavsiya",
-"Konstitutsiya faqat sudlar uchun"
-],
-"answer": "b",
-"level": "O‘rta",
-"explain": "Konstitutsiya mamlakat hududida oliy yuridik kuchga ega bo‘lib, to‘g‘ridan-to‘g‘ri amal qiladi.",
-"source": "Konstitutsiya, 15-modda"
-},
-{
-"q": "Davlat tiliga oid konstitutsiyaviy norma qaysi fikrni belgilaydi?",
-"options": [
-"Davlat tili o‘zbek tili",
-"Davlat tili faqat ingliz tili",
-"Davlat tilini faqat sud belgilaydi",
-"Davlat tili belgilanmagan"
-],
-"answer": "a",
-"level": "O‘rta",
-"explain": "Konstitutsiya O‘zbekiston Respublikasining davlat tili o‘zbek tili ekanini belgilaydi.",
-"source": "Konstitutsiya, 4-modda"
-},
-{
-"q": "Qaysi bo‘lim inson va fuqaroning asosiy huquqlari, erkinliklari va burchlariga bag‘ishlangan?",
-"options": [
-"Birinchi bo‘lim",
-"Ikkinchi bo‘lim",
-"To‘rtinchi bo‘lim",
-"Oltinchi bo‘lim"
-],
-"answer": "b",
-"level": "O‘rta",
-"explain": "Konstitutsiyaning Ikkinchi bo‘limi inson va fuqaroning asosiy huquqlari, erkinliklari va burchlariga bag‘ishlangan.",
-"source": "LexUZ — Konstitutsiya"
-},
-{
-"q": "Konstitutsiyada siyosiy huquqlar alohida bob sifatida qaysi bobda joylashgan?",
-"options": [
-"VII bob",
-"VIII bob",
-"X bob",
-"XXII bob"
-],
-"answer": "b",
-"level": "Yuqori",
-"explain": "VIII bob “Siyosiy huquqlar” deb nomlangan va siyosiy huquqlarga oid moddalarni qamrab oladi.",
-"source": "LexUZ — Konstitutsiya"
-},
-{
-"q": "Oliy Majlis Konstitutsiyaning qaysi bobida berilgan?",
-"options": [
-"XVIII bob",
-"XIX bob",
-"XXIII bob",
-"XXV bob"
-],
-"answer": "a",
-"level": "Yuqori",
-"explain": "Beshinchi bo‘limdagi XVIII bob O‘zbekiston Respublikasi Oliy Majlisiga bag‘ishlangan.",
-"source": "LexUZ — Konstitutsiya"
-},
-{
-"q": "Prezidentga bag‘ishlangan bob qaysi?",
-"options": [
-"XVIII bob",
-"XIX bob",
-"XX bob",
-"XXII bob"
-],
-"answer": "b",
-"level": "Yuqori",
-"explain": "XIX bob O‘zbekiston Respublikasi Prezidentining konstitutsiyaviy maqomiga bag‘ishlangan.",
-"source": "LexUZ — Konstitutsiya"
-},
-{
-"q": "Sud hokimiyatiga bag‘ishlangan bob qaysi?",
-"options": [
-"XXI bob",
-"XXII bob",
-"XXIII bob",
-"XXIV bob"
-],
-"answer": "c",
-"level": "O‘rta",
-"explain": "XXIII bob sud hokimiyatiga bag‘ishlangan.",
-"source": "LexUZ — Konstitutsiya"
-},
-{
-"q": "Prokuraturaga bag‘ishlangan bob qaysi?",
-"options": [
-"XXIII bob",
-"XXIV bob",
-"XXV bob",
-"XXVI bob"
-],
-"answer": "c",
-"level": "Yuqori",
-"explain": "XXV bob O‘zbekiston Respublikasi prokuraturasiga bag‘ishlangan.",
-"source": "LexUZ — Konstitutsiya"
-},
-{
-"q": "Konstitutsiyani o‘rganishda eng to‘g‘ri yondashuv qaysi?",
-"options": [
-"Faqat modda raqamlarini yodlash",
-"Faqat internetdagi qisqa postlarni o‘qish",
-"Normani rasmiy matn, mazmun va vaziyatga qo‘llash bilan birga tahlil qilish",
-"Faqat test javoblarini yodlash"
-],
-"answer": "c",
-"level": "Boshlang‘ich",
-"explain": "Huquqni chuqur o‘rganish uchun normani rasmiy manbadan o‘qish, mazmunini tushunish va amaliy vaziyatlarda qo‘llash muhim.",
-"source": "LEGISTZONE o‘quv metodikasi"
-},
-{
-"q": "O‘zbekiston Respublikasining davlat tili qaysi?",
-"options": [
-"O‘zbek tili",
-"Ingliz tili",
-"Faqat rus tili",
-"Davlat tili belgilanmagan"
-],
-"answer": "a",
-"level": "Boshlang‘ich",
-"explain": "4-modda O‘zbekiston Respublikasining davlat tili o‘zbek tili ekanini belgilaydi.",
-"source": "Konstitutsiya, 4-modda"
-},
-{
-"q": "O‘zbekiston Respublikasining davlat ramzlari qaysilar?",
-"options": [
-"Bayroq, gerb va madhiya",
-"Faqat bayroq",
-"Bayroq va pul birligi",
-"Faqat gerb"
-],
-"answer": "a",
-"level": "Boshlang‘ich",
-"explain": "5-modda qonun bilan tasdiqlanadigan davlat ramzlari sifatida bayroq, gerb va madhiyani ko‘rsatadi.",
-"source": "Konstitutsiya, 5-modda"
-},
-{
-"q": "Fuqarolarning davlat organlariga ariza, taklif va shikoyat bilan murojaat qilish huquqi qaysi moddada belgilangan?",
-"options": [
-"11-modda",
-"20-modda",
-"40-modda",
-"154-modda"
-],
-"answer": "c",
-"level": "Yuqori",
-"explain": "40-modda har kimning davlat organlari va boshqa tegishli subyektlarga arizalar, takliflar va shikoyatlar bilan murojaat qilish huquqini belgilaydi.",
-"source": "Konstitutsiya, 40-modda"
-}
-]
-</script>
-<div class="test-actions reveal"><button class="btn btn-primary" type="submit">Natijani hisoblash</button><a class="btn btn-secondary" href="maruzalar.html">Avval ma’ruzalarni o‘qish</a><a class="btn btn-secondary" href="materiallar.html">Materiallarga o‘tish</a></div><div aria-live="polite" class="result-panel" data-result=""></div>
-</form>
-<div class="source-panel reveal"><strong>Huquqiy manbalar</strong><p>Testning huquqiy savollari amaldagi Konstitutsiya va LexUZ ma’lumotlari asosida tuzilgan. Savol matnini rasmiy manba bilan solishtirib o‘rganing.</p><a href="https://lex.uz/docs/6445145" rel="noopener" target="_blank">LexUZ — O‘zbekiston Respublikasi Konstitutsiyasi →</a></div>
-</div></section></main>
-<footer class="footer"><div class="container footer-grid"><div><div class="footer-brand">LEGIST<span>ZONE</span></div><div class="footer-small">Huquq va ta’lim platformasi</div></div><div class="footer-links"><a href="index.html">Bosh sahifa</a><a href="fanlar.html">Fanlar</a><a href="maruzalar.html">Ma’ruzalar</a><a href="seminarlar.html">Seminarlar</a><a href="materiallar.html">Materiallar</a><a href="aloqa.html">Aloqa</a><a href="videolar.html">Videolar</a></div><div class="footer-small">© <span data-year=""></span> LEGISTZONE</div></div></footer><button aria-label="Yuqoriga" class="to-top">↑</button><script src="assets/app.js"></script>
-</body></html>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">⚖️ LEGIST<span>ZONE</span></a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger"><span></span><span></span><span></span></label>
+            <nav class="nav-links">
+                <a href="index.html">Bosh sahifa</a>
+                <a href="fanlar.html">Fanlar</a>
+                <a href="maruzalar.html">Ma'ruzalar</a>
+                <a href="seminarlar.html">Seminarlar</a>
+                <a href="testlar.html" class="active">Testlar</a>
+                <a href="videolar.html">Videolar</a>
+                <a href="aloqa.html" class="btn-nav">Aloqa</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Interaktiv Testlar</h1>
+            <p>O'z bilimlaringizni amalda sinang hamda davlat imtihonlariga tayyorlaning.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="grid-3">
+            <div class="card">
+                <span class="card-badge">20 ta savol</span>
+                <h3>Konstitutsiyaviy huquq testi</h3>
+                <p>Konstitutsiya moddalari hamda davlat organlari vakolatlariga oid test topshiriqlari.</p>
+                <div class="card-footer">
+                    <span>Vaqt: 20 daqiqa</span>
+                    <a href="#" class="btn-sm">Boshlash &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-badge">25 ta savol</span>
+                <h3>Fuqarolik huquqi testi</h3>
+                <p>Bitimlar, shartnomalar hamda mulk huquqiga bag'ishlangan interaktiv savollar.</p>
+                <div class="card-footer">
+                    <span>Vaqt: 30 daqiqa</span>
+                    <a href="#" class="btn-sm">Boshlash &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-badge">15 ta savol</span>
+                <h3>Jinoyat huquqi umumiy qism</h3>
+                <p>Jinoyat tarkibi, javobgarlik va jazoni yengillashtiruvchi holatlar bo'yicha testlar.</p>
+                <div class="card-footer">
+                    <span>Vaqt: 15 daqiqa</span>
+                    <a href="#" class="btn-sm">Boshlash &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>LEGISTZONE</h2>
+                <p>Huquqni o‘rganish uchun kerakli bilimlar — bir platformada.</p>
+            </div>
+            <p>&copy; 2026 LEGISTZONE.uz. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
