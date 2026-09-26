@@ -2,40 +2,31 @@
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>LEGISTZONE — Huquq va ta'lim platformasi</title>
 
     <meta name="description"
-          content="LEGISTZONE — huquq fanlari, ma'ruzalar, seminarlar, testlar va o'quv materiallari uchun zamonaviy ta'lim platformasi.">
+          content="LEGISTZONE — huquq fanlari, ma'ruzalar, testlar, qonunchilik va o'quv materiallari uchun zamonaviy ta'lim platformasi.">
 
     <meta name="keywords"
           content="LEGISTZONE, huquq, huquqshunoslik, konstitutsiyaviy huquq, jinoyat huquqi, testlar, ma'ruzalar, O'zbekiston">
 
     <meta name="author" content="LEGISTZONE">
 
+    <meta name="theme-color" content="#071426">
+
     <meta property="og:title" content="LEGISTZONE — Huquq va ta'lim platformasi">
     <meta property="og:description"
-          content="Huquqni o'rganish, ma'ruzalar, testlar va o'quv materiallari.">
+          content="Huquqni o'rganish uchun zamonaviy ta'lim platformasi.">
     <meta property="og:type" content="website">
 
     <style>
-        :root {
-            --bg: #07111f;
-            --bg-2: #0b1728;
-            --card: rgba(15, 31, 51, 0.78);
-            --card-solid: #0f2035;
-            --text: #f4f7fb;
-            --muted: #9eafc3;
-            --blue: #3b82f6;
-            --blue-light: #60a5fa;
-            --cyan: #22d3ee;
-            --gold: #f59e0b;
-            --border: rgba(255,255,255,0.09);
-            --shadow: 0 20px 50px rgba(0,0,0,0.24);
-            --radius: 22px;
-            --max: 1180px;
-        }
+
+        /* =========================
+           ASOSIY SOZLAMALAR
+        ========================= */
 
         * {
             margin: 0;
@@ -48,14 +39,14 @@
         }
 
         body {
-            font-family: Inter, Arial, Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background:
-                radial-gradient(circle at 10% 10%, rgba(59,130,246,0.15), transparent 30%),
-                radial-gradient(circle at 90% 20%, rgba(34,211,238,0.09), transparent 25%),
-                linear-gradient(180deg, var(--bg), #081321 55%, #06101c);
-            color: var(--text);
+                radial-gradient(circle at 10% 10%, rgba(0, 140, 255, .14), transparent 30%),
+                radial-gradient(circle at 90% 20%, rgba(0, 220, 255, .10), transparent 25%),
+                #06101f;
+            color: #ffffff;
             line-height: 1.6;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
         a {
@@ -63,13 +54,12 @@
             text-decoration: none;
         }
 
-        button,
-        input {
-            font: inherit;
+        button {
+            font-family: inherit;
         }
 
         .container {
-            width: min(92%, var(--max));
+            width: min(1180px, 92%);
             margin: auto;
         }
 
@@ -78,62 +68,68 @@
         ========================= */
 
         header {
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(16px);
-            background: rgba(7,17,31,0.76);
-            border-bottom: 1px solid var(--border);
+            background: rgba(4, 14, 29, .82);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255,255,255,.08);
         }
 
-        .navbar {
-            min-height: 74px;
+        .nav {
+            height: 76px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 30px;
+            gap: 25px;
         }
 
         .logo {
-            font-size: 1.35rem;
+            font-size: 25px;
             font-weight: 900;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             white-space: nowrap;
         }
 
         .logo span {
-            color: var(--blue-light);
+            color: #19aaff;
         }
 
-        .nav-links {
+        .logo-icon {
+            color: #19aaff;
+            margin-right: 5px;
+        }
+
+        nav {
             display: flex;
             align-items: center;
-            gap: 8px;
-            list-style: none;
+            gap: 7px;
         }
 
-        .nav-links a {
-            color: #c5d2e1;
-            padding: 10px 15px;
-            border-radius: 12px;
-            font-size: 0.94rem;
-            transition: 0.25s;
+        nav a {
+            padding: 10px 13px;
+            border-radius: 10px;
+            color: #c9d5e6;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
         }
 
-        .nav-links a:hover {
+        nav a:hover,
+        nav a.active {
             color: white;
-            background: rgba(255,255,255,0.06);
+            background: rgba(25,170,255,.13);
         }
 
-        .nav-cta {
-            background: linear-gradient(135deg, var(--blue), #2563eb);
-            color: white !important;
-            box-shadow: 0 8px 24px rgba(37,99,235,0.28);
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            background: linear-gradient(135deg, #4b8df8, #2563eb) !important;
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: transparent;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
         }
 
         /* =========================
@@ -141,396 +137,393 @@
         ========================= */
 
         .hero {
-            padding: 92px 0 72px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 130px 0 80px;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.12fr 0.88fr;
-            gap: 55px;
+            grid-template-columns: 1.05fr .95fr;
             align-items: center;
+            gap: 60px;
         }
 
         .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 8px 13px;
-            border: 1px solid rgba(96,165,250,0.24);
-            background: rgba(59,130,246,0.09);
-            color: #b9d8ff;
-            border-radius: 999px;
-            font-size: 0.82rem;
-            font-weight: 700;
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(25,170,255,.35);
+            background: rgba(25,170,255,.09);
+            color: #55c7ff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
             margin-bottom: 22px;
         }
 
         .hero h1 {
-            font-size: clamp(2.6rem, 6vw, 5rem);
+            font-size: clamp(42px, 6vw, 76px);
             line-height: 1.02;
-            letter-spacing: -2.8px;
-            max-width: 760px;
-            margin-bottom: 24px;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
         }
 
-        .hero h1 .accent {
-            background: linear-gradient(90deg, #60a5fa, #22d3ee);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero h1 span {
+            color: #20b7ff;
         }
 
-        .hero-text {
-            max-width: 690px;
-            color: var(--muted);
-            font-size: 1.08rem;
+        .hero p {
+            color: #aabbd0;
+            max-width: 650px;
+            font-size: 18px;
             margin-bottom: 32px;
         }
 
-        .hero-buttons {
+        .buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 13px;
-            margin-bottom: 34px;
         }
 
         .btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 9px;
-            padding: 14px 20px;
-            border-radius: 14px;
-            border: 1px solid var(--border);
+            padding: 14px 22px;
+            border-radius: 12px;
             font-weight: 800;
-            transition: 0.25s;
-            cursor: pointer;
+            transition: .3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid transparent;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--blue), #2563eb);
             color: white;
-            box-shadow: 0 14px 34px rgba(37,99,235,0.26);
+            background: linear-gradient(135deg, #087de8, #14b8ff);
+            box-shadow: 0 12px 30px rgba(0,150,255,.20);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(0,150,255,.30);
         }
 
         .btn-secondary {
-            background: rgba(255,255,255,0.035);
+            border-color: rgba(255,255,255,.13);
             color: white;
+            background: rgba(255,255,255,.04);
         }
 
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.07);
+            background: rgba(255,255,255,.09);
+            transform: translateY(-3px);
         }
 
-        .hero-stats {
+        /* =========================
+           HERO CARD
+        ========================= */
+
+        .hero-visual {
+            min-height: 460px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .glow {
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            background: rgba(0,150,255,.15);
+            filter: blur(45px);
+            position: absolute;
+        }
+
+        .law-card {
+            width: min(390px, 90%);
+            padding: 45px 30px;
+            border-radius: 30px;
+            background:
+                linear-gradient(145deg, rgba(18,45,75,.92), rgba(5,18,35,.94));
+            border: 1px solid rgba(255,255,255,.13);
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.45),
+                inset 0 1px 0 rgba(255,255,255,.08);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .scale {
+            font-size: 110px;
+            line-height: 1;
+            margin-bottom: 25px;
+            color: #22baff;
+            text-shadow: 0 0 40px rgba(20,180,255,.35);
+        }
+
+        .law-card h2 {
+            font-size: 29px;
+            margin-bottom: 10px;
+        }
+
+        .law-card p {
+            color: #9eb1c7;
+        }
+
+        .floating-card {
+            position: absolute;
+            padding: 13px 18px;
+            border-radius: 14px;
+            background: rgba(8,25,45,.9);
+            border: 1px solid rgba(255,255,255,.10);
+            box-shadow: 0 15px 40px rgba(0,0,0,.3);
+            font-weight: 700;
+            font-size: 13px;
+            z-index: 3;
+        }
+
+        .float-one {
+            top: 35px;
+            left: 0;
+            animation: floating 4s ease-in-out infinite 1s;
+        }
+
+        .float-two {
+            right: 0;
+            top: 130px;
+            animation: floating 4s ease-in-out infinite .5s;
+        }
+
+        .float-three {
+            bottom: 45px;
+            left: 35px;
+            animation: floating 4s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes floating {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* =========================
+           STATISTIKA
+        ========================= */
+
+        .stats {
             display: flex;
             flex-wrap: wrap;
-            gap: 28px;
+            gap: 35px;
+            margin-top: 40px;
         }
 
         .stat strong {
             display: block;
-            font-size: 1.45rem;
+            font-size: 28px;
+            color: white;
         }
 
         .stat span {
-            color: var(--muted);
-            font-size: 0.88rem;
-        }
-
-        /* HERO VISUAL */
-
-        .hero-panel {
-            position: relative;
-            min-height: 420px;
-        }
-
-        .hero-card {
-            height: 100%;
-            min-height: 420px;
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            background:
-                linear-gradient(145deg, rgba(59,130,246,0.15), rgba(255,255,255,0.02)),
-                var(--card);
-            box-shadow: var(--shadow);
-            padding: 28px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .hero-card::before {
-            content: "";
-            position: absolute;
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            background: rgba(34,211,238,0.12);
-            filter: blur(35px);
-            top: -70px;
-            right: -60px;
-        }
-
-        .card-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        .mini-logo {
-            width: 46px;
-            height: 46px;
-            display: grid;
-            place-items: center;
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--blue), #22d3ee);
-            font-size: 1.2rem;
-            font-weight: 900;
-        }
-
-        .live {
-            padding: 7px 10px;
-            border-radius: 999px;
-            background: rgba(34,197,94,0.1);
-            border: 1px solid rgba(34,197,94,0.2);
-            color: #86efac;
-            font-size: 0.78rem;
-            font-weight: 800;
-        }
-
-        .hero-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-        }
-
-        .hero-card p {
-            color: var(--muted);
-            margin-bottom: 25px;
-        }
-
-        .feature-line {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            padding: 14px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .feature-icon {
-            width: 39px;
-            height: 39px;
-            display: grid;
-            place-items: center;
-            border-radius: 12px;
-            background: rgba(59,130,246,0.1);
-            border: 1px solid rgba(96,165,250,0.13);
-        }
-
-        .feature-line span {
-            font-size: 0.92rem;
-            color: #dce6f1;
+            color: #7f94ad;
+            font-size: 13px;
         }
 
         /* =========================
-           SEARCH
-        ========================= */
-
-        .search-box {
-            margin-top: 20px;
-            position: relative;
-        }
-
-        .search-box input {
-            width: 100%;
-            height: 52px;
-            padding: 0 18px;
-            border-radius: 14px;
-            border: 1px solid var(--border);
-            background: rgba(255,255,255,0.04);
-            color: white;
-            outline: none;
-        }
-
-        .search-box input::placeholder {
-            color: #7f91a7;
-        }
-
-        .search-box input:focus {
-            border-color: rgba(96,165,250,0.5);
-            box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
-        }
-
-        /* =========================
-           SECTIONS
+           SECTION
         ========================= */
 
         section {
-            padding: 78px 0;
+            padding: 100px 0;
         }
 
-        .section-heading {
-            max-width: 760px;
-            margin-bottom: 35px;
+        .section-head {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 45px;
         }
 
-        .eyebrow {
-            color: var(--blue-light);
-            font-size: 0.82rem;
-            font-weight: 900;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 9px;
+        .section-head small {
+            color: #20b7ff;
+            font-weight: 800;
+            letter-spacing: 2px;
         }
 
-        .section-heading h2 {
-            font-size: clamp(1.9rem, 4vw, 2.7rem);
-            line-height: 1.15;
-            margin-bottom: 12px;
+        .section-head h2 {
+            font-size: clamp(32px, 5vw, 50px);
+            margin: 8px 0 13px;
         }
 
-        .section-heading p {
-            color: var(--muted);
+        .section-head p {
+            color: #8fa3ba;
         }
 
         /* =========================
-           SUBJECTS
+           FANLAR
         ========================= */
 
-        .subjects-grid {
+        .subjects {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 17px;
+            gap: 18px;
         }
 
-        .subject-card {
-            padding: 22px;
-            border: 1px solid var(--border);
-            background: var(--card);
-            border-radius: var(--radius);
-            transition: 0.25s;
-            min-height: 205px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        .subject {
+            padding: 27px;
+            border-radius: 20px;
+            background: linear-gradient(
+                145deg,
+                rgba(16,38,64,.8),
+                rgba(8,22,39,.8)
+            );
+            border: 1px solid rgba(255,255,255,.08);
+            transition: .35s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .subject-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(96,165,250,0.3);
-            box-shadow: var(--shadow);
+        .subject::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(20,180,255,.08);
+            top: -50px;
+            right: -50px;
         }
 
-        .subject-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 15px;
+        .subject:hover {
+            transform: translateY(-7px);
+            border-color: rgba(25,170,255,.4);
+            box-shadow: 0 20px 50px rgba(0,0,0,.25);
         }
 
         .subject-icon {
-            width: 46px;
-            height: 46px;
-            display: grid;
-            place-items: center;
-            border-radius: 14px;
-            background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(34,211,238,0.08));
-            border: 1px solid rgba(96,165,250,0.12);
-            font-size: 1.35rem;
+            font-size: 35px;
+            margin-bottom: 16px;
         }
 
-        .status {
-            font-size: 0.72rem;
-            padding: 6px 8px;
-            border-radius: 999px;
-            color: #cbd5e1;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
+        .subject h3 {
+            margin-bottom: 8px;
+            font-size: 20px;
         }
 
-        .status.active {
-            color: #93c5fd;
-            background: rgba(59,130,246,0.10);
+        .subject p {
+            color: #8fa3ba;
+            font-size: 14px;
+            margin-bottom: 18px;
         }
 
-        .subject-card h3 {
-            font-size: 1.08rem;
-            margin: 16px 0 5px;
-        }
-
-        .subject-card p {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        .subject-link {
-            color: var(--blue-light);
+        .more {
+            color: #29baff;
+            font-size: 14px;
             font-weight: 800;
-            font-size: 0.88rem;
-            margin-top: 15px;
         }
 
         /* =========================
-           FEATURES
+           IMKONIYATLAR
         ========================= */
 
-        .features-grid {
+        .features {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 17px;
+            gap: 18px;
         }
 
-        .feature-card {
-            padding: 23px;
-            border-radius: var(--radius);
-            background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
-            border: 1px solid var(--border);
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 20px;
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(255,255,255,.07);
         }
 
-        .feature-card .icon {
-            font-size: 1.35rem;
+        .feature-icon {
+            font-size: 38px;
             margin-bottom: 15px;
         }
 
-        .feature-card h3 {
-            font-size: 1rem;
-            margin-bottom: 7px;
+        .feature h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
         }
 
-        .feature-card p {
-            color: var(--muted);
-            font-size: 0.9rem;
+        .feature p {
+            color: #8fa3ba;
+            font-size: 13px;
+        }
+
+        /* =========================
+           KONSTITUTSIYA
+        ========================= */
+
+        .constitution {
+            border-radius: 30px;
+            padding: 55px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(10,80,130,.65),
+                    rgba(10,24,45,.9)
+                );
+            border: 1px solid rgba(60,190,255,.25);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .constitution h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .constitution p {
+            color: #afc0d3;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .constitution-symbol {
+            font-size: 110px;
+            opacity: .9;
         }
 
         /* =========================
            CTA
         ========================= */
 
-        .cta-box {
-            padding: 45px;
-            border-radius: 28px;
-            border: 1px solid rgba(96,165,250,0.18);
+        .cta {
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 30px;
             background:
-                radial-gradient(circle at 90% 10%, rgba(34,211,238,0.09), transparent 25%),
-                linear-gradient(135deg, rgba(59,130,246,0.13), rgba(255,255,255,0.025));
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
+                radial-gradient(
+                    circle at center,
+                    rgba(0,150,255,.18),
+                    transparent 65%
+                );
         }
 
-        .cta-box h2 {
-            margin-bottom: 8px;
-            font-size: clamp(1.7rem, 4vw, 2.5rem);
+        .cta h2 {
+            font-size: clamp(32px, 5vw, 55px);
+            margin-bottom: 15px;
         }
 
-        .cta-box p {
-            color: var(--muted);
+        .cta p {
+            color: #91a5bb;
+            max-width: 600px;
+            margin: 0 auto 28px;
         }
 
         /* =========================
@@ -538,570 +531,970 @@
         ========================= */
 
         footer {
-            border-top: 1px solid var(--border);
-            padding: 35px 0;
-            background: rgba(3,9,17,0.65);
+            border-top: 1px solid rgba(255,255,255,.08);
+            padding: 50px 0 25px;
+            background: rgba(0,0,0,.15);
         }
 
         .footer-grid {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
-        .footer-brand {
-            font-weight: 900;
-            letter-spacing: 1px;
+        footer h3 {
+            margin-bottom: 14px;
         }
 
-        .footer-brand span {
-            color: var(--blue-light);
+        footer p,
+        footer a {
+            color: #8195ad;
+            font-size: 14px;
         }
 
-        .footer-text {
-            color: var(--muted);
-            font-size: 0.86rem;
+        footer a {
+            display: block;
+            margin-bottom: 8px;
+            transition: .2s;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 14px;
-            color: #b6c4d5;
-            font-size: 0.88rem;
+        footer a:hover {
+            color: #21b8ff;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.06);
+            padding-top: 20px;
+            color: #61748b;
+            font-size: 13px;
+            text-align: center;
         }
 
         /* =========================
-           SEARCH RESULT
+           SCROLL TOP
         ========================= */
 
-        .no-results {
+        #topBtn {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 48px;
+            height: 48px;
+            border: 0;
+            border-radius: 50%;
+            background: #129fe9;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
             display: none;
-            margin-top: 20px;
-            color: var(--muted);
-            padding: 18px;
-            border-radius: 14px;
-            border: 1px dashed var(--border);
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0,150,255,.3);
+        }
+
+        #topBtn.show {
+            display: block;
+        }
+
+        /* =========================
+           ANIMATSIYA
+        ========================= */
+
+        .animate {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: .7s ease;
+        }
+
+        .animate.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* =========================
            RESPONSIVE
         ========================= */
 
-        @media (max-width: 980px) {
+        @media (max-width: 950px) {
+
             .hero-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .subjects-grid {
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons,
+            .stats {
+                justify-content: center;
+            }
+
+            .subjects {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .features-grid {
+            .features {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .nav-links {
+            .constitution {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .constitution p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .constitution-symbol {
                 display: none;
             }
 
-            .cta-box {
-                flex-direction: column;
-                align-items: flex-start;
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 700px) {
+
+            .nav {
+                height: 68px;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 4%;
+                right: 4%;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px;
+                border-radius: 18px;
+                background: rgba(5,18,35,.98);
+                border: 1px solid rgba(255,255,255,.09);
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            nav a {
+                text-align: center;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
             .hero {
-                padding-top: 55px;
+                padding-top: 115px;
             }
 
             .hero h1 {
-                letter-spacing: -1.6px;
+                font-size: 44px;
             }
 
-            .hero-stats {
-                gap: 18px;
+            .hero p {
+                font-size: 16px;
             }
 
-            .subjects-grid,
-            .features-grid {
+            .hero-visual {
+                min-height: 380px;
+            }
+
+            .subjects {
                 grid-template-columns: 1fr;
             }
 
-            .cta-box {
-                padding: 28px;
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .constitution {
+                padding: 35px 25px;
+            }
+
+            .constitution h2 {
+                font-size: 30px;
             }
 
             .footer-grid {
-                flex-direction: column;
-                align-items: flex-start;
+                grid-template-columns: 1fr;
             }
 
-            .footer-links {
-                flex-wrap: wrap;
+            section {
+                padding: 75px 0;
             }
         }
+
+        @media (max-width: 430px) {
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .hero h1 {
+                font-size: 37px;
+            }
+
+            .law-card {
+                padding: 35px 20px;
+            }
+
+            .scale {
+                font-size: 85px;
+            }
+
+            .floating-card {
+                font-size: 11px;
+                padding: 10px 12px;
+            }
+
+            .float-one {
+                left: -5px;
+            }
+
+            .float-two {
+                right: -5px;
+            }
+
+            .stats {
+                gap: 20px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-    <div class="container navbar">
+
+    <div class="container nav">
 
         <a href="index.html" class="logo">
+            <span class="logo-icon">⚖</span>
             LEGIST<span>ZONE</span>
         </a>
 
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Bosh sahifa</a></li>
-                <li><a href="fanlar.html">Fanlar</a></li>
-                <li><a href="maruzalar.html">Ma’ruzalar</a></li>
-                <li><a href="#imkoniyatlar">Imkoniyatlar</a></li>
-                <li><a href="#aloqa">Aloqa</a></li>
-                <li><a href="fanlar.html" class="nav-cta">Boshlash</a></li>
-            </ul>
+        <button class="menu-btn" id="menuBtn" aria-label="Menyu">
+            ☰
+        </button>
+
+        <nav id="mainNav">
+
+            <a href="index.html" class="active">Bosh sahifa</a>
+
+            <a href="fanlar.html">Fanlar</a>
+
+            <a href="maruzalar.html">Ma'ruzalar</a>
+
+            <a href="testlar.html">Testlar</a>
+
+            <a href="qonunchilik.html">Qonunchilik</a>
+
+            <a href="aloqa.html">Aloqa</a>
+
         </nav>
 
     </div>
+
 </header>
+
+
+<!-- =========================
+     HERO
+========================= -->
 
 <main>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container hero-grid">
+<section class="hero">
 
-            <div>
+    <div class="container hero-grid">
 
-                <div class="badge">
-                    ⚖️ HUQUQ • TA’LIM • RIVOJLANISH
-                </div>
+        <div class="animate">
 
-                <h1>
-                    Huquqni
-                    <span class="accent">o‘rganishning</span>
-                    yangi darajasi.
-                </h1>
-
-                <p class="hero-text">
-                    LEGISTZONE — huquqshunoslikni tizimli va qulay o‘rganish
-                    uchun ma’ruzalar, seminarlar, testlar va o‘quv
-                    materiallarini bir joyga jamlagan zamonaviy ta’lim platformasi.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="fanlar.html" class="btn btn-primary">
-                        📚 Fanlarni ko‘rish
-                    </a>
-
-                    <a href="maruzalar.html" class="btn btn-secondary">
-                        📖 Ma’ruzalarni ko‘rish
-                    </a>
-                </div>
-
-                <div class="hero-stats">
-                    <div class="stat">
-                        <strong>9+</strong>
-                        <span>Fanlar</span>
-                    </div>
-
-                    <div class="stat">
-                        <strong>100+</strong>
-                        <span>O‘quv materiallari</span>
-                    </div>
-
-                    <div class="stat">
-                        <strong>24/7</strong>
-                        <span>O‘rganish imkoniyati</span>
-                    </div>
-                </div>
-
+            <div class="badge">
+                ⚖️ HUQUQ • TA'LIM • RIVOJLANISH
             </div>
 
-            <div class="hero-panel">
-
-                <div class="hero-card">
-
-                    <div class="card-top">
-                        <div class="mini-logo">LZ</div>
-                        <div class="live">● Platforma online</div>
-                    </div>
-
-                    <h3>LEGISTZONE</h3>
-
-                    <p>
-                        Huquqni o‘rganish uchun kerakli bilimlar — bir platformada.
-                    </p>
-
-                    <div class="feature-line">
-                        <div class="feature-icon">📖</div>
-                        <span>Ma’ruzalarni bosqichma-bosqich o‘rganish</span>
-                    </div>
-
-                    <div class="feature-line">
-                        <div class="feature-icon">📝</div>
-                        <span>Testlar orqali bilimni mustahkamlash</span>
-                    </div>
-
-                    <div class="feature-line">
-                        <div class="feature-icon">⚖️</div>
-                        <span>Huquqiy tushunchalarni tizimli o‘rganish</span>
-                    </div>
-
-                    <div class="feature-line">
-                        <div class="feature-icon">🚀</div>
-                        <span>Istalgan qurilmadan foydalanish</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SEARCH -->
-    <section style="padding-top: 0;">
-        <div class="container">
-
-            <div class="section-heading">
-                <div class="eyebrow">Qidiruv</div>
-                <h2>Kerakli faningizni tez toping</h2>
-                <p>
-                    Quyidagi qidiruv orqali mavjud fanlarni filtrlashingiz mumkin.
-                </p>
-            </div>
-
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="subjectSearch"
-                    placeholder="Masalan: konstitutsiyaviy huquq..."
-                >
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SUBJECTS -->
-    <section id="fanlar">
-        <div class="container">
-
-            <div class="section-heading">
-                <div class="eyebrow">Ta’lim yo‘nalishlari</div>
-                <h2>Asosiy fanlar</h2>
-                <p>
-                    Huquq va boshqa yo‘nalishlarni bir tizimda o‘rganing.
-                </p>
-            </div>
-
-            <div class="subjects-grid" id="subjectsGrid">
-
-                <a href="konstitutsiya.html" class="subject-card subject-item">
-                    <div>
-                        <div class="subject-top">
-                            <div class="subject-icon">⚖️</div>
-                            <div class="status active">Faol</div>
-                        </div>
-
-                        <h3>Konstitutsiyaviy huquq</h3>
-
-                        <p>
-                            Konstitutsiya, inson huquqlari, davlat hokimiyati
-                            va konstitutsiyaviy institutlar.
-                        </p>
-                    </div>
-
-                    <div class="subject-link">Kursni ochish →</div>
-                </a>
-
-                <div class="subject-card subject-item">
-                    <div>
-                        <div class="subject-top">
-                            <div class="subject-icon">🔴</div>
-                            <div class="status">Tez orada</div>
-                        </div>
-
-                        <h3>Jinoyat huquqi</h3>
-
-                        <p>
-                            Jinoyat, javobgarlik, jazo va jinoyat-huquqiy institutlar.
-                        </p>
-                    </div>
-
-                    <div class="subject-link">Tez orada →</div>
-                </div>
-
-                <div class="subject-card subject-item">
-                    <div>
-                        <div class="subject-top">
-                            <div class="subject-icon">🟠</div>
-                            <div class="status">Tez orada</div>
-                        </div>
-
-                        <h3>Jinoyat-protsessual huquq</h3>
-
-                        <p>
-                            Jinoyat ishlarini yuritish, protsess ishtirokchilari
-                            va protsessual tartiblar.
-                        </p>
-                    </div>
-
-                    <div class="subject-link">Tez orada →</div>
-                </div>
-
-                <div class="subject-card subject-item">
-                    <div>
-                        <div class="subject-top">
-                            <div class="subject-icon">🟢</div>
-                            <div class="status">Tez orada</div>
-                        </div>
-
-                        <h3>Ma’muriy huquq</h3>
-
-                        <p>
-                            Davlat boshqaruvi, ma’muriy javobgarlik
-                            va huquqiy munosabatlar.
-                        </p>
-                    </div>
-
-                    <div class="subject-link">Tez orada →</div>
-                </div>
-
-                <div class="subject-card subject-item">
-                    <div>
-                        <div class="subject-top">
-                            <div class="subject-icon">📜</div>
-                            <div class="status">Tez orada</div>
-                        </div>
-
-                        <h3>Fuqarolik huquqi</h3>
-
-                        <p>
-                            Mulkiy va shaxsiy nomulkiy munosabatlar,
-                            shartnomalar va fuqarolik huquqlari.
-                        </p>
-                    </div>
-
-                    <div class="subject-link">Tez orada →</div>
-                </div>
-
-                <div class="subject-card subject-item">
-                    <div>
-                        <div class="subject-top">
-                            <div class="subject-icon">🏛️</div>
-                            <div class="status">Tez orada</div>
-                        </div>
-
-                        <h3>Davlat va huquq nazariyasi</h3>
-
-                        <p>
-                            Davlat, huquq, huquqiy tizim va asosiy nazariy tushunchalar.
-                        </p>
-                    </div>
-
-                    <div class="subject-link">Tez orada →</div>
-                </div>
-
-                <div class="subject-card subject-item">
-                    <div>
-                        <div class="subject-top">
-                            <div class="subject-icon">🌐</div>
-                            <div class="status">Tez orada</div>
-                        </div>
-
-                        <h3>Xalqaro huquq</h3>
-
-                        <p>
-                            Xalqaro huquq prinsiplari, subyektlar va xalqaro munosabatlar.
-                        </p>
-                    </div>
-
-                    <div class="subject-link">Tez orada →</div>
-                </div>
-
-                <div class="subject-card subject-item">
-                    <div>
-                        <div class="subject-top">
-                            <div class="subject-icon">🧠</div>
-                            <div class="status">Tez orada</div>
-                        </div>
-
-                        <h3>Matematik mantiq</h3>
-
-                        <p>
-                            To‘plamlar, mantiqiy amallar, Eyler–Venn diagrammalari
-                            va mantiqiy fikrlash.
-                        </p>
-                    </div>
-
-                    <div class="subject-link">Tez orada →</div>
-                </div>
-
-                <div class="subject-card subject-item">
-                    <div>
-                        <div class="subject-top">
-                            <div class="subject-icon">🇬🇧</div>
-                            <div class="status">Tez orada</div>
-                        </div>
-
-                        <h3>Ingliz tili</h3>
-
-                        <p>
-                            Huquqshunoslar uchun ingliz tili, speaking
-                            va akademik lug‘at.
-                        </p>
-                    </div>
-
-                    <div class="subject-link">Tez orada →</div>
-                </div>
-
-            </div>
-
-            <div class="no-results" id="noResults">
-                Qidiruv bo‘yicha fan topilmadi.
-            </div>
-
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="imkoniyatlar">
-        <div class="container">
-
-            <div class="section-heading">
-                <div class="eyebrow">Platforma imkoniyatlari</div>
-                <h2>O‘rganish jarayonini bir joyga jamlang</h2>
-                <p>
-                    LEGISTZONE faqat ma’lumot ko‘rsatadigan sayt emas,
-                    balki bosqichma-bosqich rivojlanadigan ta’lim platformasi.
-                </p>
-            </div>
-
-            <div class="features-grid">
-
-                <div class="feature-card">
-                    <div class="icon">📖</div>
-                    <h3>Ma’ruzalar</h3>
-                    <p>
-                        Mavzularni tartibli va tushunarli ko‘rinishda o‘rganish.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="icon">📝</div>
-                    <h3>Testlar</h3>
-                    <p>
-                        O‘zlashtirilgan bilimni testlar orqali tekshirish.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="icon">📚</div>
-                    <h3>Materiallar</h3>
-                    <p>
-                        Seminarlar, hujjatlar va qo‘shimcha o‘quv materiallari.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="icon">📱</div>
-                    <h3>Istalgan qurilma</h3>
-                    <p>
-                        Kompyuter, planshet va telefonda qulay foydalanish.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="aloqa">
-        <div class="container">
-
-            <div class="cta-box">
-                <div>
-                    <div class="eyebrow">LEGISTZONE</div>
-
-                    <h2>
-                        Huquqni o‘rganishni bugundan boshlang.
-                    </h2>
-
-                    <p>
-                        Fanlarni ko‘ring va o‘zingizga kerakli yo‘nalishni tanlang.
-                    </p>
-                </div>
+            <h1>
+                Huquqni o‘rganishning
+                <span>yangi darajasi.</span>
+            </h1>
+
+            <p>
+                LEGISTZONE — huquq fanlarini o‘rganish,
+                ma'ruzalarni ko‘rish, testlar ishlash va
+                qonunchilik bilan ishlash uchun zamonaviy
+                ta'lim platformasi.
+            </p>
+
+            <div class="buttons">
 
                 <a href="fanlar.html" class="btn btn-primary">
-                    Fanlarga o‘tish →
+                    📚 Fanlarni ko‘rish
                 </a>
+
+                <a href="maruzalar.html" class="btn btn-secondary">
+                    🎓 Ma'ruzalarni ko‘rish
+                </a>
+
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>9+</strong>
+                    <span>Fanlar</span>
+                </div>
+
+                <div class="stat">
+                    <strong>100+</strong>
+                    <span>O‘quv materiallari</span>
+                </div>
+
+                <div class="stat">
+                    <strong>24/7</strong>
+                    <span>O‘rganish imkoniyati</span>
+                </div>
+
             </div>
 
         </div>
-    </section>
 
-</main>
 
-<footer>
-    <div class="container footer-grid">
+        <div class="hero-visual animate">
 
-        <div>
-            <div class="footer-brand">
-                LEGIST<span>ZONE</span>
+            <div class="glow"></div>
+
+            <div class="floating-card float-one">
+                📚 Ma'ruzalar
             </div>
 
-            <div class="footer-text">
-                Huquq va ta’lim platformasi
+            <div class="floating-card float-two">
+                📝 Testlar
             </div>
-        </div>
 
-        <div class="footer-links">
-            <a href="index.html">Bosh sahifa</a>
-            <a href="fanlar.html">Fanlar</a>
-            <a href="maruzalar.html">Ma’ruzalar</a>
-        </div>
+            <div class="floating-card float-three">
+                ⚖️ Qonunchilik
+            </div>
 
-        <div class="footer-text">
-            © 2026 LEGISTZONE
+            <div class="law-card">
+
+                <div class="scale">
+                    ⚖
+                </div>
+
+                <h2>
+                    LEGISTZONE
+                </h2>
+
+                <p>
+                    Huquqni bilish — o‘z huquqingni
+                    himoya qilishning muhim qismidir.
+                </p>
+
+            </div>
+
         </div>
 
     </div>
+
+</section>
+
+
+<!-- =========================
+     FANLAR
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-head animate">
+
+            <small>ASOSIY YO‘NALISHLAR</small>
+
+            <h2>
+                Huquq fanlarini o‘rganing
+            </h2>
+
+            <p>
+                O‘zingizga kerakli fan yo‘nalishini tanlang
+                va bilimlaringizni bosqichma-bosqich rivojlantiring.
+            </p>
+
+        </div>
+
+
+        <div class="subjects">
+
+
+            <a href="konstitutsiya.html" class="subject animate">
+
+                <div class="subject-icon">🏛️</div>
+
+                <h3>
+                    Konstitutsiyaviy huquq
+                </h3>
+
+                <p>
+                    Konstitutsiya, inson huquqlari,
+                    davlat hokimiyati va fuqarolik asoslari.
+                </p>
+
+                <span class="more">
+                    O‘rganishni boshlash →
+                </span>
+
+            </a>
+
+
+            <a href="jinoyat.html" class="subject animate">
+
+                <div class="subject-icon">⚖️</div>
+
+                <h3>
+                    Jinoyat huquqi
+                </h3>
+
+                <p>
+                    Jinoyat tushunchasi, tarkibi,
+                    javobgarlik va jazo masalalari.
+                </p>
+
+                <span class="more">
+                    O‘rganishni boshlash →
+                </span>
+
+            </a>
+
+
+            <a href="jinoyat-protsessual.html" class="subject animate">
+
+                <div class="subject-icon">🔎</div>
+
+                <h3>
+                    Jinoyat-protsessual huquq
+                </h3>
+
+                <p>
+                    Jinoyat ishlarini yuritish,
+                    protsess ishtirokchilari va dalillar.
+                </p>
+
+                <span class="more">
+                    O‘rganishni boshlash →
+                </span>
+
+            </a>
+
+
+            <a href="mamuriy.html" class="subject animate">
+
+                <div class="subject-icon">🏢</div>
+
+                <h3>
+                    Ma'muriy huquq
+                </h3>
+
+                <p>
+                    Davlat boshqaruvi, ma'muriy javobgarlik
+                    va davlat organlari faoliyati.
+                </p>
+
+                <span class="more">
+                    O‘rganishni boshlash →
+                </span>
+
+            </a>
+
+
+            <a href="fuqarolik.html" class="subject animate">
+
+                <div class="subject-icon">📄</div>
+
+                <h3>
+                    Fuqarolik huquqi
+                </h3>
+
+                <p>
+                    Shartnomalar, mulk, majburiyatlar
+                    va fuqarolik-huquqiy munosabatlar.
+                </p>
+
+                <span class="more">
+                    O‘rganishni boshlash →
+                </span>
+
+            </a>
+
+
+            <a href="davlat-huquq-nazariyasi.html" class="subject animate">
+
+                <div class="subject-icon">📚</div>
+
+                <h3>
+                    Davlat va huquq nazariyasi
+                </h3>
+
+                <p>
+                    Davlat, huquq, huquqiy tizim
+                    va asosiy nazariy tushunchalar.
+                </p>
+
+                <span class="more">
+                    O‘rganishni boshlash →
+                </span>
+
+            </a>
+
+
+            <a href="xalqaro-huquq.html" class="subject animate">
+
+                <div class="subject-icon">🌍</div>
+
+                <h3>
+                    Xalqaro huquq
+                </h3>
+
+                <p>
+                    Xalqaro munosabatlar, xalqaro huquq
+                    prinsiplari va xalqaro tashkilotlar.
+                </p>
+
+                <span class="more">
+                    O‘rganishni boshlash →
+                </span>
+
+            </a>
+
+
+            <a href="mantiq.html" class="subject animate">
+
+                <div class="subject-icon">🧠</div>
+
+                <h3>
+                    Matematik mantiq
+                </h3>
+
+                <p>
+                    Mantiqiy fikrlash, to‘plamlar,
+                    mulohazalar va matematik amallar.
+                </p>
+
+                <span class="more">
+                    O‘rganishni boshlash →
+                </span>
+
+            </a>
+
+
+            <a href="ingliz-tili.html" class="subject animate">
+
+                <div class="subject-icon">🌐</div>
+
+                <h3>
+                    Ingliz tili
+                </h3>
+
+                <p>
+                    Huquq sohasi va kundalik hayot uchun
+                    zarur ingliz tili bilimlari.
+                </p>
+
+                <span class="more">
+                    O‘rganishni boshlash →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     IMKONIYATLAR
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-head animate">
+
+            <small>PLATFORMA IMKONIYATLARI</small>
+
+            <h2>
+                Bilim olishni osonlashtiring
+            </h2>
+
+            <p>
+                LEGISTZONE orqali o‘qish, takrorlash
+                va bilimni tekshirish bir joyda.
+            </p>
+
+        </div>
+
+
+        <div class="features">
+
+
+            <div class="feature animate">
+
+                <div class="feature-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Global qidiruv
+                </h3>
+
+                <p>
+                    Kerakli fan, ma'ruza yoki
+                    huquqiy mavzuni tez toping.
+                </p>
+
+            </div>
+
+
+            <div class="feature animate">
+
+                <div class="feature-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Interaktiv testlar
+                </h3>
+
+                <p>
+                    Bilimingizni testlar orqali
+                    tekshirib boring.
+                </p>
+
+            </div>
+
+
+            <div class="feature animate">
+
+                <div class="feature-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Ma'ruzalar
+                </h3>
+
+                <p>
+                    Muhim mavzular bo‘yicha
+                    o‘quv materiallarini o‘qing.
+                </p>
+
+            </div>
+
+
+            <div class="feature animate">
+
+                <div class="feature-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Huquqiy lug‘at
+                </h3>
+
+                <p>
+                    Murakkab huquqiy tushunchalarning
+                    ma'nosini tez toping.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     KONSTITUTSIYA
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="constitution animate">
+
+            <div>
+
+                <h2>
+                    Konstitutsiyani o‘rganing
+                </h2>
+
+                <p>
+                    O‘zbekiston Respublikasi Konstitutsiyasining
+                    asosiy qoidalari, inson va fuqaro huquqlari,
+                    davlat hokimiyati hamda jamiyat asoslari
+                    bo‘yicha materiallarni o‘rganing.
+                </p>
+
+                <a href="konstitutsiya.html"
+                   class="btn btn-primary">
+                    Konstitutsiya bo‘limi →
+                </a>
+
+            </div>
+
+            <div class="constitution-symbol">
+                🏛️
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="cta animate">
+
+            <h2>
+                Bilimni bugundan boshlang.
+            </h2>
+
+            <p>
+                Huquqni tushunish, yodlash va amaliyotda
+                qo‘llash uchun LEGISTZONE bilan o‘rganing.
+            </p>
+
+            <div class="buttons"
+                 style="justify-content:center;">
+
+                <a href="fanlar.html"
+                   class="btn btn-primary">
+                    📚 Fanlarni ko‘rish
+                </a>
+
+                <a href="testlar.html"
+                   class="btn btn-secondary">
+                    📝 Testlarni boshlash
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <div class="logo">
+                    <span class="logo-icon">⚖</span>
+                    LEGIST<span>ZONE</span>
+                </div>
+
+                <p style="margin-top:15px; max-width:360px;">
+                    Huquq va ta'lim yo‘nalishidagi
+                    zamonaviy o‘quv platformasi.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Platforma
+                </h3>
+
+                <a href="index.html">
+                    Bosh sahifa
+                </a>
+
+                <a href="fanlar.html">
+                    Fanlar
+                </a>
+
+                <a href="maruzalar.html">
+                    Ma'ruzalar
+                </a>
+
+                <a href="testlar.html">
+                    Testlar
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Foydali bo‘limlar
+                </h3>
+
+                <a href="qonunchilik.html">
+                    Qonunchilik
+                </a>
+
+                <a href="lugat.html">
+                    Huquqiy lug‘at
+                </a>
+
+                <a href="aloqa.html">
+                    Aloqa
+                </a>
+
+                <a href="tel:+998200003437">
+                    📞 +998 20 000 34 37
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © <span id="year"></span> LEGISTZONE.
+            Barcha huquqlar himoyalangan.
+
+        </div>
+
+    </div>
+
 </footer>
 
+
+<!-- YUQORIGA QAYTISH -->
+
+<button id="topBtn" aria-label="Yuqoriga">
+    ↑
+</button>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
-    const searchInput = document.getElementById("subjectSearch");
-    const subjectItems = document.querySelectorAll(".subject-item");
-    const noResults = document.getElementById("noResults");
 
-    searchInput.addEventListener("input", function () {
+    /* MOBIL MENYU */
 
-        const query = this.value
-            .toLowerCase()
-            .trim();
+    const menuBtn = document.getElementById("menuBtn");
+    const mainNav = document.getElementById("mainNav");
 
-        let visibleCount = 0;
+    menuBtn.addEventListener("click", function () {
+        mainNav.classList.toggle("open");
+    });
 
-        subjectItems.forEach(function (item) {
 
-            const text = item.innerText.toLowerCase();
+    /* MENYU LINK BOSILGANDA YOPILADI */
 
-            if (text.includes(query)) {
-                item.style.display = "flex";
-                visibleCount++;
-            } else {
-                item.style.display = "none";
+    document.querySelectorAll("#mainNav a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+            mainNav.classList.remove("open");
+        });
+
+    });
+
+
+    /* YIL */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    /* SCROLL ANIMATSIYA */
+
+    const animatedElements =
+        document.querySelectorAll(".animate");
+
+    function reveal() {
+
+        animatedElements.forEach(function(element) {
+
+            const position =
+                element.getBoundingClientRect().top;
+
+            if (position < window.innerHeight - 80) {
+                element.classList.add("show");
             }
 
         });
 
-        noResults.style.display =
-            visibleCount === 0 ? "block" : "none";
+    }
+
+    window.addEventListener("scroll", reveal);
+
+    reveal();
+
+
+    /* YUQORIGA QAYTISH */
+
+    const topBtn =
+        document.getElementById("topBtn");
+
+    window.addEventListener("scroll", function() {
+
+        if (window.scrollY > 500) {
+            topBtn.classList.add("show");
+        } else {
+            topBtn.classList.remove("show");
+        }
+
     });
+
+    topBtn.addEventListener("click", function() {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
 </script>
 
 </body>

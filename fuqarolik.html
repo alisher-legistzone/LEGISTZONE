@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fuqarolik huquqi — LEGISTZONE</title>
+
+<meta name="description" content="Fuqarolik huquqi bo‘yicha ma’ruzalar, asosiy tushunchalar va o‘quv materiallari — LEGISTZONE.">
+<meta name="keywords" content="fuqarolik huquqi, huquq, LEGISTZONE, shartnoma, mulk, majburiyat, meros, fuqarolik huquqiy munosabatlar">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(29,181,255,.12), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(67,120,255,.13), transparent 30%),
+        #06101f;
+    color:#f3f7ff;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(6,16,31,.78);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:.5px;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:#1db5ff;
+}
+
+.logo-icon{
+    color:#1db5ff;
+    margin-right:7px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.nav-links a{
+    padding:10px 13px;
+    border-radius:10px;
+    color:#b9c8dd;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:white;
+    background:rgba(29,181,255,.12);
+}
+
+.start-btn{
+    background:linear-gradient(135deg,#1db5ff,#4378ff)!important;
+    color:white!important;
+    box-shadow:0 8px 25px rgba(29,181,255,.22);
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:transparent;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:720px;
+    padding:150px 0 90px;
+    display:flex;
+    align-items:center;
+    position:relative;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:60px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 15px;
+    border:1px solid rgba(29,181,255,.25);
+    background:rgba(29,181,255,.08);
+    border-radius:50px;
+    color:#62cfff;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,72px);
+    line-height:1.04;
+    letter-spacing:-2px;
+    margin-bottom:24px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#fff,#53caff,#6685ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:#9fb0c7;
+    font-size:18px;
+    max-width:680px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 21px;
+    border-radius:12px;
+    font-weight:700;
+    font-size:14px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,#1db5ff,#4378ff);
+    box-shadow:0 10px 30px rgba(29,181,255,.2);
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.04);
+    color:#d9e4f4;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* HERO VISUAL */
+
+.hero-visual{
+    min-height:450px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.glow{
+    position:absolute;
+    width:310px;
+    height:310px;
+    border-radius:50%;
+    background:rgba(29,181,255,.12);
+    filter:blur(45px);
+    animation:pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);opacity:.65}
+    50%{transform:scale(1.2);opacity:1}
+}
+
+.main-card{
+    width:300px;
+    height:350px;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.12);
+    background:
+        linear-gradient(145deg,rgba(29,181,255,.13),rgba(67,120,255,.07)),
+        rgba(10,24,45,.9);
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.4),
+        inset 0 1px 0 rgba(255,255,255,.08);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    z-index:2;
+    animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-14px)}
+}
+
+.balance{
+    font-size:100px;
+    color:#57caff;
+    text-shadow:0 0 35px rgba(29,181,255,.35);
+    margin-bottom:10px;
+}
+
+.main-card h3{
+    font-size:23px;
+    margin-bottom:5px;
+}
+
+.main-card p{
+    color:#8fa5bd;
+    font-size:14px;
+}
+
+.float-card{
+    position:absolute;
+    z-index:3;
+    padding:13px 16px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(10,24,45,.9);
+    backdrop-filter:blur(15px);
+    border-radius:14px;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+    font-size:13px;
+    color:#dce8f8;
+}
+
+.float-one{
+    top:50px;
+    left:5px;
+    animation:floatSmall 4s ease-in-out infinite;
+}
+
+.float-two{
+    right:0;
+    top:150px;
+    animation:floatSmall 4.5s ease-in-out infinite .5s;
+}
+
+.float-three{
+    bottom:55px;
+    left:25px;
+    animation:floatSmall 5s ease-in-out infinite 1s;
+}
+
+@keyframes floatSmall{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-9px)}
+}
+
+/* GENERAL */
+
+section{
+    padding:90px 0;
+}
+
+.section-head{
+    max-width:700px;
+    margin-bottom:42px;
+}
+
+.section-head span{
+    color:#43c5ff;
+    font-size:13px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.section-head h2{
+    font-size:clamp(30px,4vw,48px);
+    line-height:1.1;
+    margin:10px 0 15px;
+}
+
+.section-head p{
+    color:#91a5be;
+}
+
+/* CARDS */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.info-card{
+    padding:28px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    background:rgba(255,255,255,.035);
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.info-card::before{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:rgba(29,181,255,.1);
+    filter:blur(30px);
+    right:-30px;
+    top:-30px;
+}
+
+.info-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(29,181,255,.3);
+    background:rgba(29,181,255,.06);
+}
+
+.icon{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:15px;
+    background:rgba(29,181,255,.1);
+    border:1px solid rgba(29,181,255,.16);
+    font-size:25px;
+    margin-bottom:18px;
+}
+
+.info-card h3{
+    margin-bottom:8px;
+    font-size:19px;
+}
+
+.info-card p{
+    color:#91a5be;
+    font-size:14px;
+}
+
+/* TOPICS */
+
+.topics{
+    max-width:950px;
+    margin:auto;
+}
+
+details{
+    margin-bottom:12px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    background:rgba(255,255,255,.035);
+    overflow:hidden;
+    transition:.3s;
+}
+
+details:hover{
+    border-color:rgba(29,181,255,.2);
+}
+
+summary{
+    list-style:none;
+    cursor:pointer;
+    padding:20px 24px;
+    font-size:17px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    color:#edf5ff;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::after{
+    content:"+";
+    width:30px;
+    height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(29,181,255,.1);
+    color:#48c7ff;
+    font-size:20px;
+    transition:.3s;
+}
+
+details[open] summary::after{
+    content:"−";
+    transform:rotate(180deg);
+}
+
+.detail-content{
+    padding:0 24px 23px;
+    color:#9cafc5;
+    font-size:15px;
+    border-top:1px solid rgba(255,255,255,.05);
+    animation:openTopic .25s ease;
+}
+
+.detail-content p{
+    padding-top:18px;
+}
+
+.detail-content ul{
+    padding:15px 0 0 20px;
+}
+
+.detail-content li{
+    margin:6px 0;
+}
+
+@keyframes openTopic{
+    from{
+        opacity:0;
+        transform:translateY(-5px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* REVIEW */
+
+.review{
+    background:
+        linear-gradient(135deg,rgba(29,181,255,.08),rgba(67,120,255,.04)),
+        rgba(255,255,255,.025);
+    border-top:1px solid rgba(255,255,255,.06);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.review-card{
+    padding:25px 20px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    background:rgba(6,16,31,.65);
+}
+
+.review-card strong{
+    display:block;
+    font-size:30px;
+    color:#54caff;
+    margin-bottom:5px;
+}
+
+.review-card span{
+    color:#93a8bf;
+    font-size:13px;
+}
+
+/* ARTICLE */
+
+.article{
+    max-width:900px;
+    margin:auto;
+}
+
+.article-box{
+    padding:35px;
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.035);
+}
+
+.article-box h3{
+    font-size:25px;
+    margin-bottom:18px;
+}
+
+.article-box p{
+    color:#9cafc5;
+    margin-bottom:16px;
+}
+
+.article-box strong{
+    color:#eaf5ff;
+}
+
+/* CTA */
+
+.cta{
+    padding:70px 0 100px;
+}
+
+.cta-box{
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    padding:70px 25px;
+    border-radius:28px;
+    border:1px solid rgba(29,181,255,.16);
+    background:
+        radial-gradient(circle at center,rgba(29,181,255,.14),transparent 55%),
+        rgba(255,255,255,.035);
+}
+
+.cta-box h2{
+    font-size:clamp(30px,5vw,48px);
+    margin-bottom:15px;
+}
+
+.cta-box p{
+    color:#9cafc5;
+    max-width:650px;
+    margin:0 auto 27px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:35px 0;
+    background:rgba(0,0,0,.12);
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-copy{
+    color:#71859e;
+    font-size:13px;
+}
+
+.footer-links{
+    display:flex;
+    gap:18px;
+    color:#91a5be;
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:#4cc8ff;
+}
+
+/* BACK TOP */
+
+#topBtn{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:45px;
+    height:45px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:13px;
+    background:rgba(8,25,45,.9);
+    color:#5acaff;
+    cursor:pointer;
+    display:none;
+    z-index:500;
+    font-size:19px;
+}
+
+/* REVEAL */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:opacity .7s ease, transform .7s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+    .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        padding:15px 4%;
+        background:rgba(6,16,31,.97);
+        border-bottom:1px solid rgba(255,255,255,.08);
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        width:100%;
+        text-align:center;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        min-height:390px;
+    }
+
+    .info-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .review-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .float-one{
+        left:5%;
+    }
+
+    .float-two{
+        right:5%;
+    }
+}
+
+@media(max-width:650px){
+
+    .navbar{
+        min-height:68px;
+    }
+
+    .hero{
+        padding-top:125px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        letter-spacing:-1.5px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-visual{
+        min-height:350px;
+    }
+
+    .main-card{
+        width:255px;
+        height:310px;
+    }
+
+    .balance{
+        font-size:80px;
+    }
+
+    .float-card{
+        font-size:11px;
+        padding:10px 12px;
+    }
+
+    .float-one{
+        left:0;
+        top:35px;
+    }
+
+    .float-two{
+        right:0;
+        top:130px;
+    }
+
+    .float-three{
+        left:0;
+        bottom:30px;
+    }
+
+    section{
+        padding:70px 0;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .article-box{
+        padding:25px 20px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container navbar">
+
+<a href="index.html" class="logo">
+<span class="logo-icon">⚖</span> LEGIST<span>ZONE</span>
+</a>
+
+<button class="menu-btn" id="menuBtn">☰</button>
+
+<nav class="nav-links" id="navLinks">
+
+<a href="index.html">Bosh sahifa</a>
+<a href="fanlar.html" class="active">Fanlar</a>
+<a href="maruzalar.html">Ma'ruzalar</a>
+<a href="testlar.html">Testlar</a>
+<a href="qonunchilik.html">Qonunchilik</a>
+<a href="aloqa.html">Aloqa</a>
+<a href="fanlar.html" class="start-btn">Boshlash →</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div class="reveal">
+
+<div class="badge">
+⚖️ FUQAROLIK HUQUQI
+</div>
+
+<h1>
+Fuqarolik huquqini
+<span class="gradient-text">tizimli o‘rganing.</span>
+</h1>
+
+<p>
+Mulk, shartnoma, majburiyat, zarar qoplash, meros va boshqa
+fuqarolik-huquqiy munosabatlar bo‘yicha asosiy tushunchalarni
+bir joyda o‘rganing.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#mavzular" class="btn btn-primary">
+📚 Mavzularni o‘rganish
+</a>
+
+<a href="testlar.html" class="btn btn-secondary">
+🧠 Testlarni boshlash
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-visual reveal">
+
+<div class="glow"></div>
+
+<div class="float-card float-one">
+🏠 Mulk huquqi
+</div>
+
+<div class="float-card float-two">
+📝 Shartnoma
+</div>
+
+<div class="float-card float-three">
+⚖️ Majburiyat
+</div>
+
+<div class="main-card">
+
+<div class="balance">⚖</div>
+
+<h3>Fuqarolik huquqi</h3>
+
+<p>Huquqiy munosabatlar • Mulk • Majburiyat</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ASOSIY YO‘NALISHLAR -->
+
+<section>
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<span>ASOSIY YO‘NALISHLAR</span>
+
+<h2>Fuqarolik huquqi nimalarni o‘rganadi?</h2>
+
+<p>
+Fuqarolik huquqi doirasidagi muhim institutlar va
+kundalik hayotda uchraydigan huquqiy munosabatlar.
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<div class="info-card reveal">
+
+<div class="icon">🏠</div>
+
+<h3>Mulk huquqi</h3>
+
+<p>
+Mol-mulkka egalik qilish, undan foydalanish va uni tasarruf etish
+bilan bog‘liq huquqiy munosabatlar.
+</p>
+
+</div>
+
+
+<div class="info-card reveal">
+
+<div class="icon">📝</div>
+
+<h3>Shartnomalar</h3>
+
+<p>
+Taraflarning huquq va majburiyatlarini belgilovchi
+kelishuvlarning huquqiy mazmuni.
+</p>
+
+</div>
+
+
+<div class="info-card reveal">
+
+<div class="icon">🤝</div>
+
+<h3>Majburiyatlar</h3>
+
+<p>
+Bir tarafning muayyan harakatni bajarishi yoki bajarishdan
+saqlanishi bilan bog‘liq munosabatlar.
+</p>
+
+</div>
+
+
+<div class="info-card reveal">
+
+<div class="icon">💰</div>
+
+<h3>Zararni qoplash</h3>
+
+<p>
+Yetkazilgan zarar va uning huquqiy oqibatlari bilan bog‘liq
+umumiy qoidalar.
+</p>
+
+</div>
+
+
+<div class="info-card reveal">
+
+<div class="icon">👨‍👩‍👧</div>
+
+<h3>Meros</h3>
+
+<p>
+Meros qoldirish, meros olish va meros bilan bog‘liq
+huquqiy munosabatlarning asoslari.
+</p>
+
+</div>
+
+
+<div class="info-card reveal">
+
+<div class="icon">🏢</div>
+
+<h3>Yuridik shaxslar</h3>
+
+<p>
+Tashkilotlarning fuqarolik-huquqiy munosabatlardagi
+ishtiroki va huquqiy maqomi.
+</p>
+
+</div>
+
+
+<div class="info-card reveal">
+
+<div class="icon">👤</div>
+
+<h3>Jismoniy shaxslar</h3>
+
+<p>
+Fuqarolik huquq va majburiyatlariga ega bo‘lish hamda
+ulardan foydalanish bilan bog‘liq masalalar.
+</p>
+
+</div>
+
+
+<div class="info-card reveal">
+
+<div class="icon">🛡️</div>
+
+<h3>Huquqlarni himoya qilish</h3>
+
+<p>
+Buzilgan fuqarolik huquqlarini himoya qilishning
+umumiy huquqiy mexanizmlari.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MAVZULAR -->
+
+<section id="mavzular">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<span>O‘QUV MODULI</span>
+
+<h2>Fuqarolik huquqi mavzulari</h2>
+
+<p>
+Har bir mavzuni bosib, qisqacha mazmunini oching.
+Keyinchalik bu bo‘limga batafsil ma’ruzalar va materiallar qo‘shish mumkin.
+</p>
+
+</div>
+
+
+<div class="topics">
+
+
+<details name="fuqarolik" class="reveal">
+
+<summary>
+1. Fuqarolik huquqi tushunchasi
+</summary>
+
+<div class="detail-content">
+
+<p>
+Fuqarolik huquqi shaxslar o‘rtasidagi mulkiy va u bilan bog‘liq
+shaxsiy nomulkiy munosabatlarni huquqiy tartibga soluvchi
+huquq sohasi sifatida o‘rganiladi.
+</p>
+
+</div>
+
+</details>
+
+
+<details name="fuqarolik" class="reveal">
+
+<summary>
+2. Fuqarolik-huquqiy munosabatlar
+</summary>
+
+<div class="detail-content">
+
+<p>
+Fuqarolik-huquqiy munosabatlarda taraflar, ularning huquq va
+majburiyatlari hamda munosabat obyekti muhim o‘rin tutadi.
+</p>
+
+<ul>
+<li>Subyekt</li>
+<li>Obyekt</li>
+<li>Subyektiv huquq</li>
+<li>Yuridik majburiyat</li>
+</ul>
+
+</div>
+
+</details>
+
+
+<details name="fuqarolik" class="reveal">
+
+<summary>
+3. Jismoniy shaxslar
+</summary>
+
+<div class="detail-content">
+
+<p>
+Jismoniy shaxslarning fuqarolik-huquqiy munosabatlarda
+ishtirok etishi, huquq va majburiyatlari hamda muomala
+layoqati masalalari o‘rganiladi.
+</p>
+
+</div>
+
+</details>
+
+
+<details name="fuqarolik" class="reveal">
+
+<summary>
+4. Yuridik shaxslar
+</summary>
+
+<div class="detail-content">
+
+<p>
+Yuridik shaxs tushunchasi, uning tashkil etilishi, huquqiy
+maqomi va fuqarolik muomalasidagi ishtiroki haqida asosiy
+tushunchalar beriladi.
+</p>
+
+</div>
+
+</details>
+
+
+<details name="fuqarolik" class="reveal">
+
+<summary>
+5. Mulk huquqi
+</summary>
+
+<div class="detail-content">
+
+<p>
+Mulk huquqi doirasida mol-mulkka egalik qilish, undan
+foydalanish va uni tasarruf etish bilan bog‘liq masalalar
+o‘rganiladi.
+</p>
+
+<ul>
+<li>Egalik qilish</li>
+<li>Foydalanish</li>
+<li>Tasarruf etish</li>
+</ul>
+
+</div>
+
+</details>
+
+
+<details name="fuqarolik" class="reveal">
+
+<summary>
+6. Shartnoma huquqi
+</summary>
+
+<div class="detail-content">
+
+<p>
+Shartnoma taraflarning huquq va majburiyatlarini belgilovchi
+muhim fuqarolik-huquqiy vosita hisoblanadi.
+</p>
+
+<ul>
+<li>Shartnoma tushunchasi</li>
+<li>Shartnoma tuzish</li>
+<li>Shartnoma shartlari</li>
+<li>Shartnomani o‘zgartirish va bekor qilish</li>
+</ul>
+
+</div>
+
+</details>
+
+
+<details name="fuqarolik" class="reveal">
+
+<summary>
+7. Majburiyat huquqi
+</summary>
+
+<div class="detail-content">
+
+<p>
+Majburiyat huquqida qarzdor va kreditor o‘rtasidagi
+huquqiy munosabatlar, majburiyatni bajarish va uning
+bajarilmasligi bilan bog‘liq masalalar o‘rganiladi.
+</p>
+
+</div>
+
+</details>
+
+
+<details name="fuqarolik" class="reveal">
+
+<summary>
+8. Yetkazilgan zararni qoplash
+</summary>
+
+<div class="detail-content">
+
+<p>
+Boshqa shaxsga zarar yetkazilishi natijasida yuzaga keladigan
+fuqarolik-huquqiy oqibatlar va zararni qoplash bilan bog‘liq
+umumiy masalalar ko‘rib chiqiladi.
+</p>
+
+</div>
+
+</details>
+
+
+<details name="fuqarolik" class="reveal">
+
+<summary>
+9. Meros huquqi
+</summary>
+
+<div class="detail-content">
+
+<p>
+Meros qoldiruvchining mol-mulki va tegishli huquq hamda
+majburiyatlarining merosxo‘rlarga o‘tishi bilan bog‘liq
+asosiy tushunchalar o‘rganiladi.
+</p>
+
+</div>
+
+</details>
+
+
+<details name="fuqarolik" class="reveal">
+
+<summary>
+10. Fuqarolik huquqlarini himoya qilish
+</summary>
+
+<div class="detail-content">
+
+<p>
+Fuqarolik huquqlari buzilganda ularni himoya qilishning
+huquqiy usullari va himoya mexanizmlarining umumiy
+tushunchalari o‘rganiladi.
+</p>
+
+</div>
+
+</details>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TEZKOR TAKRORLASH -->
+
+<section class="review">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<span>TEZKOR TAKRORLASH</span>
+
+<h2>Imtihondan oldin eslab qoling</h2>
+
+<p>
+Fuqarolik huquqining asosiy tushunchalarini qisqa ko‘rinishda takrorlang.
+</p>
+
+</div>
+
+
+<div class="review-grid">
+
+<div class="review-card reveal">
+<strong>01</strong>
+<span>Subyekt</span>
+</div>
+
+<div class="review-card reveal">
+<strong>02</strong>
+<span>Obyekt</span>
+</div>
+
+<div class="review-card reveal">
+<strong>03</strong>
+<span>Huquq va majburiyat</span>
+</div>
+
+<div class="review-card reveal">
+<strong>04</strong>
+<span>Yuridik fakt</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MA'RUZA -->
+
+<section>
+
+<div class="container article">
+
+<div class="section-head reveal">
+
+<span>QISQA MA'RUZA</span>
+
+<h2>Fuqarolik huquqining mazmuni</h2>
+
+</div>
+
+
+<div class="article-box reveal">
+
+<h3>Fuqarolik huquqini qanday tushunish mumkin?</h3>
+
+<p>
+Fuqarolik huquqi insonlarning kundalik hayotida uchraydigan
+ko‘plab munosabatlar bilan bog‘liq. Masalan, mulkdan foydalanish,
+shartnoma tuzish, xizmat ko‘rsatish, zarar yetkazilishi yoki
+meros masalalari fuqarolik-huquqiy munosabatlar doirasida
+o‘rganilishi mumkin.
+</p>
+
+<p>
+Bu fan orqali talaba avvalo <strong>subyekt, obyekt, huquq,
+majburiyat va yuridik fakt</strong> kabi asosiy tushunchalarni
+o‘zlashtiradi.
+</p>
+
+<p>
+Keyingi bosqichda mulk huquqi, shartnoma, majburiyat,
+meros va fuqarolik huquqlarini himoya qilish kabi institutlar
+tizimli ravishda o‘rganiladi.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-box reveal">
+
+<h2>Bilimingizni sinab ko‘ring.</h2>
+
+<p>
+Fuqarolik huquqi bo‘yicha o‘rgangan mavzularingizni
+testlar orqali tekshirib ko‘ring.
+</p>
+
+<a href="testlar.html" class="btn btn-primary">
+🧠 Testlarni boshlash →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<div class="footer-copy">
+© 2026 LEGISTZONE. Barcha huquqlar himoyalangan.
+</div>
+
+<div class="footer-links">
+
+<a href="index.html">Bosh sahifa</a>
+<a href="fanlar.html">Fanlar</a>
+<a href="maruzalar.html">Ma'ruzalar</a>
+<a href="aloqa.html">Aloqa</a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<button id="topBtn">↑</button>
+
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+    });
+});
+
+
+/* SCROLL REVEAL */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:.12
+});
+
+revealElements.forEach(element => {
+    observer.observe(element);
+});
+
+
+/* TOP BUTTON */
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 500){
+        topBtn.style.display = "block";
+    }else{
+        topBtn.style.display = "none";
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* DETAILS SCROLL */
+
+document.querySelectorAll("details").forEach(item => {
+
+    item.addEventListener("toggle", () => {
+
+        if(item.open){
+
+            setTimeout(() => {
+
+                const rect = item.getBoundingClientRect();
+
+                if(rect.top < 100){
+
+                    window.scrollBy({
+                        top:rect.top - 120,
+                        behavior:"smooth"
+                    });
+
+                }
+
+            },120);
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

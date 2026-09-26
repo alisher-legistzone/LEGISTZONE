@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ma'muriy huquq — LEGISTZONE</title>
+
+  <meta name="description"
+        content="Ma'muriy huquq bo‘yicha mavzular, davlat boshqaruvi, ma'muriy javobgarlik va huquqiy o‘quv materiallari — LEGISTZONE.">
+
+  <meta name="keywords"
+        content="ma'muriy huquq, davlat boshqaruvi, ma'muriy javobgarlik, ma'muriy huquqbuzarlik, LEGISTZONE">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 8% 10%,rgba(29,181,255,.13),transparent 30%),
+        radial-gradient(circle at 92% 28%,rgba(91,76,255,.13),transparent 32%),
+        #06101f;
+      color:#eef7ff;
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    .container{
+      width:min(1180px,92%);
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(4,13,27,.84);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .nav{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .logo{
+      font-size:23px;
+      font-weight:900;
+      letter-spacing:.5px;
+      white-space:nowrap;
+    }
+
+    .logo span{
+      color:#1db5ff;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .nav-links a{
+      padding:10px 13px;
+      color:#aebfd2;
+      border-radius:10px;
+      font-size:14px;
+      transition:.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:#fff;
+      background:rgba(29,181,255,.10);
+    }
+
+    .start-btn{
+      color:#fff !important;
+      background:linear-gradient(135deg,#1db5ff,#4378ff);
+      box-shadow:0 10px 30px rgba(29,181,255,.18);
+    }
+
+    .menu-btn{
+      display:none;
+      width:44px;
+      height:44px;
+      border:0;
+      border-radius:12px;
+      background:rgba(255,255,255,.07);
+      color:#fff;
+      cursor:pointer;
+      font-size:22px;
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:155px 0 85px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:55px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(29,181,255,.08);
+      border:1px solid rgba(29,181,255,.25);
+      color:#6dd5ff;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.5px;
+      margin-bottom:22px;
+    }
+
+    h1{
+      font-size:clamp(40px,5.8vw,68px);
+      line-height:1.06;
+      letter-spacing:-2px;
+      margin-bottom:24px;
+    }
+
+    h1 span{
+      background:linear-gradient(90deg,#fff,#52caff,#778aff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero-text{
+      max-width:680px;
+      color:#a9bbce;
+      font-size:17px;
+      margin-bottom:32px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:13px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:14px 21px;
+      border-radius:13px;
+      border:1px solid rgba(255,255,255,.10);
+      font-weight:800;
+      transition:.25s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#1db5ff,#4378ff);
+      box-shadow:0 15px 35px rgba(29,181,255,.18);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.045);
+      color:#d8e6f5;
+    }
+
+    /* VISUAL */
+
+    .admin-visual{
+      position:relative;
+      min-height:390px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .visual-glow{
+      position:absolute;
+      width:310px;
+      height:310px;
+      border-radius:50%;
+      background:rgba(29,181,255,.12);
+      filter:blur(45px);
+      animation:pulse 4s infinite ease-in-out;
+    }
+
+    .admin-card{
+      position:relative;
+      width:min(365px,90%);
+      padding:32px;
+      border-radius:30px;
+      background:
+        linear-gradient(145deg,rgba(19,43,72,.95),rgba(7,20,38,.96));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 30px 80px rgba(0,0,0,.35);
+      animation:float 5s infinite ease-in-out;
+    }
+
+    .admin-icon{
+      width:100px;
+      height:100px;
+      margin:0 auto 22px;
+      border-radius:28px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:48px;
+      background:linear-gradient(
+        145deg,
+        rgba(29,181,255,.20),
+        rgba(71,104,255,.12)
+      );
+      border:1px solid rgba(29,181,255,.25);
+    }
+
+    .admin-card h3{
+      text-align:center;
+      font-size:25px;
+      margin-bottom:8px;
+    }
+
+    .admin-card p{
+      text-align:center;
+      color:#91a8be;
+      font-size:14px;
+    }
+
+    .floating{
+      position:absolute;
+      padding:12px 15px;
+      background:rgba(8,23,42,.94);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:14px;
+      box-shadow:0 15px 40px rgba(0,0,0,.25);
+      color:#d8e9f8;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .floating.one{
+      left:0;
+      top:35px;
+      animation:float2 4s infinite ease-in-out;
+    }
+
+    .floating.two{
+      right:0;
+      top:125px;
+      animation:float2 5s infinite ease-in-out .4s;
+    }
+
+    .floating.three{
+      left:30px;
+      bottom:30px;
+      animation:float2 4.5s infinite ease-in-out .7s;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:85px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:25px;
+      margin-bottom:32px;
+    }
+
+    .eyebrow{
+      color:#42c6ff;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1.4px;
+      margin-bottom:8px;
+    }
+
+    .section-head h2{
+      font-size:clamp(30px,4vw,45px);
+      line-height:1.1;
+    }
+
+    .section-head p{
+      max-width:550px;
+      color:#8ea5ba;
+      font-size:14px;
+    }
+
+    /* AREAS */
+
+    .areas{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .area{
+      padding:28px;
+      min-height:210px;
+      border-radius:22px;
+      background:linear-gradient(
+        145deg,
+        rgba(17,39,65,.75),
+        rgba(7,20,37,.75)
+      );
+      border:1px solid rgba(255,255,255,.08);
+      transition:.3s;
+    }
+
+    .area:hover{
+      transform:translateY(-7px);
+      border-color:rgba(29,181,255,.25);
+      box-shadow:0 20px 50px rgba(0,0,0,.22);
+    }
+
+    .area-icon{
+      width:52px;
+      height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:15px;
+      background:rgba(29,181,255,.10);
+      border:1px solid rgba(29,181,255,.18);
+      font-size:23px;
+      margin-bottom:18px;
+    }
+
+    .area h3{
+      font-size:19px;
+      margin-bottom:9px;
+    }
+
+    .area p{
+      color:#91a7ba;
+      font-size:14px;
+    }
+
+    /* TOPICS */
+
+    .topics{
+      display:grid;
+      gap:14px;
+    }
+
+    details{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      background:linear-gradient(
+        145deg,
+        rgba(18,39,65,.72),
+        rgba(8,21,39,.72)
+      );
+      overflow:hidden;
+      transition:.25s;
+    }
+
+    details:hover{
+      border-color:rgba(29,181,255,.25);
+    }
+
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:21px 23px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      font-size:17px;
+      font-weight:800;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    summary::after{
+      content:"+";
+      width:32px;
+      height:32px;
+      flex:0 0 32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:10px;
+      background:rgba(29,181,255,.10);
+      color:#50caff;
+      font-size:20px;
+      transition:.25s;
+    }
+
+    details[open] summary::after{
+      content:"−";
+      transform:rotate(180deg);
+    }
+
+    .details-content{
+      padding:0 23px 23px;
+      border-top:1px solid rgba(255,255,255,.06);
+      color:#9fb2c5;
+      font-size:15px;
+    }
+
+    .details-content p{
+      padding-top:18px;
+    }
+
+    .details-content ul{
+      padding:14px 0 0 20px;
+    }
+
+    .details-content li{
+      margin:7px 0;
+    }
+
+    /* ARTICLE */
+
+    .article{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .article-box{
+      padding:32px;
+      border-radius:23px;
+      background:rgba(11,29,50,.72);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .article-box h3{
+      font-size:23px;
+      margin-bottom:14px;
+    }
+
+    .article-box p{
+      color:#9fb2c5;
+      font-size:15px;
+      margin-bottom:14px;
+    }
+
+    .highlight{
+      padding:18px;
+      border-left:3px solid #1db5ff;
+      border-radius:10px;
+      background:rgba(29,181,255,.06);
+      color:#c4d8e9;
+      font-size:14px;
+    }
+
+    /* RESPONSIBILITY */
+
+    .responsibility{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:15px;
+    }
+
+    .r-card{
+      padding:23px;
+      border-radius:19px;
+      background:rgba(11,29,50,.72);
+      border:1px solid rgba(255,255,255,.08);
+      transition:.3s;
+    }
+
+    .r-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(29,181,255,.23);
+    }
+
+    .r-number{
+      color:#48caff;
+      font-size:13px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    .r-card h3{
+      font-size:17px;
+      margin-bottom:7px;
+    }
+
+    .r-card p{
+      color:#8fa6ba;
+      font-size:13px;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:55px;
+      border-radius:30px;
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(67,120,255,.22),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          rgba(15,48,78,.95),
+          rgba(8,25,47,.95)
+        );
+      border:1px solid rgba(29,181,255,.18);
+      text-align:center;
+    }
+
+    .cta h2{
+      font-size:clamp(28px,4vw,42px);
+      margin-bottom:13px;
+    }
+
+    .cta p{
+      max-width:650px;
+      margin:0 auto 25px;
+      color:#9fb6c9;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:50px 0 30px;
+      border-top:1px solid rgba(255,255,255,.07);
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.5fr 1fr 1fr;
+      gap:35px;
+      padding-bottom:35px;
+    }
+
+    .footer-brand p{
+      max-width:400px;
+      color:#8298ad;
+      margin-top:13px;
+      font-size:14px;
+    }
+
+    footer h4{
+      margin-bottom:14px;
+    }
+
+    footer a{
+      display:block;
+      color:#8298ad;
+      margin:8px 0;
+      font-size:14px;
+      transition:.2s;
+    }
+
+    footer a:hover{
+      color:#42c6ff;
+    }
+
+    .copyright{
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.07);
+      color:#71879c;
+      font-size:13px;
+      text-align:center;
+    }
+
+    /* TOP BUTTON */
+
+    #topBtn{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(7,22,40,.90);
+      color:#fff;
+      cursor:pointer;
+      opacity:0;
+      pointer-events:none;
+      transition:.3s;
+      z-index:999;
+    }
+
+    #topBtn.show{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    /* REVEAL */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(25px);
+      transition:opacity .7s ease,transform .7s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* ANIMATION */
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-12px);
+      }
+    }
+
+    @keyframes float2{
+      0%,100%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-8px);
+      }
+    }
+
+    @keyframes pulse{
+      0%,100%{
+        transform:scale(1);
+        opacity:.6;
+      }
+
+      50%{
+        transform:scale(1.15);
+        opacity:1;
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:950px){
+
+      .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        padding:15px;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        background:rgba(4,13,27,.98);
+        border-bottom:1px solid rgba(255,255,255,.08);
+      }
+
+      .nav-links.open{
+        display:flex;
+      }
+
+      .nav-links a{
+        padding:13px;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .areas{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .responsibility{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .article{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:650px){
+
+      .hero{
+        padding-top:125px;
+      }
+
+      h1{
+        letter-spacing:-1px;
+      }
+
+      .hero-text{
+        font-size:15px;
+      }
+
+      .admin-visual{
+        min-height:330px;
+      }
+
+      .areas{
+        grid-template-columns:1fr;
+      }
+
+      .responsibility{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .cta{
+        padding:35px 22px;
+      }
+
+      .floating.one{
+        left:-5px;
+      }
+
+      .floating.two{
+        right:-5px;
+      }
+
+      .floating.three{
+        left:5px;
+      }
+
+      .admin-card{
+        width:310px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+        ⚖ <span>LEGIST</span>ZONE
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">
+          Bosh sahifa
+        </a>
+
+        <a href="fanlar.html">
+          Fanlar
+        </a>
+
+        <a href="maruzalar.html">
+          Ma'ruzalar
+        </a>
+
+        <a href="testlar.html">
+          Testlar
+        </a>
+
+        <a href="qonunchilik.html">
+          Qonunchilik
+        </a>
+
+        <a href="aloqa.html">
+          Aloqa
+        </a>
+
+        <a href="fanlar.html" class="start-btn">
+          Boshlash →
+        </a>
+
+      </nav>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Menyu">
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div class="reveal">
+
+          <div class="badge">
+            🏛️ MA'MURIY HUQUQ
+          </div>
+
+          <h1>
+            Davlat boshqaruvini
+            <span>huquqiy jihatdan o‘rganing.</span>
+          </h1>
+
+          <p class="hero-text">
+            Ma'muriy huquqning asosiy tushunchalari, davlat
+            boshqaruvi, ma'muriy-huquqiy munosabatlar,
+            ma'muriy javobgarlik va boshqa muhim mavzularni
+            tizimli o‘rganing.
+          </p>
+
+          <div class="buttons">
+
+            <a
+              href="#mavzular"
+              class="btn btn-primary">
+              📚 Mavzularni boshlash
+            </a>
+
+            <a
+              href="testlar.html"
+              class="btn btn-secondary">
+              🧠 Test ishlash
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="admin-visual reveal">
+
+          <div class="visual-glow"></div>
+
+          <div class="floating one">
+            🏛️ Davlat boshqaruvi
+          </div>
+
+          <div class="floating two">
+            📋 Ma'muriy huquq
+          </div>
+
+          <div class="floating three">
+            ⚖️ Javobgarlik
+          </div>
+
+          <div class="admin-card">
+
+            <div class="admin-icon">
+              🏛️
+            </div>
+
+            <h3>
+              Ma'muriy huquq
+            </h3>
+
+            <p>
+              Davlat boshqaruvi sohasidagi huquqiy
+              munosabatlarni o‘rganish sohasi.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- YO‘NALISHLAR -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="eyebrow">
+              ASOSIY YO‘NALISHLAR
+            </div>
+
+            <h2>
+              Ma'muriy huquq nimalarni o‘rganadi?
+            </h2>
+
+          </div>
+
+          <p>
+            Fan doirasidagi asosiy yo‘nalishlarni bir nechta
+            blok orqali ko‘rib chiqamiz.
+          </p>
+
+        </div>
+
+
+        <div class="areas">
+
+          <article class="area reveal">
+
+            <div class="area-icon">
+              🏛️
+            </div>
+
+            <h3>
+              Davlat boshqaruvi
+            </h3>
+
+            <p>
+              Davlat boshqaruvi va ijro etuvchi faoliyat bilan
+              bog‘liq huquqiy munosabatlar.
+            </p>
+
+          </article>
+
+
+          <article class="area reveal">
+
+            <div class="area-icon">
+              ⚖️
+            </div>
+
+            <h3>
+              Ma'muriy-huquqiy munosabatlar
+            </h3>
+
+            <p>
+              Boshqaruv sohasida yuzaga keladigan huquqiy
+              munosabatlar va ularning ishtirokchilari.
+            </p>
+
+          </article>
+
+
+          <article class="area reveal">
+
+            <div class="area-icon">
+              📋
+            </div>
+
+            <h3>
+              Ma'muriy javobgarlik
+            </h3>
+
+            <p>
+              Ma'muriy huquqbuzarlik va unga bog‘liq
+              javobgarlik masalalari.
+            </p>
+
+          </article>
+
+
+          <article class="area reveal">
+
+            <div class="area-icon">
+              👥
+            </div>
+
+            <h3>
+              Fuqarolar va davlat
+            </h3>
+
+            <p>
+              Fuqarolarning davlat boshqaruvi bilan bog‘liq
+              huquq va majburiyatlari.
+            </p>
+
+          </article>
+
+
+          <article class="area reveal">
+
+            <div class="area-icon">
+              🏢
+            </div>
+
+            <h3>
+              Davlat organlari
+            </h3>
+
+            <p>
+              Ijro etuvchi hokimiyat va boshqa davlat
+              boshqaruvi subyektlari.
+            </p>
+
+          </article>
+
+
+          <article class="area reveal">
+
+            <div class="area-icon">
+              🛡️
+            </div>
+
+            <h3>
+              Huquqiy himoya
+            </h3>
+
+            <p>
+              Davlat boshqaruvi sohasida shaxslarning huquq va
+              qonuniy manfaatlarini himoya qilish.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MAVZULAR -->
+
+    <section id="mavzular">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="eyebrow">
+              ASOSIY MAVZULAR
+            </div>
+
+            <h2>
+              Ma'muriy huquq mavzulari
+            </h2>
+
+          </div>
+
+          <p>
+            Har bir mavzuni bosib, uning qisqacha mazmunini
+            ochib ko‘ring.
+          </p>
+
+        </div>
+
+
+        <div class="topics">
+
+
+          <details class="reveal">
+
+            <summary>
+              01. Ma'muriy huquq tushunchasi
+            </summary>
+
+            <div class="details-content">
+
+              <p>
+                Ma'muriy huquq davlat boshqaruvi va ijro etuvchi
+                faoliyat bilan bog‘liq huquqiy munosabatlarni
+                o‘rganadigan huquq sohasi sifatida qaraladi.
+              </p>
+
+              <ul>
+                <li>Predmet</li>
+                <li>Usullar</li>
+                <li>Vazifalar</li>
+                <li>Ma'muriy huquq tizimi</li>
+              </ul>
+
+            </div>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              02. Ma'muriy-huquqiy munosabatlar
+            </summary>
+
+            <div class="details-content">
+
+              <p>
+                Ushbu mavzuda davlat boshqaruvi sohasida yuzaga
+                keladigan huquqiy munosabatlarning mazmuni,
+                subyektlari va obyektlari o‘rganiladi.
+              </p>
+
+              <ul>
+                <li>Munosabat subyektlari</li>
+                <li>Munosabat obyekti</li>
+                <li>Huquq va majburiyatlar</li>
+              </ul>
+
+            </div>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              03. Davlat boshqaruvi
+            </summary>
+
+            <div class="details-content">
+
+              <p>
+                Davlat boshqaruvi davlat vazifalarini amalga
+                oshirishga qaratilgan boshqaruv faoliyatini
+                o‘rganish bilan bog‘liq.
+              </p>
+
+              <ul>
+                <li>Boshqaruv tushunchasi</li>
+                <li>Ijro etuvchi faoliyat</li>
+                <li>Boshqaruv shakllari</li>
+                <li>Boshqaruv usullari</li>
+              </ul>
+
+            </div>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              04. Ma'muriy huquq subyektlari
+            </summary>
+
+            <div class="details-content">
+
+              <p>
+                Ma'muriy huquq munosabatlarida davlat organlari,
+                mansabdor shaxslar, fuqarolar va boshqa
+                subyektlar ishtirok etishi mumkin.
+              </p>
+
+              <ul>
+                <li>Davlat organlari</li>
+                <li>Mansabdor shaxslar</li>
+                <li>Fuqarolar</li>
+                <li>Tashkilotlar</li>
+              </ul>
+
+            </div>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              05. Ma'muriy-huquqiy shakllar va usullar
+            </summary>
+
+            <div class="details-content">
+
+              <p>
+                Davlat boshqaruvi faoliyatida turli huquqiy
+                shakllar va boshqaruv usullaridan foydalaniladi.
+              </p>
+
+              <ul>
+                <li>Huquqiy hujjatlar</li>
+                <li>Ma'muriy qarorlar</li>
+                <li>Rag‘batlantirish</li>
+                <li>Majburlov</li>
+              </ul>
+
+            </div>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              06. Ma'muriy huquqbuzarlik
+            </summary>
+
+            <div class="details-content">
+
+              <p>
+                Ma'muriy huquqbuzarlik mavzusida huquqbuzarlik
+                tushunchasi, uning belgilari va huquqiy oqibatlari
+                o‘rganiladi.
+              </p>
+
+              <ul>
+                <li>Huquqbuzarlik tushunchasi</li>
+                <li>Huquqbuzarlik tarkibi</li>
+                <li>Subyekt</li>
+                <li>Ayblilik masalasi</li>
+              </ul>
+
+            </div>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              07. Ma'muriy javobgarlik
+            </summary>
+
+            <div class="details-content">
+
+              <p>
+                Ma'muriy javobgarlik huquqbuzarlik sodir
+                etilishi bilan bog‘liq huquqiy oqibatlarni
+                o‘rganadigan muhim institutlardan biridir.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              08. Ma'muriy jazo
+            </summary>
+
+            <div class="details-content">
+
+              <p>
+                Ushbu mavzuda ma'muriy huquqbuzarlik uchun
+                qo‘llaniladigan jazo choralarining huquqiy
+                mazmuni va maqsadi o‘rganiladi.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              09. Fuqarolarning murojaatlari
+            </summary>
+
+            <div class="details-content">
+
+              <p>
+                Fuqarolarning davlat organlari bilan o‘zaro
+                munosabatlari va murojaat qilish bilan bog‘liq
+                huquqiy masalalar ma'muriy huquqni o‘rganishda
+                muhim yo‘nalishlardan biridir.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              10. Ma'muriy tartib-taomillar
+            </summary>
+
+            <div class="details-content">
+
+              <p>
+                Ma'muriy tartib-taomillar davlat organlari va
+                boshqa vakolatli subyektlarning ma'muriy
+                faoliyatini amalga oshirish tartibi bilan
+                bog‘liq masalalarni qamrab oladi.
+              </p>
+
+            </div>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- JAVOBGARLIK BLOKLARI -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="eyebrow">
+              TEZKOR TAKRORLASH
+            </div>
+
+            <h2>
+              Ma'muriy javobgarlikni tushunish
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="responsibility">
+
+          <article class="r-card reveal">
+
+            <div class="r-number">
+              01
+            </div>
+
+            <h3>
+              Huquqbuzarlik
+            </h3>
+
+            <p>
+              Huquqqa xilof qilmish va uning asosiy belgilarini
+              aniqlash.
+            </p>
+
+          </article>
+
+
+          <article class="r-card reveal">
+
+            <div class="r-number">
+              02
+            </div>
+
+            <h3>
+              Subyekt
+            </h3>
+
+            <p>
+              Javobgarlik masalasida ishtirok etuvchi shaxs
+              yoki boshqa subyektni aniqlash.
+            </p>
+
+          </article>
+
+
+          <article class="r-card reveal">
+
+            <div class="r-number">
+              03
+            </div>
+
+            <h3>
+              Ayb
+            </h3>
+
+            <p>
+              Shaxsning sodir etgan qilmishiga bo‘lgan
+              huquqiy munosabatini o‘rganish.
+            </p>
+
+          </article>
+
+
+          <article class="r-card reveal">
+
+            <div class="r-number">
+              04
+            </div>
+
+            <h3>
+              Huquqiy oqibat
+            </h3>
+
+            <p>
+              Huquqbuzarlik sodir etilgandan keyingi
+              javobgarlik va jazo masalalari.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TAHLIL -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="eyebrow">
+              O‘RGANISH METODI
+            </div>
+
+            <h2>
+              Mavzuni qanday o‘zlashtirish mumkin?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="article">
+
+          <div class="article-box reveal">
+
+            <h3>
+              Davlat boshqaruvini tushuning
+            </h3>
+
+            <p>
+              Ma'muriy huquqni o‘rganishda avvalo davlat
+              boshqaruvi va ijro etuvchi faoliyat o‘rtasidagi
+              bog‘liqlikni tushunish foydali.
+            </p>
+
+            <div class="highlight">
+              Davlat boshqaruvi → organlar → vakolatlar →
+              ma'muriy munosabatlar.
+            </div>
+
+          </div>
+
+
+          <div class="article-box reveal">
+
+            <h3>
+              Javobgarlikni ketma-ket tahlil qiling
+            </h3>
+
+            <p>
+              Ma'muriy javobgarlikka oid savollarda avvalo
+              qilmish, subyekt, ayb va huquqiy oqibatlarni
+              bir-biridan ajratib olish muhim.
+            </p>
+
+            <div class="highlight">
+              Qilmish → huquqbuzarlik → javobgarlik →
+              huquqiy oqibat.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="cta reveal">
+
+          <h2>
+            Endi bilimni sinab ko‘ring
+          </h2>
+
+          <p>
+            Ma'muriy huquq bo‘yicha mavzularni o‘rganib,
+            keyin LEGISTZONE testlari orqali o‘zingizni
+            tekshiring.
+          </p>
+
+          <a
+            href="testlar.html"
+            class="btn btn-primary">
+            🧠 Testlarga o‘tish →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <a href="index.html" class="logo">
+            ⚖ <span>LEGIST</span>ZONE
+          </a>
+
+          <p>
+            Huquq va ta’limni zamonaviy, tushunarli va
+            interaktiv shaklda o‘rganish platformasi.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h4>Platforma</h4>
+
+          <a href="index.html">
+            Bosh sahifa
+          </a>
+
+          <a href="fanlar.html">
+            Fanlar
+          </a>
+
+          <a href="maruzalar.html">
+            Ma'ruzalar
+          </a>
+
+          <a href="testlar.html">
+            Testlar
+          </a>
+
+        </div>
+
+
+        <div>
+
+          <h4>Huquq fanlari</h4>
+
+          <a href="konstitutsiya.html">
+            Konstitutsiyaviy huquq
+          </a>
+
+          <a href="jinoyat.html">
+            Jinoyat huquqi
+          </a>
+
+          <a href="jinoyat-protsessual.html">
+            Jinoyat-protsessual huquq
+          </a>
+
+          <a href="mamuriy.html">
+            Ma'muriy huquq
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 LEGISTZONE. Barcha huquqlar himoyalangan.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- BACK TO TOP -->
+
+  <button id="topBtn" aria-label="Yuqoriga">
+    ↑
+  </button>
+
+
+  <script>
+
+    /* MOBILE MENU */
+
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener("click", () => {
+
+      navLinks.classList.toggle("open");
+
+      menuBtn.textContent =
+        navLinks.classList.contains("open")
+          ? "✕"
+          : "☰";
+
+    });
+
+
+    /* MENU CLOSE */
+
+    document.querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+          menuBtn.textContent = "☰";
+
+        });
+
+      });
+
+
+    /* SCROLL REVEAL */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+              entry.target.classList.add("show");
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold:.12
+        }
+      );
+
+
+    revealElements.forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+
+    /* BACK TO TOP */
+
+    const topBtn =
+      document.getElementById("topBtn");
+
+
+    window.addEventListener("scroll", () => {
+
+      if(window.scrollY > 500){
+
+        topBtn.classList.add("show");
+
+      }else{
+
+        topBtn.classList.remove("show");
+
+      }
+
+    });
+
+
+    topBtn.addEventListener("click", () => {
+
+      window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+      });
+
+    });
+
+
+    /* DETAILS INTERACTION */
+
+    document.querySelectorAll("details")
+      .forEach(item => {
+
+        item.addEventListener("toggle", () => {
+
+          if(item.open){
+
+            item.scrollIntoView({
+              behavior:"smooth",
+              block:"nearest"
+            });
+
+          }
+
+        });
+
+      });
+
+  </script>
+
+</body>
+</html>

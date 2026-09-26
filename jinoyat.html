@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jinoyat huquqi — LEGISTZONE</title>
+
+  <meta name="description"
+        content="Jinoyat huquqi bo‘yicha mavzular, tushunchalar va o‘quv materiallari — LEGISTZONE.">
+  <meta name="keywords"
+        content="jinoyat huquqi, jinoyat, jinoyat tarkibi, jazo, huquq, LEGISTZONE, O‘zbekiston">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(29,181,255,.13), transparent 30%),
+        radial-gradient(circle at 90% 30%, rgba(85,70,255,.12), transparent 30%),
+        #06101f;
+      color:#eef7ff;
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    .container{
+      width:min(1180px,92%);
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(4,13,27,.82);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .nav{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .logo{
+      font-size:23px;
+      font-weight:900;
+      letter-spacing:.5px;
+      white-space:nowrap;
+    }
+
+    .logo span{
+      color:#1db5ff;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .nav-links a{
+      padding:10px 13px;
+      color:#aebfd2;
+      border-radius:10px;
+      transition:.25s;
+      font-size:14px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:#fff;
+      background:rgba(29,181,255,.10);
+    }
+
+    .start-btn{
+      background:linear-gradient(135deg,#1db5ff,#4378ff);
+      color:#fff !important;
+      box-shadow:0 10px 30px rgba(29,181,255,.20);
+    }
+
+    .menu-btn{
+      display:none;
+      border:0;
+      background:rgba(255,255,255,.07);
+      color:#fff;
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      cursor:pointer;
+      font-size:22px;
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:155px 0 85px;
+      position:relative;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:55px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border:1px solid rgba(29,181,255,.25);
+      background:rgba(29,181,255,.08);
+      color:#70d5ff;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.5px;
+      margin-bottom:22px;
+    }
+
+    h1{
+      font-size:clamp(42px,6vw,72px);
+      line-height:1.05;
+      letter-spacing:-2px;
+      margin-bottom:24px;
+    }
+
+    h1 span{
+      background:linear-gradient(90deg,#fff,#55caff,#778aff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero-text{
+      color:#a9bbce;
+      font-size:17px;
+      max-width:690px;
+      margin-bottom:32px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:13px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:14px 21px;
+      border-radius:13px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.10);
+      transition:.25s;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#1db5ff,#4378ff);
+      box-shadow:0 15px 35px rgba(29,181,255,.18);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.045);
+      color:#d8e6f5;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* HERO VISUAL */
+
+    .crime-visual{
+      position:relative;
+      min-height:390px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .visual-glow{
+      position:absolute;
+      width:310px;
+      height:310px;
+      border-radius:50%;
+      background:rgba(29,181,255,.12);
+      filter:blur(40px);
+      animation:pulse 4s infinite ease-in-out;
+    }
+
+    .law-card{
+      position:relative;
+      width:min(350px,90%);
+      padding:35px;
+      border-radius:30px;
+      background:
+        linear-gradient(145deg,rgba(19,43,72,.94),rgba(7,20,38,.95));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 30px 80px rgba(0,0,0,.35);
+      text-align:center;
+      animation:float 5s infinite ease-in-out;
+    }
+
+    .law-icon{
+      width:100px;
+      height:100px;
+      border-radius:28px;
+      margin:0 auto 22px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:52px;
+      background:linear-gradient(145deg,rgba(29,181,255,.20),rgba(71,104,255,.12));
+      border:1px solid rgba(29,181,255,.25);
+      box-shadow:0 0 50px rgba(29,181,255,.10);
+    }
+
+    .law-card h3{
+      font-size:25px;
+      margin-bottom:8px;
+    }
+
+    .law-card p{
+      color:#91a8be;
+      font-size:14px;
+    }
+
+    .floating{
+      position:absolute;
+      padding:12px 15px;
+      background:rgba(8,23,42,.92);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:14px;
+      box-shadow:0 15px 40px rgba(0,0,0,.25);
+      font-size:13px;
+      font-weight:700;
+      color:#d8e9f8;
+    }
+
+    .floating.one{
+      top:35px;
+      left:0;
+      animation:float2 4s infinite ease-in-out;
+    }
+
+    .floating.two{
+      right:0;
+      top:130px;
+      animation:float2 5s infinite ease-in-out .5s;
+    }
+
+    .floating.three{
+      bottom:30px;
+      left:35px;
+      animation:float2 4.5s infinite ease-in-out .8s;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:85px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:25px;
+      margin-bottom:32px;
+    }
+
+    .eyebrow{
+      color:#42c6ff;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1.4px;
+      margin-bottom:8px;
+    }
+
+    .section-head h2{
+      font-size:clamp(30px,4vw,45px);
+      line-height:1.1;
+    }
+
+    .section-head p{
+      color:#8ea5ba;
+      max-width:550px;
+      font-size:14px;
+    }
+
+    /* TOPICS */
+
+    .topics{
+      display:grid;
+      gap:14px;
+    }
+
+    details{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      background:linear-gradient(
+        145deg,
+        rgba(18,39,65,.72),
+        rgba(8,21,39,.72)
+      );
+      overflow:hidden;
+      transition:.25s;
+    }
+
+    details:hover{
+      border-color:rgba(29,181,255,.25);
+      transform:translateY(-2px);
+    }
+
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:21px 23px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      font-size:17px;
+      font-weight:800;
+      color:#edf7ff;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    summary::after{
+      content:"+";
+      width:32px;
+      height:32px;
+      flex:0 0 32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:10px;
+      background:rgba(29,181,255,.10);
+      color:#50caff;
+      font-size:20px;
+      transition:.25s;
+    }
+
+    details[open] summary::after{
+      content:"−";
+      transform:rotate(180deg);
+    }
+
+    .details-content{
+      padding:0 23px 23px;
+      color:#9fb2c5;
+      font-size:15px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+
+    .details-content p{
+      padding-top:18px;
+    }
+
+    .details-content ul{
+      padding:15px 0 0 20px;
+    }
+
+    .details-content li{
+      margin:7px 0;
+    }
+
+    /* CONCEPT CARDS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      padding:27px;
+      border-radius:22px;
+      background:linear-gradient(
+        145deg,
+        rgba(17,39,65,.75),
+        rgba(7,20,37,.75)
+      );
+      border:1px solid rgba(255,255,255,.08);
+      transition:.3s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      width:100px;
+      height:100px;
+      right:-45px;
+      top:-45px;
+      background:rgba(29,181,255,.10);
+      border-radius:50%;
+      filter:blur(4px);
+    }
+
+    .card:hover{
+      transform:translateY(-7px);
+      border-color:rgba(29,181,255,.25);
+      box-shadow:0 20px 50px rgba(0,0,0,.20);
+    }
+
+    .card-icon{
+      width:50px;
+      height:50px;
+      border-radius:15px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:23px;
+      background:rgba(29,181,255,.10);
+      border:1px solid rgba(29,181,255,.18);
+      margin-bottom:19px;
+    }
+
+    .card h3{
+      font-size:19px;
+      margin-bottom:9px;
+    }
+
+    .card p{
+      color:#91a7ba;
+      font-size:14px;
+    }
+
+    /* ARTICLE */
+
+    .article{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .article-box{
+      padding:32px;
+      border-radius:23px;
+      background:rgba(11,29,50,.72);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .article-box h3{
+      margin-bottom:14px;
+      font-size:23px;
+    }
+
+    .article-box p{
+      color:#9fb2c5;
+      font-size:15px;
+      margin-bottom:14px;
+    }
+
+    .highlight{
+      padding:18px;
+      border-left:3px solid #1db5ff;
+      background:rgba(29,181,255,.06);
+      border-radius:10px;
+      color:#c4d8e9;
+      font-size:14px;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:55px;
+      border-radius:30px;
+      background:
+        radial-gradient(circle at 90% 10%,rgba(67,120,255,.22),transparent 35%),
+        linear-gradient(135deg,rgba(15,48,78,.95),rgba(8,25,47,.95));
+      border:1px solid rgba(29,181,255,.18);
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta h2{
+      font-size:clamp(28px,4vw,42px);
+      margin-bottom:13px;
+    }
+
+    .cta p{
+      max-width:650px;
+      margin:0 auto 25px;
+      color:#9fb6c9;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:50px 0 30px;
+      border-top:1px solid rgba(255,255,255,.07);
+      margin-top:30px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.5fr 1fr 1fr;
+      gap:35px;
+      padding-bottom:35px;
+    }
+
+    .footer-brand p{
+      color:#8298ad;
+      max-width:400px;
+      margin-top:13px;
+      font-size:14px;
+    }
+
+    footer h4{
+      margin-bottom:14px;
+    }
+
+    footer a{
+      display:block;
+      color:#8298ad;
+      margin:8px 0;
+      font-size:14px;
+      transition:.2s;
+    }
+
+    footer a:hover{
+      color:#42c6ff;
+    }
+
+    .copyright{
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.07);
+      color:#71879c;
+      font-size:13px;
+      text-align:center;
+    }
+
+    /* BACK TOP */
+
+    #topBtn{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(7,22,40,.90);
+      color:#fff;
+      cursor:pointer;
+      opacity:0;
+      pointer-events:none;
+      transition:.3s;
+      z-index:999;
+    }
+
+    #topBtn.show{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    /* ANIMATION */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(25px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
+    }
+
+    @keyframes float2{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1);opacity:.6}
+      50%{transform:scale(1.15);opacity:1}
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        padding:15px;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        background:rgba(4,13,27,.97);
+        border-bottom:1px solid rgba(255,255,255,.08);
+      }
+
+      .nav-links.open{
+        display:flex;
+      }
+
+      .nav-links a{
+        padding:13px;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .crime-visual{
+        min-height:330px;
+      }
+
+      .cards{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .article{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:650px){
+
+      .hero{
+        padding-top:125px;
+      }
+
+      h1{
+        letter-spacing:-1px;
+      }
+
+      .hero-text{
+        font-size:15px;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .cta{
+        padding:35px 22px;
+      }
+
+      .floating.one{
+        left:-5px;
+      }
+
+      .floating.two{
+        right:-5px;
+      }
+
+      .floating.three{
+        left:5px;
+      }
+
+      .law-card{
+        width:310px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+        ⚖ <span>LEGIST</span>ZONE
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Bosh sahifa</a>
+        <a href="fanlar.html">Fanlar</a>
+        <a href="maruzalar.html">Ma'ruzalar</a>
+        <a href="testlar.html">Testlar</a>
+        <a href="qonunchilik.html">Qonunchilik</a>
+        <a href="aloqa.html">Aloqa</a>
+        <a href="fanlar.html" class="start-btn">Boshlash →</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Menyu">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="reveal">
+
+          <div class="badge">
+            ⚔️ JINOYAT HUQUQI
+          </div>
+
+          <h1>
+            Jinoyat huquqini
+            <span>tizimli o‘rganing.</span>
+          </h1>
+
+          <p class="hero-text">
+            Jinoyat huquqining asosiy tushunchalari, jinoyat tarkibi,
+            javobgarlik, jazo va boshqa muhim mavzularni sodda,
+            tushunarli va tizimli tarzda o‘rganing.
+          </p>
+
+          <div class="buttons">
+            <a href="#mavzular" class="btn btn-primary">
+              📚 Mavzularni boshlash
+            </a>
+
+            <a href="testlar.html" class="btn btn-secondary">
+              🧠 Test ishlash
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="crime-visual reveal">
+
+          <div class="visual-glow"></div>
+
+          <div class="floating one">
+            ⚖ Jinoyat tarkibi
+          </div>
+
+          <div class="floating two">
+            📚 Javobgarlik
+          </div>
+
+          <div class="floating three">
+            🛡️ Jazo tizimi
+          </div>
+
+          <div class="law-card">
+
+            <div class="law-icon">
+              ⚔️
+            </div>
+
+            <h3>Jinoyat huquqi</h3>
+
+            <p>
+              Jinoyat va jinoiy javobgarlik bilan bog‘liq
+              huquqiy munosabatlarni o‘rganish sohasi.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- MAVZULAR -->
+    <section id="mavzular">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+            <div class="eyebrow">
+              ASOSIY YO‘NALISHLAR
+            </div>
+
+            <h2>
+              Jinoyat huquqining asosiy mavzulari
+            </h2>
+          </div>
+
+          <p>
+            Har bir mavzuni bosib, uning asosiy mazmunini
+            ochib ko‘rishingiz mumkin.
+          </p>
+
+        </div>
+
+
+        <div class="topics">
+
+          <details class="reveal">
+            <summary>
+              01. Jinoyat huquqi tushunchasi
+            </summary>
+
+            <div class="details-content">
+              <p>
+                Jinoyat huquqi jinoyat deb e'tirof etiladigan
+                qilmishlar, jinoiy javobgarlik asoslari va
+                jazoga oid huquqiy masalalarni o‘rganadi.
+              </p>
+
+              <ul>
+                <li>Jinoyat huquqining predmeti</li>
+                <li>Jinoyat huquqining vazifalari</li>
+                <li>Jinoyat qonunchiligining asosiy tushunchalari</li>
+              </ul>
+            </div>
+          </details>
+
+
+          <details class="reveal">
+            <summary>
+              02. Jinoyat tushunchasi
+            </summary>
+
+            <div class="details-content">
+              <p>
+                Jinoyat tushunchasi jinoyat huquqining markaziy
+                kategoriyalaridan biridir. Mavzuni o‘rganishda
+                qilmishning huquqiy belgilari va uning jamiyat
+                uchun xavfliligi kabi masalalar tahlil qilinadi.
+              </p>
+
+              <ul>
+                <li>Qilmish tushunchasi</li>
+                <li>Harakat va harakatsizlik</li>
+                <li>Jinoiy qilmishning belgilari</li>
+              </ul>
+            </div>
+          </details>
+
+
+          <details class="reveal">
+            <summary>
+              03. Jinoyat tarkibi
+            </summary>
+
+            <div class="details-content">
+              <p>
+                Jinoyat tarkibi jinoyatni huquqiy jihatdan
+                tavsiflashda muhim nazariy tushuncha hisoblanadi.
+                U odatda bir nechta o‘zaro bog‘liq elementlar
+                orqali o‘rganiladi.
+              </p>
+
+              <ul>
+                <li>Jinoyat obyekti</li>
+                <li>Jinoyatning obyektiv tomoni</li>
+                <li>Jinoyat subyekti</li>
+                <li>Jinoyatning subyektiv tomoni</li>
+              </ul>
+            </div>
+          </details>
+
+
+          <details class="reveal">
+            <summary>
+              04. Jinoyat subyekti
+            </summary>
+
+            <div class="details-content">
+              <p>
+                Jinoyat subyekti mavzusida jinoyat sodir etgan
+                shaxsga qo‘yiladigan huquqiy talablar va uning
+                javobgarlikka tortilishi bilan bog‘liq masalalar
+                o‘rganiladi.
+              </p>
+            </div>
+          </details>
+
+
+          <details class="reveal">
+            <summary>
+              05. Ayb va uning shakllari
+            </summary>
+
+            <div class="details-content">
+              <p>
+                Ayb jinoyat huquqidagi muhim tushunchalardan biri.
+                Ushbu mavzuda shaxsning sodir etilgan qilmishga
+                bo‘lgan ruhiy munosabati huquqiy jihatdan
+                o‘rganiladi.
+              </p>
+
+              <ul>
+                <li>Qasd</li>
+                <li>Ehtiyotsizlik</li>
+                <li>Aybning boshqa huquqiy jihatlari</li>
+              </ul>
+            </div>
+          </details>
+
+
+          <details class="reveal">
+            <summary>
+              06. Jinoyatga suiqasd va tayyorgarlik
+            </summary>
+
+            <div class="details-content">
+              <p>
+                Jinoyat sodir etish jarayoni ayrim holatlarda
+                jinoyatning yakunlanishidan oldin to‘xtashi mumkin.
+                Ushbu mavzuda jinoyatga tayyorgarlik va suiqasd
+                kabi tushunchalar o‘rganiladi.
+              </p>
+            </div>
+          </details>
+
+
+          <details class="reveal">
+            <summary>
+              07. Ishtirokchilik
+            </summary>
+
+            <div class="details-content">
+              <p>
+                Jinoyatda ishtirokchilik bir necha shaxsning
+                umumiy jinoyatga aloqadorligi bilan bog‘liq
+                huquqiy masalalarni o‘rganadi.
+              </p>
+
+              <ul>
+                <li>Bajaruvchi</li>
+                <li>Tashkilotchi</li>
+                <li>Dalolatchi</li>
+                <li>Yordamchi</li>
+              </ul>
+            </div>
+          </details>
+
+
+          <details class="reveal">
+            <summary>
+              08. Jinoiy javobgarlik
+            </summary>
+
+            <div class="details-content">
+              <p>
+                Jinoiy javobgarlik jinoyat sodir etish bilan
+                bog‘liq huquqiy oqibatlarni o‘rganadigan muhim
+                mavzulardan biridir.
+              </p>
+            </div>
+          </details>
+
+
+          <details class="reveal">
+            <summary>
+              09. Jazo tushunchasi
+            </summary>
+
+            <div class="details-content">
+              <p>
+                Jazo jinoyat huquqidagi asosiy institutlardan
+                biri bo‘lib, uning maqsadi, turlari va qo‘llash
+                bilan bog‘liq huquqiy masalalar alohida o‘rganiladi.
+              </p>
+            </div>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- MUHIM TUSHUNCHALAR -->
+    <section>
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+            <div class="eyebrow">
+              TEZKOR TAKRORLASH
+            </div>
+
+            <h2>
+              Muhim tushunchalar
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="cards">
+
+          <article class="card reveal">
+
+            <div class="card-icon">
+              ⚖️
+            </div>
+
+            <h3>Jinoyat</h3>
+
+            <p>
+              Jinoyat tushunchasi va uning asosiy huquqiy
+              belgilarini o‘rganish.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal">
+
+            <div class="card-icon">
+              🔎
+            </div>
+
+            <h3>Jinoyat tarkibi</h3>
+
+            <p>
+              Obyekt, obyektiv tomon, subyekt va subyektiv
+              tomonning o‘zaro bog‘liqligi.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal">
+
+            <div class="card-icon">
+              🧠
+            </div>
+
+            <h3>Ayb</h3>
+
+            <p>
+              Shaxsning sodir etilgan qilmishga bo‘lgan
+              ruhiy munosabati bilan bog‘liq tushuncha.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal">
+
+            <div class="card-icon">
+              👥
+            </div>
+
+            <h3>Ishtirokchilik</h3>
+
+            <p>
+              Bir nechta shaxsning jinoyat sodir etishdagi
+              huquqiy ishtiroki.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal">
+
+            <div class="card-icon">
+              🛡️
+            </div>
+
+            <h3>Jinoiy javobgarlik</h3>
+
+            <p>
+              Jinoyat sodir etish natijasida yuzaga keladigan
+              huquqiy javobgarlik masalalari.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal">
+
+            <div class="card-icon">
+              📜
+            </div>
+
+            <h3>Jazo</h3>
+
+            <p>
+              Jinoyat huquqida jazoning mazmuni, maqsadi va
+              turlari bilan bog‘liq mavzular.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TAHLIL -->
+    <section>
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+            <div class="eyebrow">
+              O‘RGANISH USULI
+            </div>
+
+            <h2>
+              Mavzuni qanday o‘rganish kerak?
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="article">
+
+          <div class="article-box reveal">
+
+            <h3>
+              1. Avval tushunchani aniqlang
+            </h3>
+
+            <p>
+              Har bir jinoyat-huquqiy mavzuni o‘rganishda
+              avvalo uning asosiy tushunchalarini aniqlab olish
+              muhim.
+            </p>
+
+            <div class="highlight">
+              Masalan: jinoyat → jinoyat tarkibi →
+              ayb → javobgarlik → jazo.
+            </div>
+
+          </div>
+
+
+          <div class="article-box reveal">
+
+            <h3>
+              2. Keyin elementlarni ajrating
+            </h3>
+
+            <p>
+              Murakkab huquqiy tushunchalarni kichik qismlarga
+              ajratish mavzuni eslab qolishni osonlashtiradi.
+            </p>
+
+            <div class="highlight">
+              Nazariya + misol + taqqoslash + test =
+              mustahkam bilim.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section>
+
+      <div class="container">
+
+        <div class="cta reveal">
+
+          <h2>
+            Bilimingizni sinab ko‘ring
+          </h2>
+
+          <p>
+            Jinoyat huquqi bo‘yicha mavzularni o‘rganib
+            bo‘lgach, interaktiv testlar orqali bilimingizni
+            tekshirib ko‘ring.
+          </p>
+
+          <a href="testlar.html" class="btn btn-primary">
+            🧠 Testlarga o‘tish →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <a href="index.html" class="logo">
+            ⚖ <span>LEGIST</span>ZONE
+          </a>
+
+          <p>
+            Huquq va ta’limni zamonaviy, tushunarli va
+            interaktiv shaklda o‘rganish platformasi.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h4>Platforma</h4>
+
+          <a href="index.html">Bosh sahifa</a>
+          <a href="fanlar.html">Fanlar</a>
+          <a href="maruzalar.html">Ma'ruzalar</a>
+          <a href="testlar.html">Testlar</a>
+
+        </div>
+
+
+        <div>
+
+          <h4>Huquq fanlari</h4>
+
+          <a href="konstitutsiya.html">
+            Konstitutsiyaviy huquq
+          </a>
+
+          <a href="jinoyat.html">
+            Jinoyat huquqi
+          </a>
+
+          <a href="jinoyat-protsessual.html">
+            Jinoyat-protsessual huquq
+          </a>
+
+          <a href="qonunchilik.html">
+            Qonunchilik
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 LEGISTZONE. Barcha huquqlar himoyalangan.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- BACK TO TOP -->
+  <button id="topBtn" aria-label="Yuqoriga">
+    ↑
+  </button>
+
+
+  <script>
+
+    /* MOBILE MENU */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+
+      menuBtn.textContent =
+        navLinks.classList.contains("open") ? "✕" : "☰";
+    });
+
+
+    /* CLOSE MOBILE MENU AFTER CLICK */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+
+    /* SCROLL REVEAL */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold:.12
+      }
+    );
+
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+
+    /* BACK TO TOP */
+
+    const topBtn =
+      document.getElementById("topBtn");
+
+    window.addEventListener("scroll", () => {
+
+      if(window.scrollY > 500){
+        topBtn.classList.add("show");
+      }else{
+        topBtn.classList.remove("show");
+      }
+
+    });
+
+
+    topBtn.addEventListener("click", () => {
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+    });
+
+
+    /* DETAILS INTERACTION */
+
+    document.querySelectorAll("details").forEach(item => {
+
+      item.addEventListener("toggle", () => {
+
+        if(item.open){
+
+          item.scrollIntoView({
+            behavior:"smooth",
+            block:"nearest"
+          });
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
