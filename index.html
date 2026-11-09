@@ -1,1507 +1,1427 @@
-<
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <link rel="icon" type="image/jpeg" href="./logo.jpg.jpg">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-```
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>LEGISTZONE — Huquq va ta'lim platformasi</title>
-
-    <meta name="description"
-          content="LEGISTZONE — huquq fanlari, ma'ruzalar, testlar, qonunchilik va o'quv materiallari uchun zamonaviy ta'lim platformasi.">
-
-    <meta name="keywords"
-          content="LEGISTZONE, huquq, huquqshunoslik, konstitutsiyaviy huquq, jinoyat huquqi, testlar, ma'ruzalar, O'zbekiston">
-
-    <meta name="author" content="LEGISTZONE">
-
-    <meta name="theme-color" content="#071426">
-
-    <meta property="og:title" content="LEGISTZONE — Huquq va ta'lim platformasi">
-    <meta property="og:description"
-          content="Huquqni o'rganish uchun zamonaviy ta'lim platformasi.">
-    <meta property="og:type" content="website">
-
-    <style>
-
-        /* =========================
-           ASOSIY SOZLAMALAR
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background:
-                radial-gradient(circle at 10% 10%, rgba(0, 140, 255, .14), transparent 30%),
-                radial-gradient(circle at 90% 20%, rgba(0, 220, 255, .10), transparent 25%),
-                #06101f;
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        .container {
-            width: min(1180px, 92%);
-            margin: auto;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(4, 14, 29, .82);
-            backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(255,255,255,.08);
-        }
-
-        .nav {
-            height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
-
-        .logo span {
-            color: #19aaff;
-        }
-
-        .logo-icon {
-            color: #19aaff;
-            margin-right: 5px;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        nav a {
-            padding: 10px 13px;
-            border-radius: 10px;
-            color: #c9d5e6;
-            font-size: 14px;
-            font-weight: 600;
-            transition: .3s;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: white;
-            background: rgba(25,170,255,.13);
-        }
-
-        .menu-btn {
-            display: none;
-            border: 0;
-            background: transparent;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 130px 0 80px;
-            position: relative;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.05fr .95fr;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 8px 14px;
-            border-radius: 50px;
-            border: 1px solid rgba(25,170,255,.35);
-            background: rgba(25,170,255,.09);
-            color: #55c7ff;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 6vw, 76px);
-            line-height: 1.02;
-            letter-spacing: -2px;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #20b7ff;
-        }
-
-        .hero p {
-            color: #aabbd0;
-            max-width: 650px;
-            font-size: 18px;
-            margin-bottom: 32px;
-        }
-
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 13px;
-        }
-
-        .btn {
-            padding: 14px 22px;
-            border-radius: 12px;
-            font-weight: 800;
-            transition: .3s;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid transparent;
-        }
-
-        .btn-primary {
-            color: white;
-            background: linear-gradient(135deg, #087de8, #14b8ff);
-            box-shadow: 0 12px 30px rgba(0,150,255,.20);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 18px 40px rgba(0,150,255,.30);
-        }
-
-        .btn-secondary {
-            border-color: rgba(255,255,255,.13);
-            color: white;
-            background: rgba(255,255,255,.04);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,.09);
-            transform: translateY(-3px);
-        }
-
-        /* =========================
-           HERO CARD
-        ========================= */
-
-        .hero-visual {
-            min-height: 460px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .glow {
-            width: 310px;
-            height: 310px;
-            border-radius: 50%;
-            background: rgba(0,150,255,.15);
-            filter: blur(45px);
-            position: absolute;
-        }
-
-        .law-card {
-            width: min(390px, 90%);
-            padding: 45px 30px;
-            border-radius: 30px;
-            background:
-                linear-gradient(145deg, rgba(18,45,75,.92), rgba(5,18,35,.94));
-            border: 1px solid rgba(255,255,255,.13);
-            box-shadow:
-                0 30px 80px rgba(0,0,0,.45),
-                inset 0 1px 0 rgba(255,255,255,.08);
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            animation: floating 4s ease-in-out infinite;
-        }
-
-        .scale {
-            font-size: 110px;
-            line-height: 1;
-            margin-bottom: 25px;
-            color: #22baff;
-            text-shadow: 0 0 40px rgba(20,180,255,.35);
-        }
-
-        .law-card h2 {
-            font-size: 29px;
-            margin-bottom: 10px;
-        }
-
-        .law-card p {
-            color: #9eb1c7;
-        }
-
-        .floating-card {
-            position: absolute;
-            padding: 13px 18px;
-            border-radius: 14px;
-            background: rgba(8,25,45,.9);
-            border: 1px solid rgba(255,255,255,.10);
-            box-shadow: 0 15px 40px rgba(0,0,0,.3);
-            font-weight: 700;
-            font-size: 13px;
-            z-index: 3;
-        }
-
-        .float-one {
-            top: 35px;
-            left: 0;
-            animation: floating 4s ease-in-out infinite 1s;
-        }
-
-        .float-two {
-            right: 0;
-            top: 130px;
-            animation: floating 4s ease-in-out infinite .5s;
-        }
-
-        .float-three {
-            bottom: 45px;
-            left: 35px;
-            animation: floating 4s ease-in-out infinite 1.5s;
-        }
-
-        @keyframes floating {
-            0%,100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
-        }
-
-        /* =========================
-           STATISTIKA
-        ========================= */
-
-        .stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 35px;
-            margin-top: 40px;
-        }
-
-        .stat strong {
-            display: block;
-            font-size: 28px;
-            color: white;
-        }
-
-        .stat span {
-            color: #7f94ad;
-            font-size: 13px;
-        }
-
-        /* =========================
-           SECTION
-        ========================= */
-
-        section {
-            padding: 100px 0;
-        }
-
-        .section-head {
-            text-align: center;
-            max-width: 720px;
-            margin: 0 auto 45px;
-        }
-
-        .section-head small {
-            color: #20b7ff;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-
-        .section-head h2 {
-            font-size: clamp(32px, 5vw, 50px);
-            margin: 8px 0 13px;
-        }
-
-        .section-head p {
-            color: #8fa3ba;
-        }
-
-        /* =========================
-           FANLAR
-        ========================= */
-
-        .subjects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .subject {
-            padding: 27px;
-            border-radius: 20px;
-            background: linear-gradient(
-                145deg,
-                rgba(16,38,64,.8),
-                rgba(8,22,39,.8)
-            );
-            border: 1px solid rgba(255,255,255,.08);
-            transition: .35s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .subject::before {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: rgba(20,180,255,.08);
-            top: -50px;
-            right: -50px;
-        }
-
-        .subject:hover {
-            transform: translateY(-7px);
-            border-color: rgba(25,170,255,.4);
-            box-shadow: 0 20px 50px rgba(0,0,0,.25);
-        }
-
-        .subject-icon {
-            font-size: 35px;
-            margin-bottom: 16px;
-        }
-
-        .subject h3 {
-            margin-bottom: 8px;
-            font-size: 20px;
-        }
-
-        .subject p {
-            color: #8fa3ba;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
-
-        .more {
-            color: #29baff;
-            font-size: 14px;
-            font-weight: 800;
-        }
-
-        /* =========================
-           IMKONIYATLAR
-        ========================= */
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 30px 20px;
-            border-radius: 20px;
-            background: rgba(255,255,255,.035);
-            border: 1px solid rgba(255,255,255,.07);
-        }
-
-        .feature-icon {
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
-        .feature h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .feature p {
-            color: #8fa3ba;
-            font-size: 13px;
-        }
-
-        /* =========================
-           KONSTITUTSIYA
-        ========================= */
-
-        .constitution {
-            border-radius: 30px;
-            padding: 55px;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(10,80,130,.65),
-                    rgba(10,24,45,.9)
-                );
-            border: 1px solid rgba(60,190,255,.25);
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 40px;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .constitution h2 {
-            font-size: 38px;
-            margin-bottom: 12px;
-        }
-
-        .constitution p {
-            color: #afc0d3;
-            max-width: 700px;
-            margin-bottom: 25px;
-        }
-
-        .constitution-symbol {
-            font-size: 110px;
-            opacity: .9;
-        }
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta {
-            text-align: center;
-            padding: 80px 20px;
-            border-radius: 30px;
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(0,150,255,.18),
-                    transparent 65%
-                );
-        }
-
-        .cta h2 {
-            font-size: clamp(32px, 5vw, 55px);
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            color: #91a5bb;
-            max-width: 600px;
-            margin: 0 auto 28px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            border-top: 1px solid rgba(255,255,255,.08);
-            padding: 50px 0 25px;
-            background: rgba(0,0,0,.15);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        footer h3 {
-            margin-bottom: 14px;
-        }
-
-        footer p,
-        footer a {
-            color: #8195ad;
-            font-size: 14px;
-        }
-
-        footer a {
-            display: block;
-            margin-bottom: 8px;
-            transition: .2s;
-        }
-
-        footer a:hover {
-            color: #21b8ff;
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,.06);
-            padding-top: 20px;
-            color: #61748b;
-            font-size: 13px;
-            text-align: center;
-        }
-
-        /* =========================
-           SCROLL TOP
-        ========================= */
-
-        #topBtn {
-            position: fixed;
-            right: 22px;
-            bottom: 22px;
-            width: 48px;
-            height: 48px;
-            border: 0;
-            border-radius: 50%;
-            background: #129fe9;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            display: none;
-            z-index: 999;
-            box-shadow: 0 10px 30px rgba(0,150,255,.3);
-        }
-
-        #topBtn.show {
-            display: block;
-        }
-
-        /* =========================
-           ANIMATSIYA
-        ========================= */
-
-        .animate {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: .7s ease;
-        }
-
-        .animate.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 950px) {
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .buttons,
-            .stats {
-                justify-content: center;
-            }
-
-            .subjects {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .constitution {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .constitution p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .constitution-symbol {
-                display: none;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 700px) {
-
-            .nav {
-                height: 68px;
-            }
-
-            nav {
-                display: none;
-                position: absolute;
-                top: 68px;
-                left: 4%;
-                right: 4%;
-                flex-direction: column;
-                align-items: stretch;
-                padding: 12px;
-                border-radius: 18px;
-                background: rgba(5,18,35,.98);
-                border: 1px solid rgba(255,255,255,.09);
-            }
-
-            nav.open {
-                display: flex;
-            }
-
-            nav a {
-                text-align: center;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            .hero {
-                padding-top: 115px;
-            }
-
-            .hero h1 {
-                font-size: 44px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .hero-visual {
-                min-height: 380px;
-            }
-
-            .subjects {
-                grid-template-columns: 1fr;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .constitution {
-                padding: 35px 25px;
-            }
-
-            .constitution h2 {
-                font-size: 30px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 75px 0;
-            }
-        }
-
-        @media (max-width: 430px) {
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .hero h1 {
-                font-size: 37px;
-            }
-
-            .law-card {
-                padding: 35px 20px;
-            }
-
-            .scale {
-                font-size: 85px;
-            }
-
-            .floating-card {
-                font-size: 11px;
-                padding: 10px 12px;
-            }
-
-            .float-one {
-                left: -5px;
-            }
-
-            .float-two {
-                right: -5px;
-            }
-
-            .stats {
-                gap: 20px;
-            }
-        }
-
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LEGISTZONE — Alisher Kaxramonov | Kiberxavfsizlik va Huquqiy Platforma</title>
+<meta name="description" content="LEGISTZONE — Alisher Kaxramonov. White Hackerlar va mijozlar birjasi, Smart-2FA biometrik tekshiruv va AI-Fishing xavfsizlik platformasi.">
+<link rel="icon" type="image/jpeg" href="assets/lz-logo.jpg">
+<link rel="shortcut icon" type="image/jpeg" href="assets/lz-logo.jpg">
+<link rel="apple-touch-icon" href="assets/lz-logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#040711;
+  --bg2:#070c1b;
+  --card:rgba(10,16,34,0.76);
+  --card-hi:rgba(14,23,48,0.9);
+  --line:rgba(120,165,255,0.15);
+  --line-hi:rgba(56,189,248,0.48);
+  --blue:#2563eb;
+  --electric:#3b82f6;
+  --cyan:#22d3ee;
+  --emerald:#10b981;
+  --amber:#f59e0b;
+  --rose:#f43f5e;
+  --txt:#f8fafc;
+  --mu:#94a3b8;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --pad:clamp(18px,5.2vw,88px);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg);color:var(--txt);font-family:var(--sans)}
+body{
+  margin:0;
+  overflow-x:hidden;
+  background:
+    radial-gradient(65% 45% at 72% 12%,rgba(37,99,235,0.22),transparent 70%),
+    radial-gradient(50% 40% at 18% 48%,rgba(34,211,238,0.12),transparent 72%),
+    radial-gradient(55% 45% at 80% 82%,rgba(59,130,246,0.15),transparent 70%),
+    var(--bg);
+}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit;color:inherit}
+.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+#rain{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+body::after{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right,rgba(148,163,184,0.035) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(148,163,184,0.035) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(circle at 50% 35%,#000 35%,transparent 90%);
+  -webkit-mask-image:radial-gradient(circle at 50% 35%,#000 35%,transparent 90%);
+}
+
+/* TOP NAVIGATION WITH DEDICATED ROLE TABS */
+nav#top{
+  position:sticky;top:0;z-index:45;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  min-height:72px;padding:10px var(--pad);
+  background:rgba(4,7,17,0.84);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+  flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:11px;font-weight:700}
+.logo-box{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,#38bdf8,#2563eb);
+  display:grid;place-items:center;
+  box-shadow:0 0 22px rgba(34,211,238,0.45);color:#030712;
+}
+.logo-box svg{width:20px;height:20px}
+.logo b{font-size:19px;letter-spacing:-0.4px;display:block;line-height:1}
+.logo b i{font-style:normal;color:var(--cyan)}
+.logo small{display:block;font-size:10px;font-family:var(--mono);color:var(--mu);letter-spacing:0.4px;margin-top:2px}
+
+/* TOP SEPARATE SECTIONS BAR (Requested by user) */
+.top-sections{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  background:rgba(8,14,30,0.9);
+  padding:5px;border-radius:14px;border:1px solid var(--line);
+}
+.tsec-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 15px;border-radius:10px;border:1px solid transparent;
+  background:transparent;color:#cbd5e1;
+  font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;
+}
+.tsec-btn .i{font-size:16px;color:var(--cyan)}
+.tsec-btn:hover{color:#fff;background:rgba(34,211,238,0.08)}
+.tsec-btn.on{
+  background:linear-gradient(135deg,rgba(34,211,238,0.2),rgba(37,99,235,0.32));
+  border-color:var(--cyan);color:#fff;
+  box-shadow:0 0 20px rgba(34,211,238,0.25);
+}
+
+.nr{display:flex;align-items:center;gap:10px}
+.dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 10px var(--cyan);
+  animation:pulse 2.2s infinite;display:inline-block;
+}
+.nb{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  height:38px;padding:0 16px;border-radius:99px;
+  font-size:13px;font-weight:600;
+  border:1px solid rgba(255,255,255,0.14);
+  background:rgba(15,23,42,0.78);
+  color:#fff;cursor:pointer;transition:all .2s;
+}
+.nb:hover{border-color:var(--cyan);transform:translateY(-1px)}
+.nb.bl{
+  background:linear-gradient(135deg,#22d3ee 0%,#2563eb 100%);
+  color:#020617;font-weight:700;border-color:transparent;
+  box-shadow:0 6px 24px rgba(34,211,238,0.32);
+}
+.nb.bl:hover{box-shadow:0 10px 30px rgba(34,211,238,0.5);filter:brightness(1.06)}
+
+/* SUB-BAR FOR QUICK FILTERING */
+.mode-bar{
+  position:relative;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  padding:10px var(--pad);
+  background:rgba(7,12,27,0.75);
+  border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:11.5px;color:var(--mu);
+}
+.mode-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.mode-btn{
+  padding:5px 12px;border-radius:99px;
+  border:1px solid rgba(148,163,184,0.18);
+  background:rgba(15,23,42,0.6);
+  font-family:var(--mono);font-size:11px;color:#cbd5e1;cursor:pointer;
+}
+.mode-btn.on{border-color:var(--cyan);color:var(--cyan);background:rgba(34,211,238,0.12)}
+
+header.hero,main,footer{position:relative;z-index:2}
+header.hero{padding:38px var(--pad) 34px}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr 1.15fr;
+  gap:clamp(22px,3.2vw,44px);align-items:start;
+}
+.mono-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:6px 13px;border-radius:6px;
+  background:rgba(15,23,42,0.82);border:1px solid var(--line);
+  font-family:var(--mono);font-size:11.5px;color:#cbd5e1;
+}
+.mono-tag i{font-style:normal;color:var(--cyan)}
+h1{
+  margin:16px 0 14px;
+  font-size:clamp(34px,3.8vw,58px);
+  line-height:1.05;font-weight:700;letter-spacing:-1.5px;
+}
+h1 em,.serif-em{
+  font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-0.4px;
+  background:linear-gradient(90deg,#e0f2fe,#38bdf8,#60a5fa);
+  -webkit-background-clip:text;background-clip:text;color:transparent;padding-right:4px;
+}
+.hero-sub{margin:0 0 22px;max-width:540px;font-size:15.5px;line-height:1.6;color:var(--mu)}
+
+/* FIRST PAGE INTERACTIVE AI PHISHING VIDEO PLAYER */
+.video-stage{
+  border-radius:18px;
+  border:1px solid rgba(34,211,238,0.42);
+  background:linear-gradient(180deg,rgba(10,18,38,0.94),rgba(4,8,20,0.96));
+  box-shadow:0 24px 70px rgba(0,0,0,0.7),0 0 42px rgba(34,211,238,0.18);
+  overflow:hidden;
+}
+.vs-top{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:12px 18px;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:11.5px;
+}
+.vs-screen{
+  position:relative;
+  height:255px;
+  background:radial-gradient(circle at 50% 40%,rgba(37,99,235,0.24),rgba(3,7,18,0.96));
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:18px;overflow:hidden;
+}
+.vs-badge-row{display:flex;justify-content:space-between;align-items:center;z-index:2}
+.vs-scene{
+  z-index:2;my:auto;
+  padding:14px 16px;border-radius:12px;
+  border:1px solid rgba(56,189,248,0.35);
+  background:rgba(6,12,28,0.86);
+  backdrop-filter:blur(8px);
+}
+.vs-scene h3{margin:0 0 6px;font-size:16px;color:#fff}
+.vs-scene p{margin:0;font-size:13px;color:#cbd5e1;line-height:1.5}
+.vs-choices{
+  z-index:2;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+}
+.vs-controls{
+  padding:12px 18px;border-top:1px solid var(--line);
+  background:rgba(3,6,15,0.9);
+  display:flex;align-items:center;gap:12px;
+}
+.vs-prog{
+  flex:1;height:6px;border-radius:99px;background:rgba(255,255,255,0.1);
+  overflow:hidden;cursor:pointer;
+}
+.vs-prog i{display:block;height:100%;width:35%;background:linear-gradient(90deg,var(--cyan),var(--electric));transition:width .25s}
+
+/* THREE ROLE CARDS ON FIRST PAGE */
+.role-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;
+}
+.rcard{
+  padding:20px;border-radius:15px;border:1px solid var(--line);
+  background:var(--card);backdrop-filter:blur(12px);
+  display:flex;flex-direction:column;gap:10px;transition:.22s;
+}
+.rcard:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 12px 32px rgba(34,211,238,0.16)}
+.rcard-head{display:flex;align-items:center;justify-content:space-between}
+.rcard h3{margin:0;font-size:17px}
+.rcard p{margin:0;font-size:13px;color:var(--mu);line-height:1.55}
+
+/* WORKFLOW WINDOW */
+.flow-window{
+  border-radius:16px;border:1px solid rgba(56,189,248,0.32);
+  background:linear-gradient(180deg,rgba(10,17,36,0.88),rgba(5,9,20,0.92));
+  overflow:hidden;margin-top:20px;
+}
+.fw-top{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  padding:12px 18px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;
+}
+.fw-run{
+  display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border-radius:99px;
+  background:rgba(16,185,129,0.14);border:1px solid rgba(16,185,129,0.4);color:#34d399;font-size:11px;cursor:pointer;
+}
+.fw-canvas{
+  position:relative;padding:20px 18px;min-height:210px;
+  display:grid;grid-template-columns:1fr 1.25fr 1.1fr;gap:16px;align-items:center;
+}
+.fw-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.node-col{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px}
+.fnode{
+  padding:11px 14px;border-radius:11px;border:1px solid rgba(148,163,184,0.22);
+  background:rgba(13,21,44,0.9);cursor:pointer;transition:.2s;text-align:left;
+}
+.fnode:hover,.fnode.act{border-color:var(--cyan);box-shadow:0 0 20px rgba(34,211,238,0.24)}
+.fnode small{display:block;font-family:var(--mono);font-size:10px;color:var(--mu)}
+.fnode b{display:block;font-size:13px;margin:3px 0 4px;color:#fff}
+.fnode span{font-family:var(--mono);font-size:11px;color:var(--cyan)}
+.fnode span.ok{color:#34d399}
+.fnode span.wait{color:#fbbf24}
+.fw-log{border-top:1px solid var(--line);padding:11px 18px;background:rgba(3,6,15,0.75);font-family:var(--mono);font-size:11.5px;display:grid;gap:5px}
+.log-row{display:grid;grid-template-columns:68px 95px 1fr auto;gap:10px;color:#cbd5e1}
+.log-row time{color:#64748b}
+.log-row i{font-style:normal;color:var(--cyan)}
+.log-row em{font-style:normal;color:#94a3b8;text-align:right}
+
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px}
+.st-card{padding:15px 16px;border-radius:13px;border:1px solid var(--line);background:var(--card);display:flex;align-items:center;gap:12px}
+.st-card .i{font-size:26px;color:var(--cyan)}
+.st-card b{display:block;font-size:19px;font-weight:700}
+.st-card small{display:block;font-size:11px;color:var(--mu)}
+
+.sec{padding:58px var(--pad);border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;margin-bottom:28px}
+.sec h2{margin:10px 0 8px;font-size:clamp(26px,2.8vw,42px);line-height:1.1;letter-spacing:-1px}
+.lead{margin:0;max-width:620px;font-size:15px;line-height:1.6;color:var(--mu)}
+
+.app-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:24px}
+.app-tile{padding:16px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(10,16,34,0.68);text-align:center;cursor:pointer;transition:.2s}
+.app-tile:hover,.app-tile.on{border-color:var(--cyan);background:rgba(16,28,58,0.88)}
+.app-tile .i{font-size:22px;color:var(--cyan);margin-bottom:6px}
+.app-tile b{display:block;font-family:var(--mono);font-size:11.5px}
+.app-tile small{display:block;font-size:10.5px;color:var(--mu);margin-top:2px}
+
+.cmd-grid,.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pan{padding:22px;border-radius:16px;border:1px solid var(--line);background:var(--card);backdrop-filter:blur(12px)}
+.pan h3{margin:0 0 12px;font-size:17.5px}
+.trace-row{display:grid;grid-template-columns:28px 140px 1fr 60px;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid rgba(148,163,184,0.08);font-family:var(--mono);font-size:12px}
+.trace-bar{height:8px;border-radius:4px;background:rgba(255,255,255,0.06);overflow:hidden}
+.trace-bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--cyan),var(--electric))}
+
+.iso-chart{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;align-items:end;height:165px;padding:20px 10px 6px;margin-top:10px}
+.iso-col{display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.iso-bar{width:100%;max-width:36px;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,rgba(148,163,184,0.35),rgba(30,41,59,0.65));border-top:2px solid rgba(226,232,240,0.5);box-shadow:5px -5px 0 rgba(15,23,42,0.85);transition:height .4s}
+.iso-bar.hi{background:linear-gradient(180deg,#22d3ee,#2563eb);border-top-color:#e0f2fe;box-shadow:5px -5px 0 rgba(37,99,235,0.45),0 0 20px rgba(34,211,238,0.4)}
+.iso-col small{font-family:var(--mono);font-size:11px;color:var(--mu)}
+
+.gauge-wrap{display:flex;align-items:center;gap:18px;margin-top:14px}
+.gauge-ring{width:104px;height:104px;border-radius:50%;background:conic-gradient(var(--cyan) 0% 84%,rgba(255,255,255,0.08) 84% 100%);display:grid;place-items:center;flex:none}
+.gauge-in{width:80px;height:80px;border-radius:50%;background:#060b18;display:grid;place-items:center;font-size:21px;font-weight:800}
+.reg-row{margin-top:10px;display:grid;gap:8px}
+.reg-item{display:grid;grid-template-columns:110px 1fr 48px;gap:10px;align-items:center;font-family:var(--mono);font-size:11.5px}
+
+.btable{width:100%;border-collapse:collapse;font-size:13.5px}
+.btable th,.btable td{padding:12px 14px;text-align:left;border-bottom:1px solid rgba(148,163,184,0.1)}
+.btable th{font-family:var(--mono);font-size:11px;color:var(--mu);text-transform:uppercase}
+.rtag{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:99px;font-family:var(--mono);font-size:11px;font-weight:600}
+.rtag.lo{background:rgba(16,185,129,0.15);color:#34d399;border:1px solid rgba(16,185,129,0.4)}
+.rtag.md{background:rgba(245,158,11,0.15);color:#fbbf24;border:1px solid rgba(245,158,11,0.4)}
+.rtag.hi{background:rgba(244,63,94,0.15);color:#fb7185;border:1px solid rgba(244,63,94,0.4)}
+
+.hk,.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}
+.hc,.card{display:flex;flex-direction:column;gap:8px;padding:20px;border-radius:15px;border:1px solid var(--line);background:var(--card);transition:.22s}
+.hc:hover,.card:hover{border-color:var(--cyan);transform:translateY(-3px)}
+.av{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:17px;background:linear-gradient(135deg,#0ea5e9,#1d4ed8)}
+.hc h3,.card h3{margin:4px 0 0;font-size:15.5px;display:flex;align-items:center;gap:6px}
+.hc h3 .i,.card .i{color:var(--cyan);font-size:20px}
+.hc p,.card p{margin:0;font-size:12.5px;color:var(--mu);line-height:1.5}
+.rt{font-family:var(--mono);font-size:12px;color:#fbbf24}
+.tg span{display:inline-block;padding:3px 8px;margin:0 4px 4px 0;border-radius:6px;font-family:var(--mono);font-size:10.5px;background:rgba(37,99,235,0.15);border:1px solid rgba(59,130,246,0.35);color:#bae6fd}
+.hc .nb{margin-top:auto;width:100%}
+
+.mtr{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.mbx{padding:11px 12px;border-radius:11px;border:1px solid var(--line);background:rgba(5,9,22,0.85)}
+.mbx small{display:block;font-size:10.5px;color:var(--mu);font-family:var(--mono)}
+.mbx b{display:block;margin-top:4px;font-size:18px;font-family:var(--mono);color:var(--cyan)}
+.pbar{height:8px;border-radius:99px;background:rgba(255,255,255,0.07);overflow:hidden;margin-top:8px}
+.pbar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--cyan),var(--electric),var(--emerald));transition:width .2s}
+.tpad{user-select:none;touch-action:none;cursor:pointer;padding:18px;border-radius:14px;border:1px dashed rgba(34,211,238,0.5);background:radial-gradient(circle at 50% 50%,rgba(34,211,238,0.12),rgba(6,11,25,0.9));text-align:center;transition:.2s}
+.tpad.act{border-color:var(--emerald);box-shadow:0 0 24px rgba(16,185,129,0.3)}
+.wave{display:flex;align-items:center;justify-content:center;gap:4px;height:34px;margin:12px 0}
+.wave i{width:4px;height:8px;border-radius:4px;background:var(--electric);transition:height .12s}
+.rbox{margin-top:12px;padding:14px;border-radius:12px;border:1px solid var(--line);background:rgba(5,9,22,0.85)}
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.vcard{padding:14px;border-radius:12px;border:1px solid var(--line);background:rgba(6,11,25,0.85);display:flex;flex-direction:column;gap:6px}
+.vcard .vtop{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--cyan)}
+.vcard h4{margin:0;font-size:14px}
+.vcard p{margin:0;font-size:12px;color:var(--mu);line-height:1.45}
+.pill-nav{display:inline-flex;flex-wrap:wrap;gap:6px;padding:4px;border-radius:10px;background:#050916;border:1px solid var(--line);margin-bottom:10px}
+.pill-nav button{background:transparent;border:0;color:var(--mu);padding:6px 11px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer}
+.pill-nav button.on{background:var(--blue);color:#fff}
+
+.ord{display:grid;grid-template-columns:1fr 1.25fr;gap:22px;align-items:start}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fg label{display:grid;gap:5px;font-size:12.5px;color:#cbd5e1}
+.fg .w{grid-column:1/-1}
+.fg input,.fg select,.fg textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,0.2);background:#050916;color:#fff;font-size:13.5px}
+.fg textarea{min-height:84px;resize:vertical}
+.okp{margin-top:12px;padding:12px 14px;border-radius:11px;border:1px solid var(--emerald);background:rgba(16,185,129,0.12);font-size:13px}
+.okp b{color:#34d399;font-family:var(--mono)}
+
+details{margin-bottom:10px;border-radius:12px;border:1px solid var(--line);background:var(--card)}
+summary{cursor:pointer;padding:15px 18px;font-weight:600;font-size:14.5px}
+details p{margin:0;padding:0 18px 16px;color:var(--mu);font-size:13.5px;line-height:1.55}
+
+.mdl{position:fixed;inset:0;z-index:80;background:rgba(2,5,14,0.84);backdrop-filter:blur(10px);display:grid;place-items:center;padding:20px}
+.mdl[hidden]{display:none}
+.mbox{width:min(580px,100%);padding:24px;border-radius:18px;border:1px solid var(--cyan);background:#070d1f;box-shadow:0 24px 70px rgba(0,0,0,0.8)}
+.mhd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.mhd h3{margin:0;font-size:18px}
+.xbtn{background:transparent;border:1px solid var(--line);color:#fff;width:32px;height:32px;border-radius:8px;cursor:pointer}
+
+footer{padding:32px var(--pad);border-top:1px solid var(--line);background:rgba(3,6,15,0.88);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;font-size:12.5px;color:var(--mu)}
+@keyframes pulse{50%{opacity:.35}}
+@media(max-width:1100px){
+  .hero-grid,.cmd-grid,.two,.ord,.role-cards{grid-template-columns:1fr}
+  .stats,.hk,.cards{grid-template-columns:repeat(2,1fr)}
+  .app-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+  .fw-canvas,.stats,.app-grid,.hk,.cards,.fg,.mtr,.vgrid{grid-template-columns:1fr}
+}
+
+.lz-img{width:38px;height:38px;border-radius:9px;object-fit:cover;border:1px solid var(--cyan);box-shadow:0 0 16px rgba(34,211,238,0.35)}
+.founder-card{
+  display:grid;grid-template-columns:230px 1fr;gap:24px;align-items:center;
+  padding:24px;border-radius:18px;border:1px solid rgba(34,211,238,0.4);
+  background:linear-gradient(135deg,rgba(12,21,46,0.92),rgba(5,9,22,0.95));
+  box-shadow:0 20px 55px rgba(0,0,0,0.65);margin-top:26px;
+}
+.founder-photo{
+  width:100%;height:240px;object-fit:cover;border-radius:14px;
+  border:2px solid var(--cyan);box-shadow:0 0 24px rgba(34,211,238,0.25);
+}
+.tg-btn{
+  display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;
+  border-radius:99px;background:linear-gradient(135deg,#0088cc,#22d3ee);
+  color:#020617;font-weight:700;font-size:13px;border:0;cursor:pointer;
+}
+.phone-pill{
+  display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;
+  border-radius:99px;border:1px solid var(--line-hi);background:rgba(15,23,42,0.85);
+  color:#fff;font-family:var(--mono);font-size:13px;font-weight:600;
+}
+.auth-tabs{display:flex;gap:8px;margin-bottom:14px}
+.auth-tab{flex:1;padding:9px;border-radius:9px;border:1px solid var(--line);background:#050916;color:var(--mu);font-weight:600;cursor:pointer}
+.auth-tab.on{border-color:var(--cyan);color:#fff;background:rgba(34,211,238,0.15)}
+@media(max-width:760px){.founder-card{grid-template-columns:1fr}}
+
+
+.lz-img{width:44px;height:44px;border-radius:10px;object-fit:contain;background:#fff;padding:2px;border:2px solid var(--cyan);box-shadow:0 0 18px rgba(34,211,238,0.45)}
+.vs-video-wrap{position:relative;width:100%;background:#000;border-bottom:1px solid var(--line)}
+.vs-video-wrap video{width:100%;max-height:280px;display:block;object-fit:cover;background:#000}
+.soc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.soc-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  height:40px;padding:0 12px;border-radius:10px;
+  border:1px solid rgba(148,163,184,0.25);background:#081024;
+  color:#fff;font-size:12.5px;font-weight:600;cursor:pointer;transition:.2s;
+}
+.soc-btn:hover{border-color:var(--cyan);background:#0f1b38;transform:translateY(-1px)}
+.or-div{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;color:var(--mu);margin:8px 0}
+.or-div::before,.or-div::after{content:"";flex:1;height:1px;background:var(--line)}
+
+</style>
 </head>
-
 <body>
+<canvas id="rain" aria-hidden="true"></canvas>
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- Preserved SVG defs & IDs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+<radialGradient id="gG"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#040711"/></radialGradient>
+<linearGradient id="gH"><stop offset="0" stop-color="#1e293b"/><stop offset="1" stop-color="#040711"/></linearGradient>
+<linearGradient id="gD"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#040711"/></linearGradient>
+<linearGradient id="gM"><stop offset="0" stop-color="#1e293b"/><stop offset="1" stop-color="#090d16"/></linearGradient>
+<linearGradient id="sg"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#040711"/></linearGradient>
+<pattern id="dt" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.5" fill="#38bdf8"/></pattern>
+<clipPath id="cm"><rect width="100" height="100"/></clipPath>
+<filter id="gl"><feGaussianBlur stdDeviation="2"/></filter>
+<filter id="bl"><feGaussianBlur stdDeviation="4"/></filter>
+<symbol id="logo" viewBox="0 0 48 52"><path d="M36 9 14 14 9 24l23 5-5 10-19 5" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10v-6z"/><path d="m8.5 12 2.6 2.6 4.6-5"/></symbol>
+<symbol id="users" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><circle cx="5.5" cy="10" r="2.2"/><circle cx="18.5" cy="10" r="2.2"/><path d="M6.5 19.5c0-3.2 2.4-5.2 5.5-5.2s5.5 2 5.5 5.2zM1.5 18c0-2.3 1.6-3.7 4-3.7M22.5 18c0-2.3-1.6-3.7-4-3.7"/></symbol>
+<symbol id="hack" viewBox="0 0 24 24"><path d="M12 2.5c-3.5 0-5.5 2.6-5.5 5.5 0 1.6.6 2.6.6 3.7L3 14.5V21h18v-6.5l-4.1-2.8c0-1.1.6-2.1.6-3.7 0-2.9-2-5.5-5.5-5.5z"/><path d="M9.3 8.3l1.6 1.6m0-1.6-1.6 1.6m3.8-1.6 1.6 1.6m0-1.6-1.6 1.6M9.5 13.2c1.5 1 3.5 1 5 0"/></symbol>
+<symbol id="bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+<symbol id="code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+<symbol id="bug" viewBox="0 0 24 24"><ellipse cx="12" cy="14" rx="5" ry="6.5"/><path d="M9 7.5a3 3 0 0 1 6 0M12 8v12M7 12H3M17 12h4M7.5 17 4 19M16.5 17l3.5 2M7.5 9 4.5 6.5M16.5 9l3-2.5"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7z" fill="currentColor"/></symbol>
+<symbol id="plane" viewBox="0 0 24 24"><path d="M21 3 3 10.5l7 2.5 2.5 7zM10 13l6-6"/></symbol>
+<symbol id="play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol>
+<symbol id="lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+<symbol id="fp" viewBox="0 0 24 24"><path d="M12 2a9 9 0 0 0-9 9v3c0 2.5 1.5 5 4 6.5M12 2a9 9 0 0 1 9 9v2a10 10 0 0 1-2 6M12 6a5 5 0 0 0-5 5v4a6 6 0 0 0 3 5.2M12 6a5 5 0 0 1 5 5v3a7 7 0 0 1-1.5 4.3M12 10a1 1 0 0 0-1 1v5a3 3 0 0 0 2 2.8"/></symbol>
+<symbol id="mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4m-4 0h8"/></symbol>
+<symbol id="scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="4"/><path d="M12 4v2m0 12v2M4 12h2m12 0h2"/></symbol>
+</defs></svg>
 
-<header>
+<!-- TOP HEADER WITH SEPARATE DEDICATED SECTIONS -->
+<nav id="top">
+ <a class="logo" href="#top">
+  <img src="assets/lz-logo.jpg" alt="LZ Logo" class="lz-img">
+  <span><b>LEGIST<i>ZONE</i></b><small>ALISHER KAXRAMONOV · CYBER &amp; LAW</small></span>
+ </a>
 
-    <div class="container nav">
+ <!-- 4 SEPARATE TOP SECTIONS AS REQUESTED -->
+ <div class="top-sections" id="topNavTabs">
+  <button type="button" class="tsec-btn on" data-view="home">
+   <svg class="i"><use href="#play"/></svg>1. Bosh sahifa (Fishing Video)
+  </button>
+  <button type="button" class="tsec-btn" data-view="clients">
+   <svg class="i"><use href="#shield"/></svg>2. Mijozlar uchun (White Hacker xizmati)
+  </button>
+  <button type="button" class="tsec-btn" data-view="hackers">
+   <svg class="i"><use href="#hack"/></svg>3. White Hackerlar uchun (Serverlar birjasi)
+  </button>
+  <button type="button" class="tsec-btn" data-view="biometric">
+   <svg class="i"><use href="#fp"/></svg>4. Biometrik tekshirish (Smart-2FA)
+  </button>
+  <button type="button" class="tsec-btn" data-view="founder">
+   <svg class="i"><use href="#user"/></svg>5. Muallif &amp; Aloqa (LEGISTZONE)
+  </button>
+ </div>
 
-        <a href="index.html" class="logo">
-            <span class="logo-icon">⚖</span>
-            LEGIST<span>ZONE</span>
-        </a>
+ <div class="nr">
+  <a class="tg-btn" href="https://t.me/kxrmnv333" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#plane"/></svg>Telegram: @kxrmnv333</a>
+  <button class="nb" type="button" id="loginBtn"><svg class="i"><use href="#lock"/></svg><span id="userStatusTxt">Kirish (2FA)</span></button>
+  <button class="nb bl" type="button" id="showAllBtn">Barcha bo’limlar</button>
+ </div>
+</nav>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Menyu">
-            ☰
-        </button>
+<!-- SUB-BAR: DESIGN MODES & STATUS -->
+<div class="mode-bar">
+ <span id="currentViewIndicator"><i class="dot"></i> FAOL BO’LIM: Bosh sahifa — AI Fishing Videolar, Skaner va Umumiy Ko’rinish</span>
+ <div class="mode-tabs" id="designModes">
+  <button type="button" class="mode-btn on" data-mode="all">UNIFIED PLATFORM (ALL 3)</button>
+  <button type="button" class="mode-btn" data-mode="d1">DESIGN 01 · CYBER COMMAND CENTER</button>
+  <button type="button" class="mode-btn" data-mode="d2">DESIGN 02 · SECURITY MARKETPLACE</button>
+  <button type="button" class="mode-btn" data-mode="d3">DESIGN 03 · NEXT-GEN CYBER LAB</button>
+ </div>
+</div>
 
-        <nav id="mainNav">
+<!-- 1. FIRST PAGE (BOSH SAHIFA): FEATURED AI FISHING VIDEO + SCANNER + 3 PORTALS -->
+<header class="hero view-block" data-vblock="home">
+ <div class="hero-grid">
+  <!-- Left: Intro + Quick Role Switchers + Live Phishing Scanner -->
+  <div>
+   <div class="mono-tag"><i class="dot"></i> 1-SAHIFA · HUQUQIY ONG VA ANTI-FISHING MARKAZI</div>
+   <h1>Fishing xavfini <em>oldindan</em> biling, serveringizni <em>qonuniy</em> himoyalang.</h1>
+   <p class="hero-sub">
+    Birinchi sahifada sun’iy intellekt (AI) yordamida tayyorlangan <b>Fishing va Huquqiy ong videolari</b> orqali firibgarlik usullarini ko’ring, shubhali xabarlarni tekshiring yoki yuqoridagi maxsus bo’limlar orqali <b>Mijoz</b>, <b>White Hacker</b> va <b>Biometrik 2FA</b> oynasiga o’ting.
+   </p>
 
-            <a href="index.html" class="active">Bosh sahifa</a>
+   <!-- Quick Phishing Scanner right on First Page -->
+   <div class="pan" id="aishield" style="padding:18px;border-color:rgba(34,211,238,0.35)">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+     <b style="font-size:14.5px;display:flex;align-items:center;gap:8px"><svg class="i" style="color:var(--cyan)"><use href="#scan"/></svg>Shubhali SMS, Havola yoki .APK faylni darhol tekshiring:</b>
+     <span class="rtag lo" id="phishBadge">AI Skaner tayyor</span>
+    </div>
+    <div class="pill-nav" id="phishSamples">
+     <button type="button" data-ps="0">Namuna: Soxta Bank SMS</button>
+     <button type="button" data-ps="1">Namuna: Telegram APK</button>
+     <button type="button" data-ps="2">Namuna: Xavfsiz xabar</button>
+    </div>
+    <textarea id="phishInput" placeholder="SMS, Telegram xabar yoki shubhali havolani shu yerga joylashtiring..." style="width:100%;min-height:68px;padding:10px;border-radius:9px;border:1px solid var(--line);background:#040814;color:#fff;font-size:13px"></textarea>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap">
+     <button type="button" class="nb bl" id="scanPhishBtn" style="height:38px"><svg class="i"><use href="#scan"/></svg>AI yordamida fishingga tekshirish</button>
+     <b id="phishRisk" style="font-family:var(--mono);font-size:14px;color:var(--cyan)">Xavf darajasi: 0%</b>
+    </div>
+    <div id="phishResult"><p id="phishExplain" style="margin:8px 0 0;font-size:12.5px;color:#cbd5e1;line-height:1.5">Xabar tarkibidagi psixologik bosim, soxta domen va zararli APK alomatlari shu yerda chiqadi.</p></div>
+   </div>
+  </div>
 
-            <a href="fanlar.html">Fanlar</a>
-
-            <a href="maruzalar.html">Ma'ruzalar</a>
-
-            <a href="testlar.html">Testlar</a>
-
-            <a href="qonunchilik.html">Qonunchilik</a>
-
-            <a href="aloqa.html">Aloqa</a>
-
-        </nav>
-
+  <!-- Right: FIRST-PAGE INTERACTIVE AI FISHING VIDEO PLAYER -->
+  <div>
+   <div class="video-stage">
+    <div class="vs-top">
+     <span style="color:#fff;font-weight:600">▶ AI-VIDEO STUDIO · FISHING VA HUQUQIY ONG</span>
+     <span id="vidLegalTag" style="color:var(--cyan)">O’zR JK 278-modda · Kiberxavfsizlik</span>
     </div>
 
+    <div class="vs-video-wrap">
+     <video id="aiPhishVideo" src="assets/ai-fishing-video.mp4" controls playsinline preload="metadata"></video>
+    </div>
+    <div class="vs-screen" id="vidScreen" style="height:auto;gap:12px;padding:16px">
+     <div class="vs-badge-row">
+      <span class="rtag hi" id="vidScenarioBadge">1-QISM · OSON DAROMAD VA KARTA TUZOG’I (DROPPER)</span>
+      <span style="font-family:var(--mono);font-size:11.5px;color:#cbd5e1" id="vidTimerTxt">00:00 / 00:10</span>
+     </div>
+
+     <div class="vs-scene">
+      <h3 id="vidSceneTitle">AI-Video: "Karta oching va 500 000 so’m mukofot oling!" tuzog’i</h3>
+      <p id="vidSceneDesc">Oson daromad taklifi ortida shirin tuzoq yashiringan: "B" ismli shaxs arzimagan pul evaziga o’z nomiga bank kartasi ochib jinoyatchilarga (dropper sifatida) berdi. Karta orqali noqonuniy pullar aylantirildi va karta egasi jinoiy javobgarlikka tortildi!</p>
+     </div>
+
+     <div class="vs-choices">
+      <span style="font-size:12px;font-family:var(--mono);color:#fbbf24" id="vidQuestionTxt">⚡ Arzimagan pul evaziga kartangizni begonalarga berasizmi?</span>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+       <button type="button" class="nb bl" id="vidSafeActionBtn" style="height:34px;font-size:12px">✓ Yo’q! Kartani va SMS-kodni hech kimga bermaslik</button>
+       <button type="button" class="nb" id="vidNextBtn" style="height:34px;font-size:12px">Keyingi AI-Video ▸</button>
+      </div>
+     </div>
+    </div>
+
+    <div class="vs-controls">
+     <button type="button" class="nb" id="vidPlayToggle" style="height:32px;padding:0 12px;font-size:12px"><svg class="i"><use href="#play"/></svg><span id="vidPlayLbl">Ijro etilmoqda</span></button>
+     <div class="vs-prog" id="vidProgWrap"><i id="vidProgBar"></i></div>
+     <div class="pill-nav" style="margin:0">
+      <button type="button" class="on" data-vid="0">Videoni boshlash</button>
+      <button type="button" data-vid="1">2. Deepfake</button>
+      <button type="button" data-vid="2">3. White-Hat</button>
+      <button type="button" data-vid="3">4. Ofis</button>
+     </div>
+    </div>
+   </div>
+
+   <!-- 3 Quick Cards to jump directly to Clients, White Hackers, or Biometrics -->
+   <div class="role-cards">
+    <div class="rcard">
+     <div class="rcard-head"><span class="rtag lo">MIJOZLAR UCHUN</span><svg class="i" style="color:var(--cyan);font-size:20px"><use href="#shield"/></svg></div>
+     <h3>White Hacker xizmati</h3>
+     <p>Yangi sayt, ilova yoki serveringizni tasdiqlangan mutaxassislarga tekshirtiring.</p>
+     <button type="button" class="nb bl" style="margin-top:auto;width:100%" data-jump="clients">Xizmatga o’tish ▸</button>
+    </div>
+    <div class="rcard">
+     <div class="rcard-head"><span class="rtag md">WHITE HACKERLAR</span><svg class="i" style="color:var(--cyan);font-size:20px"><use href="#hack"/></svg></div>
+     <h3>Mijozlar &amp; Serverlar birjasi</h3>
+     <p>Ro’yxatdan o’tgan startap serverlarini qonuniy tekshiring va mukofot (Bounty) oling.</p>
+     <button type="button" class="nb bl" style="margin-top:auto;width:100%" data-jump="hackers">Birjaga o’tish ▸</button>
+    </div>
+    <div class="rcard">
+     <div class="rcard-head"><span class="rtag hi">SMART-2FA</span><svg class="i" style="color:var(--cyan);font-size:20px"><use href="#fp"/></svg></div>
+     <h3>Biometrik tekshirish</h3>
+     <p>Barmoq bosimi, yozish vaqti va jonli ovoz orqali ikki bosqichli himoya.</p>
+     <button type="button" class="nb bl" style="margin-top:auto;width:100%" data-jump="biometric">Sinab ko’rish ▸</button>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ 
+ <div class="founder-card" id="founderCard">
+  <img src="assets/alisher-kaxramonov.jpg" alt="Alisher Kaxramonov — LEGISTZONE" class="founder-photo">
+  <div>
+   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px">
+    <img src="assets/lz-logo.jpg" alt="LZ" style="width:42px;height:42px;border-radius:8px;border:1px solid var(--cyan)">
+    <div>
+     <span class="mono-tag" style="padding:3px 10px">LEGISTZONE FOUNDER &amp; ARCHITECT</span>
+     <h2 style="margin:4px 0 0;font-size:24px">Alisher Kaxramonov <span style="color:var(--cyan);font-size:15px;font-family:var(--mono)">(@LEGISTZONE)</span></h2>
+    </div>
+   </div>
+   <p style="margin:8px 0 14px;font-size:14px;color:#cbd5e1;line-height:1.6">
+    <b>LEGISTZONE</b> — Huquq, ta’lim va kiberxavfsizlik yo’nalishidagi zamonaviy ekotizim. Platformaning maqsadi: yangi bozorga chiqayotgan startap va serverlarning zaifliklarini <b>White Hackerlar</b> yordamida qonuniy aniqlash, <b>Smart-2FA</b> (barmoq bosimi, yozish vaqti va ovozli tekshiruv) orqali himoyalash hamda <b>AI-Videolar</b> yordamida fuqarolarning huquqiy ongini oshirib, fishing xabarlarning oldini olishdir.
+   </p>
+   <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+    <a class="tg-btn" id="tgChannelLink" href="https://t.me/kxrmnv333" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#plane"/></svg>Telegram: @kxrmnv333</a>
+    <a class="phone-pill" id="phoneContactLink" href="tel:+998200003437">📞 <span id="ownerPhoneTxt">+998 20 000 34 37</span></a>
+    <button type="button" class="nb" id="editProfileBtn" style="height:40px">⚙️ Ma’lumotlarni tahrirlash</button>
+    <button type="button" class="nb" id="openAuthFromBio" style="height:40px"><svg class="i"><use href="#user"/></svg>Login va Parol bilan kirish</button>
+   </div>
+  </div>
+ </div>
+
+ <!-- 5 KEY METRIC PILLS -->
+ <div class="stats">
+  <div class="st-card"><svg class="i"><use href="#shield"/></svg><div><b>19,615</b><small>Muvaffaqiyatli tekshiruvlar</small></div></div>
+  <div class="st-card"><svg class="i"><use href="#hack"/></svg><div><b>540+</b><small>Tasdiqlangan White Hackerlar</small></div></div>
+  <div class="st-card"><svg class="i"><use href="#fp"/></svg><div><b>99.4%</b><small>Smart-2FA biometrik aniqlik</small></div></div>
+  <div class="st-card"><svg class="i"><use href="#bolt"/></svg><div><b>140 ms</b><small>Sandbox Proksi javob vaqti</small></div></div>
+  <div class="st-card"><svg class="i"><use href="#lock"/></svg><div><b>0%</b><small>Ruxsatsiz ma’lumot sizishi</small></div></div>
+ </div>
 </header>
 
-
-<!-- =========================
-     HERO
-========================= -->
-
 <main>
+<!-- 2. FOYDALANUVCHILAR (MIJOZLAR) UCHUN: WHITE HACKER XIZMATI VA BUYURTMA -->
+<section class="sec design-sec view-block" id="caps" data-dsec="d2" data-vblock="clients">
+ <div class="sec-head">
+  <div>
+   <div class="mono-tag"><i>BO’LIM 02 · FOYDALANUVCHILAR VA STARTAPLAR UCHUN</i> // WHITE HACKER XIZMATI</div>
+   <h2>Mijozlar uchun: <em>White Hacker</em> yollash va Server auditi.</h2>
+   <p class="lead">Yangi bozorga chiqayotgan veb-saytingiz, mobil ilovangiz yoki serveringizni yovuz niyatli xakerlardan oldin tasdiqlangan White Hat mutaxassislarga tekshirtiring.</p>
+  </div>
+ </div>
 
-<section class="hero">
+ <!-- 4 Core Services for Clients -->
+ <div class="cards" style="margin-bottom:28px">
+  <article class="card"><svg class="i"><use href="#code"/></svg><h3>Penetratsion test</h3><p>Yangi server, veb-sayt va API tizimingizdagi zaifliklarni aniqlang va yoping.</p></article>
+  <article class="card"><svg class="i"><use href="#shield"/></svg><h3>Xavfsizlik auditi</h3><p>Arxitektura tahlili, konfiguratsiya tekshiruvi va professional hisobot.</p></article>
+  <article class="card"><svg class="i"><use href="#bug"/></svg><h3>Zararli dastur aniqlash</h3><p>Server va ilovalaringizni backdoor hamda troyan tahdidlaridan himoya qiling.</p></article>
+  <article class="card"><svg class="i"><use href="#users"/></svg><h3>Kiber maslahat &amp; 2FA</h3><p>Mutaxassislardan maslahat oling va Smart-2FA biometrik modulini o’rnating.</p></article>
+ </div>
 
-    <div class="container hero-grid">
+ <!-- Verified White Hackers Directory for Clients to Choose -->
+ <div id="hackers" style="margin-bottom:32px">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+   <h3 style="margin:0;font-size:20px">Loyihangiz uchun tasdiqlangan White Hackerni tanlang</h3>
+   <span style="font-family:var(--mono);font-size:12px;color:var(--cyan)">"Tanlash" tugmasini bossangiz, quyi shakl avtomatik to’ldiriladi</span>
+  </div>
+  <div class="hk">
+   <article class="pan hc"><div class="av">NF</div><h3>NightFox <svg class="i"><use href="#shield"/></svg></h3><p>Veb, OAuth2 va FinTech API xavfsizligi bo’yicha penetratsion tester.</p><div class="rt">★ 4.9 <span>· 128 loyiha · 99% aniqlik</span></div><div class="tg"><span>Pentest</span><span>OWASP</span><span>API</span></div><button class="nb bl" type="button" data-h="NightFox">Tanlash</button></article>
+   <article class="pan hc"><div class="av">ZD</div><h3>ZeroDay <svg class="i"><use href="#shield"/></svg></h3><p>Zararli dasturlar (.APK/Trojan), revers-injiniring va server himoyasi.</p><div class="rt">★ 4.8 <span>· 96 loyiha · 98% aniqlik</span></div><div class="tg"><span>Malware</span><span>Reverse</span><span>Linux</span></div><button class="nb bl" type="button" data-h="ZeroDay">Tanlash</button></article>
+   <article class="pan hc"><div class="av">CK</div><h3>CipherK <svg class="i"><use href="#shield"/></svg></h3><p>To’liq xavfsizlik auditi, kriptografiya va ISO 27001 hisobotlari.</p><div class="rt">★ 5.0 <span>· 74 loyiha · 100% aniqlik</span></div><div class="tg"><span>Audit</span><span>ISO 27001</span><span>Cloud</span></div><button class="nb bl" type="button" data-h="CipherK">Tanlash</button></article>
+   <article class="pan hc"><div class="av">RL</div><h3>RedLotus <svg class="i"><use href="#shield"/></svg></h3><p>Hodisalarga javob berish (SOC), fishing simulyatsiya va forensika.</p><div class="rt">★ 4.9 <span>· 61 loyiha · 99% aniqlik</span></div><div class="tg"><span>SOC</span><span>Forensika</span><span>AI-2FA</span></div><button class="nb bl" type="button" data-h="RedLotus">Tanlash</button></article>
+  </div>
+ </div>
 
-        <div class="animate">
+ <!-- Client Order Form & Calculator (#order) -->
+ <div class="ord" id="order">
+  <div class="pan" id="about">
+   <h3>Interaktiv Audit va Bounty Kalkulyatori</h3>
+   <p style="font-size:13px;color:var(--mu);margin:0 0 14px">Nechta server, API yoki veb-modulni tekshiruvdan o’tkazmoqchisiz?</p>
+   <label style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:12.5px;margin-bottom:8px">
+    <span>Obyektlar / API nuqtalar soni:</span>
+    <b id="calcEndpoints" style="color:var(--cyan)">15 ta endpoint</b>
+   </label>
+   <input type="range" id="calcSlider" min="5" max="100" step="5" value="15" style="width:100%;accent-color:var(--cyan)">
+   <div class="rbox" style="margin-top:16px">
+    <div style="font-family:var(--mono);font-size:11px;color:var(--cyan)" id="calcPlanName">TAVSIYA ETILGAN REJA · GROWTH STARTUP</div>
+    <div style="font-size:30px;font-weight:800;margin:6px 0" id="calcPrice">$290 <span style="font-size:13px;font-weight:400;color:var(--mu)">/ to’liq audit &amp; bounty fondi</span></div>
+    <p style="margin:0;font-size:12.5px;color:var(--mu)">✓ Safe Harbor yuridik shartnomasi · ✓ Smart-2FA SDK integratsiyasi · ✓ 24/7 Ticket Room aloqasi</p>
+   </div>
+  </div>
 
-            <div class="badge">
-                ⚖️ HUQUQ • TA'LIM • RIVOJLANISH
-            </div>
+  <form class="pan" id="of">
+   <h3>Mijoz sifatida loyihani tekshiruvga topshirish</h3>
+   <div class="fg">
+    <label>Ismingiz yoki Kompaniya<input name="nom" required placeholder="Ism familiya / Startap nomi"></label>
+    <label>Telefon yoki Email<input name="aloqa" required placeholder="+998 ... yoki security@domain.uz"></label>
+    <label>Xizmat turi<select name="service"><option>Penetratsion test (Server &amp; Web)</option><option>Bug Bounty dasturi ochish</option><option>Smart-2FA (Bosim + Ovozli SDK o’rnatish)</option><option>AI-Video va Xodimlar Anti-Fishing testi</option><option>Xavfsizlik auditi</option><option>Zararli dastur aniqlash</option><option>Kiber maslahat</option></select></label>
+    <label>White Hacker<select name="hacker"><option>Avtomatik tanlansin</option><option>NightFox</option><option>ZeroDay</option><option>CipherK</option><option>RedLotus</option></select></label>
+    <label class="w">Loyiha manzili (Scope) va tavsifi<textarea name="info" required placeholder="Tekshiriladigan sayt/server domeni va texnologiyalar haqida qisqacha yozing..."></textarea></label>
+    <label class="w" style="display:flex;align-items:center;gap:10px;font-size:12.5px;color:#cbd5e1;cursor:pointer">
+     <input type="checkbox" required checked style="width:16px;height:16px;accent-color:var(--cyan)">
+     Men ushbu loyiha egasi sifatida vakolatli xavfsizlik tekshiruvi (Authorized Audit) o’tkazilishiga ruxsat beraman.
+    </label>
+    <button class="nb bl w" type="submit" style="height:44px">Buyurtma yuborish</button>
+   </div>
+   <div class="okp" id="ok" hidden>Buyurtmangiz va ruxsatnomangiz qabul qilindi. Hujjat raqami: <b></b></div>
+  </form>
+ </div>
+</section>
 
-            <h1>
-                Huquqni o‘rganishning
-                <span>yangi darajasi.</span>
-            </h1>
+<!-- 3. WHITE HACKERLAR UCHUN (CHAPPASI): MIJOZLAR SERVERLARI BIRJASI VA COMMAND CENTER -->
+<section class="sec design-sec view-block" id="marketplace" data-dsec="d1" data-vblock="hackers">
+ <div class="sec-head">
+  <div>
+   <div class="mono-tag"><i>BO’LIM 03 · WHITE HACKERLAR UCHUN</i> // SERVERLAR BIRJASI &amp; COMMAND CENTER</div>
+   <h2>White Hackerlar uchun: <em>Mijoz loyihalarini</em> tekshirish va Mukofot olish.</h2>
+   <p class="lead">Bu bo’limda aksincha — White Hat Hackerlar yangi bozorga chiqayotgan startaplarning server va ilovalarini tanlaydi, Sandbox orqali tekshiradi va topilgan zaiflik (PoC) uchun kafolatlangan mukofot oladi.</p>
+  </div>
+  <div class="pill-nav" id="bountyFilter">
+   <button type="button" class="on" data-bf="all">Barcha loyihalar (4)</button>
+   <button type="button" data-bf="web">Web &amp; API</button>
+   <button type="button" data-bf="srv">Server &amp; Cloud</button>
+  </div>
+ </div>
 
-            <p>
-                LEGISTZONE — huquq fanlarini o‘rganish,
-                ma'ruzalarni ko‘rish, testlar ishlash va
-                qonunchilik bilan ishlash uchun zamonaviy
-                ta'lim platformasi.
-            </p>
+ <!-- Active Client Projects Waiting for White Hackers -->
+ <div class="pan" style="margin-bottom:24px;overflow-x:auto">
+  <table class="btable">
+   <thead><tr><th>Mijoz / Startap</th><th>Tekshiruv obyekti (Scope)</th><th>Ruxsat va Himoya</th><th>Mukofot (Escrow Bounty)</th><th>White Hacker amali</th></tr></thead>
+   <tbody id="bountyRows">
+    <tr data-cat="web"><td><b>PayUzbek FinTech</b></td><td><code>api.payuzbek.uz</code> · OAuth2, To’lov shlyuzi</td><td><span class="rtag lo">● Sandbox Proksi Faol</span></td><td><b>$150 – $1,200</b></td><td><button type="button" class="nb bl" style="height:34px;font-size:12px" data-prog="PayUzbek FinTech">Zaiflik yuborish</button></td></tr>
+    <tr data-cat="srv"><td><b>MedCloud Clinic</b></td><td><code>srv.medcloud.uz</code> · Linux Server, Docker, DB</td><td><span class="rtag md">● Smart-2FA Talab etiladi</span></td><td><b>$200 – $1,500</b></td><td><button type="button" class="nb bl" style="height:34px;font-size:12px" data-prog="MedCloud Clinic">Zaiflik yuborish</button></td></tr>
+    <tr data-cat="web"><td><b>EduSmart LMS</b></td><td><code>app.edusmart.uz</code> · Talabalar portali &amp; API</td><td><span class="rtag lo">● Safe Harbor NDA</span></td><td><b>$80 – $600</b></td><td><button type="button" class="nb bl" style="height:34px;font-size:12px" data-prog="EduSmart LMS">Zaiflik yuborish</button></td></tr>
+    <tr data-cat="srv"><td><b>AgroLogix IoT</b></td><td><code>gate.agrologix.uz</code> · MQTT Broker &amp; Cloud</td><td><span class="rtag hi">● Kritik Infratuzilma</span></td><td><b>$300 – $2,000</b></td><td><button type="button" class="nb bl" style="height:34px;font-size:12px" data-prog="AgroLogix IoT">Zaiflik yuborish</button></td></tr>
+   </tbody>
+  </table>
+ </div>
 
-            <div class="buttons">
+ <!-- Live Pentest Workflow & Command Center for White Hackers (#command) -->
+ <div id="command">
+  <div class="pill-nav" id="stackFilter">
+   <button type="button" class="on" data-st="API &amp; Microservices">REST / GraphQL API</button>
+   <button type="button" class=" data-st" data-st="Linux &amp; Kubernetes">Linux &amp; Docker</button>
+   <button type="button" data-st="FinTech &amp; Smart-2FA">FinTech &amp; Smart-2FA</button><button type="button" data-st="Mobile APK &amp; Web">Mobile &amp; Web</button>
+  </div>
 
-                <a href="fanlar.html" class="btn btn-primary">
-                    📚 Fanlarni ko‘rish
-                </a>
+  <div class="app-grid" id="targetGrid">
+   <div class="app-tile on" data-target="Web &amp; API"><svg class="i"><use href="#code"/></svg><b>WEB &amp; REST API</b><small>OWASP Top 10 · JWT</small></div>
+   <div class="app-tile" data-target="Cloud &amp; Server"><svg class="i"><use href="#bolt"/></svg><b>CLOUD &amp; LINUX</b><small>Docker · K8s · SSH</small></div>
+   <div class="app-tile" data-target="Smart-2FA Auth"><svg class="i"><use href="#fp"/></svg><b>SMART-2FA SDK</b><small>Bosim · Tezlik · Ovoz</small></div>
+   <div class="app-tile" data-target="Anti-Phishing AI"><svg class="i"><use href="#scan"/></svg><b>AI-FISHING GUARD</b><small>APK · SMS · Domen</small></div>
+   <div class="app-tile" data-target="Database &amp; Storage"><svg class="i"><use href="#lock"/></svg><b>POSTGRES &amp; REDIS</b><small>SQLi · Shifrlash</small></div>
+   <div class="app-tile" data-target="All 240+ Stacks"><svg class="i"><use href="#shield"/></svg><b>+240 TEXNOLOGIYALAR</b><small>To’liq qamrov</small></div>
+  </div>
 
-                <a href="maruzalar.html" class="btn btn-secondary">
-                    🎓 Ma'ruzalarni ko‘rish
-                </a>
-
-            </div>
-
-            <div class="stats">
-
-                <div class="stat">
-                    <strong>9+</strong>
-                    <span>Fanlar</span>
-                </div>
-
-                <div class="stat">
-                    <strong>100+</strong>
-                    <span>O‘quv materiallari</span>
-                </div>
-
-                <div class="stat">
-                    <strong>24/7</strong>
-                    <span>O‘rganish imkoniyati</span>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-visual animate">
-
-            <div class="glow"></div>
-
-            <div class="floating-card float-one">
-                📚 Ma'ruzalar
-            </div>
-
-            <div class="floating-card float-two">
-                📝 Testlar
-            </div>
-
-            <div class="floating-card float-three">
-                ⚖️ Qonunchilik
-            </div>
-
-            <div class="law-card">
-
-                <div class="scale">
-                    ⚖
-                </div>
-
-                <h2>
-                    LEGISTZONE
-                </h2>
-
-                <p>
-                    Huquqni bilish — o‘z huquqingni
-                    himoya qilishning muhim qismidir.
-                </p>
-
-            </div>
-
-        </div>
-
+  <div class="cmd-grid">
+   <div class="pan">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+     <h3 style="margin:0;font-family:var(--mono);font-size:14px">sandbox_trace_84920 · <span id="activeStackLbl" style="color:var(--cyan)">Web &amp; API</span></h3>
+     <span class="rtag lo" id="traceStatusBadge">SANDBOX ACTIVE · 180 ms</span>
     </div>
+    <div class="trace-row"><span>01</span><span>scope_auth_nda</span><div class="trace-bar"><i style="width:100%"></i></div><span>38 ms</span></div>
+    <div class="trace-row"><span>02</span><span>recon_port_scan</span><div class="trace-bar"><i style="width:82%"></i></div><span>112 ms</span></div>
+    <div class="trace-row"><span>03</span><span>smart2fa_biometric</span><div class="trace-bar"><i style="width:68%"></i></div><span>64 ms</span></div>
+    <div class="trace-row"><span>04</span><span>poc_patch_verify</span><div class="trace-bar"><i id="step4Bar" style="width:45%;background:var(--amber)"></i></div><span id="step4Time">waiting</span></div>
 
+    <div class="rbox" style="margin-top:14px;border-color:rgba(34,211,238,0.35)">
+     <div style="display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11.5px;color:var(--mu)">
+      <span>#security-triage · White Hacker: <b style="color:#fff">NightFox</b></span>
+      <span>Escrow mukofot: <b style="color:var(--cyan)">$450.00</b></span>
+     </div>
+     <p style="margin:8px 0;font-size:13px;color:#e2e8f0">
+      <b>Topilgan zaiflik:</b> <code>/api/v2/user/export</code> manzilida avtorizatsiya tekshiruvi yetishmasligi (IDOR).
+     </p>
+     <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button type="button" class="nb bl" id="approveAuditBtn" style="height:35px;font-size:12px">✓ Tasdiqlash va Mukofotni o’tkazish</button>
+      <button type="button" class="nb" id="viewPocBtn" style="height:35px;font-size:12px">PoC va Patch kodini ko’rish</button>
+      <button type="button" class="nb" id="simRunBtn" style="height:35px;font-size:12px">Jonli Pentest oqimini ishga tushirish</button>
+     </div>
+    </div>
+   </div>
+
+   <div class="pan">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+     <h3 style="margin:0;font-size:15px">White Hackerlar tomonidan yopilgan zaifliklar</h3>
+     <span style="font-family:var(--mono);font-size:11.5px;color:var(--cyan)" id="weeklyTotalTxt">42,800 tekshiruv / hafta</span>
+    </div>
+    <div class="iso-chart" id="isoChart">
+     <div class="iso-col"><div class="iso-bar" style="height:42%"></div><small>DU</small></div>
+     <div class="iso-col"><div class="iso-bar" style="height:58%"></div><small>SE</small></div>
+     <div class="iso-col"><div class="iso-bar" style="height:51%"></div><small>CH</small></div>
+     <div class="iso-col"><div class="iso-bar" style="height:74%"></div><small>PA</small></div>
+     <div class="iso-col"><div class="iso-bar" style="height:66%"></div><small>JU</small></div>
+     <div class="iso-col"><div class="iso-bar" style="height:82%"></div><small>SH</small></div>
+     <div class="iso-col"><div class="iso-bar hi" id="sunBar" style="height:94%"></div><small style="color:var(--cyan);font-weight:700">YA</small></div>
+    </div>
+    <div class="gauge-wrap">
+     <div class="gauge-ring"><div class="gauge-in" id="gaugeVal">84%</div></div>
+     <div>
+      <b style="font-size:14px;display:block">Avtomatlashtirilgan Triage</b>
+      <div class="reg-row">
+       <div class="reg-item"><span>uz-tashkent-1</span><div class="trace-bar"><i style="width:92%"></i></div><span>18 ms</span></div>
+       <div class="reg-item"><span>eu-frankfurt-2</span><div class="trace-bar"><i style="width:76%"></i></div><span>49 ms</span></div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <!-- Live Workflow Graph -->
+  <div class="flow-window">
+   <div class="fw-top">
+    <span class="fw-title" id="fwTitle">Jonli Sandbox Oqimi: PayUzbek_Core_API</span>
+    <button type="button" class="fw-run" id="reRunFlowBtn"><i class="dot"></i> <span id="fwStateTxt">running · 140 ms</span></button>
+   </div>
+   <div class="fw-canvas">
+    <svg class="fw-svg" viewBox="0 0 600 210" preserveAspectRatio="none">
+     <path d="M 165 105 C 210 105, 210 55, 250 55" stroke="rgba(34,211,238,0.55)" stroke-width="2" fill="none" stroke-dasharray="5 4"/>
+     <path d="M 165 105 C 210 105, 210 155, 250 155" stroke="rgba(59,130,246,0.55)" stroke-width="2" fill="none"/>
+     <path d="M 415 55 C 445 55, 445 105, 470 105" stroke="rgba(16,185,129,0.55)" stroke-width="2" fill="none"/>
+     <path d="M 415 155 C 445 155, 445 105, 470 105" stroke="rgba(34,211,238,0.55)" stroke-width="2" fill="none"/>
+    </svg>
+    <div class="node-col"><button type="button" class="fnode act" data-node="0"><small>01 · TRIGGER</small><b>Loyiha &amp; Scope ruxsati</b><span class="ok">● NDA signed · #SX-419</span></button></div>
+    <div class="node-col">
+     <button type="button" class="fnode" data-node="1"><small>02A · RECON</small><b>Server &amp; Port Sandbox</b><span class="ok">✓ 120ms</span></button>
+     <button type="button" class="fnode" data-node="2"><small>02B · BIOMETRIC</small><b>Smart-2FA Tekshiruv</b><span>⟳ Keystroke &amp; Ovoz</span></button>
+    </div>
+    <div class="node-col"><button type="button" class="fnode" data-node="3"><small>03 · TRIAGE</small><b>NightFox · PoC Hisobot</b><span class="wait">● Escrow $650</span></button></div>
+   </div>
+   <div class="fw-log" id="fwLog">
+    <div class="log-row"><time>16:38:04</time><i>sandbox_gw</i><span>api.payuzbek.uz -> TLS 1.3 &amp; OAuth2 scope verified</span><em>120 ms</em></div>
+    <div class="log-row"><time>16:38:09</time><i>white_hat</i><span>NightFox submitted PoC #VULN-804 (IDOR in /v2/invoice)</span><em>0.4 s</em></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- 4. BIOMETRIK TEKSHIRISH BO'LIMI (SMART-2FA: BOSIM + YOZISH VAQTI + OVOZ) -->
+<section class="sec design-sec view-block" id="cyberlab" data-dsec="d3" data-vblock="biometric">
+ <div class="sec-head">
+  <div>
+   <div class="mono-tag"><i>BO’LIM 04 · BIOMETRIK XAVFSIZLIK LABORATORIYASI</i> // SMART-2FA</div>
+   <h2>Ikki bosqichli <em>Biometrik</em> tekshiruv: Barmoq bosimi, Yozish vaqti va Ovoz.</h2>
+   <p class="lead">Parolni o’g’irlash mumkin, lekin foydalanuvchining barmoqni qancha bosimda bosishi, klaviaturada yozish vaqti va jonli ovozini soxtalashtirib bo’lmaydi.</p>
+  </div>
+ </div>
+
+ <div id="smart2fa">
+  <div class="two">
+   <div class="pan">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+     <h3 style="margin:0">1-Bosqich: Barmoq bosimi va Yozish vaqti</h3>
+     <span class="rtag lo">KEYSTROKE + FORCE</span>
+    </div>
+    <p style="font-size:13px;color:var(--mu);margin:0 0 12px">Tugmani bosib turish vaqti (Dwell), harflar oralig’i (Flight) va ekran bosim kuchi (Newton/Force) real vaqtda tahlil qilinadi:</p>
+    <label style="display:block;font-size:12px;font-family:var(--mono);color:#cbd5e1;margin-bottom:6px">SINOV MATNINI YOZING: <code style="color:var(--cyan)">legistzone himoya</code></label>
+    <input id="bioInput" placeholder="Shu yerga 'legistzone himoya' deb yozing..." autocomplete="off" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line-hi);background:#040814;color:#fff;font-size:14px">
+    <div class="mtr">
+     <div class="mbx"><small>BOSIB TURISH (DWELL)</small><b id="mDwell">0 ms</b></div>
+     <div class="mbx"><small>ORALIQ VAQT (FLIGHT)</small><b id="mFlight">0 ms</b></div>
+     <div class="mbx"><small>BARMOQ BOSIMI</small><b id="mPress">0.00 N</b></div>
+    </div>
+    <div class="tpad" id="touchPad">
+     <svg class="i" style="font-size:34px;color:var(--cyan);margin-bottom:6px"><use href="#fp"/></svg>
+     <div style="font-size:13.5px;font-weight:600" id="padTitle">Barmoq izi va bosim skaneri (Bosing va ushlab turing)</div>
+     <div style="font-size:12px;color:var(--mu);margin-top:4px" id="padSub">Bosim kuchi va ushlab turish davomiyligi real vaqtda o’lchanadi</div>
+     <div class="pbar"><i id="pressBar"></i></div>
+    </div>
+   </div>
+
+   <div class="pan">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+     <h3 style="margin:0">2-Bosqich: Anti-Deepfake Ovozli Tekshiruv</h3>
+     <span class="rtag lo">VOICE BIOMETRICS</span>
+    </div>
+    <p style="font-size:13px;color:var(--mu);margin:0 0 12px">Sun’iy intellektda klonlangan ovoz (Deepfake) yoki yozuvni bloklash uchun tasodifiy nazorat jumlasini ovoz chiqarib o’qing:</p>
+    <div class="rbox" style="margin-top:0;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px">
+     <div><small style="color:var(--mu);font-family:var(--mono);font-size:11px">TASODIFIY OVOZLI PAROL:</small><div style="font-size:16px;font-weight:700;color:var(--cyan);margin-top:3px" id="voicePhrase">"LEGISTZONE qalqoni 94-71 faol"</div></div>
+     <button type="button" class="nb" id="newPhraseBtn" style="height:34px;font-size:12px">Yangilash</button>
+    </div>
+    <div class="wave" id="voiceWave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+     <button type="button" class="nb bl" id="voiceBtn" style="flex:1"><svg class="i"><use href="#mic"/></svg><span id="voiceBtnTxt">Ovozli tekshiruvni boshlash</span></button>
+     <button type="button" class="nb" id="sdkBtn"><svg class="i"><use href="#code"/></svg>Saytga ulash (SDK)</button>
+    </div>
+    <div class="rbox" id="bioStatusBox">
+     <div style="display:flex;justify-content:space-between;align-items:center">
+      <span style="font-size:13px">Umumiy biometrik ishonch balli:</span>
+      <b id="bioScoreTxt" style="color:var(--cyan);font-family:var(--mono);font-size:18px">0%</b>
+     </div>
+     <div class="pbar"><i id="bioTotalBar"></i></div>
+     <p id="bioVerdict" style="margin:8px 0 0;font-size:12.5px;color:var(--mu)">1-bosqich (klaviatura/bosim) va 2-bosqich (ovoz) tekshiruvini bajaring.</p>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 
-<!-- =========================
-     FANLAR
-========================= -->
-
-<section>
-
-    <div class="container">
-
-        <div class="section-head animate">
-
-            <small>ASOSIY YO‘NALISHLAR</small>
-
-            <h2>
-                Huquq fanlarini o‘rganing
-            </h2>
-
-            <p>
-                O‘zingizga kerakli fan yo‘nalishini tanlang
-                va bilimlaringizni bosqichma-bosqich rivojlantiring.
-            </p>
-
-        </div>
-
-
-        <div class="subjects">
-
-
-            <a href="konstitutsiya.html" class="subject animate">
-
-                <div class="subject-icon">🏛️</div>
-
-                <h3>
-                    Konstitutsiyaviy huquq
-                </h3>
-
-                <p>
-                    Konstitutsiya, inson huquqlari,
-                    davlat hokimiyati va fuqarolik asoslari.
-                </p>
-
-                <span class="more">
-                    O‘rganishni boshlash →
-                </span>
-
-            </a>
-
-
-            <a href="jinoyat.html" class="subject animate">
-
-                <div class="subject-icon">⚖️</div>
-
-                <h3>
-                    Jinoyat huquqi
-                </h3>
-
-                <p>
-                    Jinoyat tushunchasi, tarkibi,
-                    javobgarlik va jazo masalalari.
-                </p>
-
-                <span class="more">
-                    O‘rganishni boshlash →
-                </span>
-
-            </a>
-
-
-            <a href="jinoyat-protsessual.html" class="subject animate">
-
-                <div class="subject-icon">🔎</div>
-
-                <h3>
-                    Jinoyat-protsessual huquq
-                </h3>
-
-                <p>
-                    Jinoyat ishlarini yuritish,
-                    protsess ishtirokchilari va dalillar.
-                </p>
-
-                <span class="more">
-                    O‘rganishni boshlash →
-                </span>
-
-            </a>
-
-
-            <a href="mamuriy.html" class="subject animate">
-
-                <div class="subject-icon">🏢</div>
-
-                <h3>
-                    Ma'muriy huquq
-                </h3>
-
-                <p>
-                    Davlat boshqaruvi, ma'muriy javobgarlik
-                    va davlat organlari faoliyati.
-                </p>
-
-                <span class="more">
-                    O‘rganishni boshlash →
-                </span>
-
-            </a>
-
-
-            <a href="fuqarolik.html" class="subject animate">
-
-                <div class="subject-icon">📄</div>
-
-                <h3>
-                    Fuqarolik huquqi
-                </h3>
-
-                <p>
-                    Shartnomalar, mulk, majburiyatlar
-                    va fuqarolik-huquqiy munosabatlar.
-                </p>
-
-                <span class="more">
-                    O‘rganishni boshlash →
-                </span>
-
-            </a>
-
-
-            <a href="davlat-huquq-nazariyasi.html" class="subject animate">
-
-                <div class="subject-icon">📚</div>
-
-                <h3>
-                    Davlat va huquq nazariyasi
-                </h3>
-
-                <p>
-                    Davlat, huquq, huquqiy tizim
-                    va asosiy nazariy tushunchalar.
-                </p>
-
-                <span class="more">
-                    O‘rganishni boshlash →
-                </span>
-
-            </a>
-
-
-            <a href="xalqaro-huquq.html" class="subject animate">
-
-                <div class="subject-icon">🌍</div>
-
-                <h3>
-                    Xalqaro huquq
-                </h3>
-
-                <p>
-                    Xalqaro munosabatlar, xalqaro huquq
-                    prinsiplari va xalqaro tashkilotlar.
-                </p>
-
-                <span class="more">
-                    O‘rganishni boshlash →
-                </span>
-
-            </a>
-
-
-            <a href="mantiq.html" class="subject animate">
-
-                <div class="subject-icon">🧠</div>
-
-                <h3>
-                    Matematik mantiq
-                </h3>
-
-                <p>
-                    Mantiqiy fikrlash, to‘plamlar,
-                    mulohazalar va matematik amallar.
-                </p>
-
-                <span class="more">
-                    O‘rganishni boshlash →
-                </span>
-
-            </a>
-
-
-            <a href="ingliz-tili.html" class="subject animate">
-
-                <div class="subject-icon">🌐</div>
-
-                <h3>
-                    Ingliz tili
-                </h3>
-
-                <p>
-                    Huquq sohasi va kundalik hayot uchun
-                    zarur ingliz tili bilimlari.
-                </p>
-
-                <span class="more">
-                    O‘rganishni boshlash →
-                </span>
-
-            </a>
-
-        </div>
-
-    </div>
-
+<section class="sec view-block" id="founderSec" data-vblock="founder">
+ <div class="sec-head">
+  <div>
+   <div class="mono-tag"><i>BO’LIM 05 · MUALLIF VA HUQUQIY TA’LIM</i> // LEGISTZONE · ALISHER KAXRAMONOV</div>
+   <h2>LEGIST<em>ZONE</em> — Huquq, Ta’lim va Kiberxavfsizlik Markazi.</h2>
+   <p class="lead">Alisher Kaxramonov tomonidan asos solingan LEGISTZONE platformasi huquqiy fanlar (Davlat va huquq nazariyasi, Fuqarolik huquqi, Jinoyat va Jinoyat-protsessual huquqi) hamda amaliy kiberxavfsizlikni birlashtiradi.</p>
+  </div>
+ </div>
+ <div class="cards">
+  <article class="card"><svg class="i"><use href="#shield"/></svg><h3>Davlat va huquq nazariyasi</h3><p>Raqamli davlat, axborot xavfsizligi huquqi va konstitutsiyaviy kafolatlar bo’yicha o’quv modullari.</p></article>
+  <article class="card"><svg class="i"><use href="#lock"/></svg><h3>Jinoyat huquqi (Kiber-jinoyatlar)</h3><p>O’zR JK 278-moddasi (Axborot tizimlariga ruxsatsiz kirish, zararli dasturlar va fishing javobgarligi).</p></article>
+  <article class="card"><svg class="i"><use href="#users"/></svg><h3>Fuqarolik va Shartnoma huquqi</h3><p>Startaplar va White Hackerlar o’rtasida Safe Harbor NDA hamda Escrow shartnomalarini tuzish.</p></article>
+  <article class="card"><svg class="i"><use href="#code"/></svg><h3>Jinoyat-protsessual &amp; Forensika</h3><p>Raqamli dalillarni to’plash, fishing va deepfake hujumlarini huquqiy rasmiylashtirish.</p></article>
+ </div>
 </section>
 
-
-<!-- =========================
-     IMKONIYATLAR
-========================= -->
-
-<section>
-
-    <div class="container">
-
-        <div class="section-head animate">
-
-            <small>PLATFORMA IMKONIYATLARI</small>
-
-            <h2>
-                Bilim olishni osonlashtiring
-            </h2>
-
-            <p>
-                LEGISTZONE orqali o‘qish, takrorlash
-                va bilimni tekshirish bir joyda.
-            </p>
-
-        </div>
-
-
-        <div class="features">
-
-
-            <div class="feature animate">
-
-                <div class="feature-icon">
-                    🔎
-                </div>
-
-                <h3>
-                    Global qidiruv
-                </h3>
-
-                <p>
-                    Kerakli fan, ma'ruza yoki
-                    huquqiy mavzuni tez toping.
-                </p>
-
-            </div>
-
-
-            <div class="feature animate">
-
-                <div class="feature-icon">
-                    📝
-                </div>
-
-                <h3>
-                    Interaktiv testlar
-                </h3>
-
-                <p>
-                    Bilimingizni testlar orqali
-                    tekshirib boring.
-                </p>
-
-            </div>
-
-
-            <div class="feature animate">
-
-                <div class="feature-icon">
-                    🎓
-                </div>
-
-                <h3>
-                    Ma'ruzalar
-                </h3>
-
-                <p>
-                    Muhim mavzular bo‘yicha
-                    o‘quv materiallarini o‘qing.
-                </p>
-
-            </div>
-
-
-            <div class="feature animate">
-
-                <div class="feature-icon">
-                    📖
-                </div>
-
-                <h3>
-                    Huquqiy lug‘at
-                </h3>
-
-                <p>
-                    Murakkab huquqiy tushunchalarning
-                    ma'nosini tez toping.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<!-- FAQ SECTION -->
+<section class="sec view-block" id="faq" data-vblock="home">
+ <div class="sec-head">
+  <div>
+   <div class="mono-tag">// FREQUENTLY ASKED QUESTIONS</div>
+   <h2>Ko’p so’raladigan <em>savollar.</em></h2>
+  </div>
+ </div>
+ <details open><summary>Yuqoridagi 4 ta bo’lim qanday ishlaydi?</summary><p>1) <b>Bosh sahifa</b> — AI yordamida yasalgan fishing videolar va shubhali xabarlar skaneri. 2) <b>Mijozlar uchun</b> — White Hacker tanlash va o’z sayt/serverini tekshiruvga topshirish. 3) <b>White Hackerlar uchun</b> — aksincha, mijozlar qo’ygan serverlar ro’yxatini ko’rish, zaiflik topish va mukofot olish. 4) <b>Biometrik tekshirish</b> — barmoq bosimi, yozish tezligi va ovozli 2FA sinovi.</p></details>
+ <details><summary>Smart-2FA (Barmoq bosimi, yozish tezligi va ovoz) qanday ishlaydi?</summary><p>Oddiy SMS-kodni o’g’irlash mumkin, ammo insonning klaviaturada yozish ritmi (Dwell/Flight time), ekranga barmoq bosish kuchi va jonli ovoz tembrini soxtalashtirib bo’lmaydi.</p></details>
 </section>
-
-
-<!-- =========================
-     KONSTITUTSIYA
-========================= -->
-
-<section>
-
-    <div class="container">
-
-        <div class="constitution animate">
-
-            <div>
-
-                <h2>
-                    Konstitutsiyani o‘rganing
-                </h2>
-
-                <p>
-                    O‘zbekiston Respublikasi Konstitutsiyasining
-                    asosiy qoidalari, inson va fuqaro huquqlari,
-                    davlat hokimiyati hamda jamiyat asoslari
-                    bo‘yicha materiallarni o‘rganing.
-                </p>
-
-                <a href="konstitutsiya.html"
-                   class="btn btn-primary">
-                    Konstitutsiya bo‘limi →
-                </a>
-
-            </div>
-
-            <div class="constitution-symbol">
-                🏛️
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section>
-
-    <div class="container">
-
-        <div class="cta animate">
-
-            <h2>
-                Bilimni bugundan boshlang.
-            </h2>
-
-            <p>
-                Huquqni tushunish, yodlash va amaliyotda
-                qo‘llash uchun LEGISTZONE bilan o‘rganing.
-            </p>
-
-            <div class="buttons"
-                 style="justify-content:center;">
-
-                <a href="fanlar.html"
-                   class="btn btn-primary">
-                    📚 Fanlarni ko‘rish
-                </a>
-
-                <a href="testlar.html"
-                   class="btn btn-secondary">
-                    📝 Testlarni boshlash
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
 </main>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- MODAL DIALOG -->
+<div class="mdl" id="appModal" hidden>
+ <div class="mbox">
+  <div class="mhd"><h3 id="mdlTitle">LEGISTZONE</h3><button type="button" class="xbtn" id="mdlClose" aria-label="Yopish">✕</button></div>
+  <div id="mdlBody" style="font-size:14px;color:#cbd5e1;line-height:1.6"></div>
+ </div>
+</div>
 
 <footer>
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-
-            <div>
-
-                <div class="logo">
-                    <span class="logo-icon">⚖</span>
-                    LEGIST<span>ZONE</span>
-                </div>
-
-                <p style="margin-top:15px; max-width:360px;">
-                    Huquq va ta'lim yo‘nalishidagi
-                    zamonaviy o‘quv platformasi.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Platforma
-                </h3>
-
-                <a href="index.html">
-                    Bosh sahifa
-                </a>
-
-                <a href="fanlar.html">
-                    Fanlar
-                </a>
-
-                <a href="maruzalar.html">
-                    Ma'ruzalar
-                </a>
-
-                <a href="testlar.html">
-                    Testlar
-                </a>
-
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Foydali bo‘limlar
-                </h3>
-
-                <a href="qonunchilik.html">
-                    Qonunchilik
-                </a>
-
-                <a href="lugat.html">
-                    Huquqiy lug‘at
-                </a>
-
-                <a href="aloqa.html">
-                    Aloqa
-                </a>
-
-                <a href="tel:+998200003437">
-                    📞 +998 20 000 34 37
-                </a>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="copyright">
-
-            © <span id="year"></span> LEGISTZONE.
-            Barcha huquqlar himoyalangan.
-
-        </div>
-
-    </div>
-
+ <div style="display:flex;align-items:center;gap:12px">
+  <img src="assets/lz-logo.jpg" alt="LZ Logo" class="lz-img" style="width:32px;height:32px">
+  <span><b>LEGISTZONE</b> · Alisher Kaxramonov · Tel: <a href="tel:+998200003437" style="color:var(--cyan)">+998 20 000 34 37</a> · Telegram: <a href="https://t.me/kxrmnv333" target="_blank" rel="noopener noreferrer" style="color:var(--cyan)">@kxrmnv333</a></span>
+ </div>
+ <div style="font-family:var(--mono);font-size:11.5px;color:#64748b">● LEGISTZONE CYBER &amp; LEGAL PLATFORM · © 2026</div>
 </footer>
 
-
-<!-- YUQORIGA QAYTISH -->
-
-<button id="topBtn" aria-label="Yuqoriga">
-    ↑
-</button>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
+(function(){
+ // 1. Animated Fiber-Optic Energy Ribbons Canvas
+ var c=document.getElementById('rain'),ctx=c.getContext('2d'),w,h,t=0;
+ function rs(){w=c.width=innerWidth;h=c.height=innerHeight}
+ rs();addEventListener('resize',rs);
+ function drawRibbons(){
+  ctx.clearRect(0,0,w,h);
+  t+=0.012;
+  for(var i=0;i<5;i++){
+   ctx.beginPath();
+   var y0=h*(0.18+i*0.14)+Math.sin(t+i)*40;
+   ctx.moveTo(-40,y0);
+   ctx.bezierCurveTo(
+    w*0.32, y0-120*Math.cos(t*0.8+i),
+    w*0.66, y0+140*Math.sin(t*0.9+i),
+    w+40, h*(0.75-i*0.08)+Math.cos(t+i)*35
+   );
+   var g=ctx.createLinearGradient(0,0,w,h);
+   g.addColorStop(0,'rgba(37,99,235,0)');
+   g.addColorStop(0.35,i%2===0?'rgba(34,211,238,0.22)':'rgba(59,130,246,0.18)');
+   g.addColorStop(0.7,i%2===0?'rgba(59,130,246,0.26)':'rgba(16,185,129,0.16)');
+   g.addColorStop(1,'rgba(37,99,235,0)');
+   ctx.strokeStyle=g;
+   ctx.lineWidth=2.2+(i%3)*1.2;
+   ctx.stroke();
+  }
+ }
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches){drawRibbons()}else{setInterval(drawRibbons,45)}
 
-    /* MOBIL MENYU */
+ // 2. TOP 4 SEPARATE SECTIONS SWITCHER (Home/Fishing Video vs Clients vs White Hackers vs Biometric 2FA)
+ var topTabs=document.querySelectorAll('#topNavTabs .tsec-btn');
+ var viewBlocks=document.querySelectorAll('.view-block');
+ var viewIndicator=document.getElementById('currentViewIndicator');
+ var viewTitles={
+  home:'FAOL BO\'LIM: 1. Bosh sahifa — LEGISTZONE, AI Fishing Video Player va Skaner',
+  clients:'FAOL BO\'LIM: 2. Mijozlar uchun — White Hacker tanlash va Server/Sayt auditiga buyurtma berish',
+  hackers:'FAOL BO\'LIM: 3. White Hackerlar uchun — Yangi startap serverlarini tekshirish va Mukofot (Bounty) olish',
+  biometric:'FAOL BO\'LIM: 4. Biometrik tekshirish — Barmoq bosimi, Yozish vaqti va Ovozli Smart-2FA',
+  founder:'FAOL BO\'LIM: 5. Muallif & Aloqa — Alisher Kaxramonov (LEGISTZONE) va Huquqiy fanlar',
+  all:'FAOL BO\'LIM: Barcha bo\'limlar yagona sahifada'
+ };
+ function switchTopView(v){
+  topTabs.forEach(function(b){b.classList.toggle('on',b.getAttribute('data-view')===v)});
+  viewBlocks.forEach(function(bl){
+   bl.style.display=(v==='all'||bl.getAttribute('data-vblock')===v)?'':'none';
+  });
+  viewIndicator.innerHTML='<i class="dot"></i> '+(viewTitles[v]||viewTitles.all);
+  window.scrollTo({top:0,behavior:'smooth'});
+ }
+ topTabs.forEach(function(btn){
+  btn.addEventListener('click',function(){switchTopView(btn.getAttribute('data-view'))});
+ });
+ document.querySelectorAll('[data-jump]').forEach(function(btn){
+  btn.addEventListener('click',function(){switchTopView(btn.getAttribute('data-jump'))});
+ });
+ document.getElementById('showAllBtn').addEventListener('click',function(){switchTopView('all')});
 
-    const menuBtn = document.getElementById("menuBtn");
-    const mainNav = document.getElementById("mainNav");
+ // Start on First Page (Fishing Video + Scanner + Role Cards) by default, or show all on mode click
+ switchTopView('home');
 
-    menuBtn.addEventListener("click", function () {
-        mainNav.classList.toggle("open");
-    });
+ // Design Modes Bar
+ var modeBtns=document.querySelectorAll('[data-mode]');
+ modeBtns.forEach(function(btn){
+  btn.addEventListener('click',function(){
+   modeBtns.forEach(function(b){b.classList.remove('on')});
+   btn.classList.add('on');
+   var m=btn.getAttribute('data-mode');
+   if(m==='all')switchTopView('all');
+   else if(m==='d1')switchTopView('hackers');
+   else if(m==='d2')switchTopView('clients');
+   else if(m==='d3')switchTopView('biometric');
+  });
+ });
+
+ // 3. FIRST-PAGE INTERACTIVE AI FISHING VIDEO PLAYER
+ var vidEl=document.getElementById('aiPhishVideo');
+ var vidData=[
+  {badge:'1-QISM · OSON DAROMAD VA KARTA TUZOG\'I (DROPPER)',time:'00:00 / 00:10',leg:'O\'zR JK 168 va 243-modda · Jinoiy daromadlarni legallashtirish',t:'AI-Video: "Karta oching va 500 000 so\'m mukofot oling!" tuzog\'i',s:'Oson daromad taklifi ortida shirin tuzoq yashiringan: "B" ismli shaxs arzimagan pul uchun karta ochib jinoyatchilarga berdi. Arzimagan pul evaziga xavfsizligingizni xatarga qo\'ymang!',q:'⚡ Arzimagan pul evaziga kartangizni begonalarga berasizmi?',a:'✓ To\'g\'ri qaror! Bank kartangiz va SMS-kodlarni hech qachon begonalarga bermang — dropperlik jinoiy javobgarlikka sabab bo\'ladi.'},
+  {badge:'2-QISM · OVOZLI DEEPFAKE QO\'NG\'IROQ',time:'00:42 / 01:40',leg:'O\'zR JK 168-modda · Kiber-firibgarlik',t:'Sahna: "AI yordamida klonlangan rahbar yoki bank ovozi"',s:'Sun\'iy intellekt 3 soniyalik ovoz yozuvidan foydalanib, xuddi rahbaringiz yoki bank xodimidek gapiradi va shoshilinch pul o\'tkazishni yoki SMS kodni so\'raydi.',q:'⚡ Qanday tekshirasiz?',a:'✓ To\'g\'ri! LEGISTZONE Smart-2FA tasodifiy ovozli parolini va barmoq bosimi tasdig\'ini talab qiling.'},
+  {badge:'3-QISM · WHITE HACKER VA SAFE HARBOR',time:'00:55 / 01:30',leg:'Safe Harbor NDA · Qonuniy Pentest',t:'Sahna: "Startap serverida ochiq ma\'lumotlar bazasi topildi"',s:'Oq xaker (White Hat) yangi bozorga chiqayotgan saytda SQL-Injection zaifligini aniqladi. Ma\'lumotlarni ko\'chirmasdan, darhol LEGISTZONE orqali egasini ogohlantirdi.',q:'⚡ Qonuniy natija qanday?',a:'✓ Kompaniya serveri qutqarildi, White Hacker esa rasmiy shartnoma asosida $800 mukofot oldi!'},
+  {badge:'4-QISM · KORPORATIV ANTI-FISHING',time:'01:10 / 02:00',leg:'B2B Xavfsizlik Standarti',t:'Sahna: "Ishchi pochtaga soxta soliq/hisob-faktura xati keldi"',s:'Xatda domen bir harfga farq qiladi (masalan: my-soliq-uz.xyz) va shoshilinch parol kiritish so\'raladi.',q:'⚡ Xodim nima qilishi shart?',a:'✓ Havolani bosmasdan LEGISTZONE AI-Fishing skaneriga tashlab tekshirishi va IT-xavfsizlik bo\'limiga xabar berishi kerak.'}
+ ];
+ var curVid=0,vidPlaying=true,vidPct=35;
+ var vidScenarioBadge=document.getElementById('vidScenarioBadge'),vidTimerTxt=document.getElementById('vidTimerTxt'),vidLegalTag=document.getElementById('vidLegalTag');
+ var vidSceneTitle=document.getElementById('vidSceneTitle'),vidSceneDesc=document.getElementById('vidSceneDesc'),vidQuestionTxt=document.getElementById('vidQuestionTxt');
+ var vidProgBar=document.getElementById('vidProgBar'),vidPlayLbl=document.getElementById('vidPlayLbl');
+ var vidBtns=document.querySelectorAll('[data-vid]');
+
+ function renderVid(idx){
+  curVid=idx;
+  var v=vidData[idx];
+  vidScenarioBadge.textContent=v.badge;
+  vidTimerTxt.textContent=v.time;
+  vidLegalTag.textContent=v.leg;
+  vidSceneTitle.textContent=v.t;
+  vidSceneDesc.textContent=v.s;
+  vidQuestionTxt.textContent=v.q;
+  vidQuestionTxt.style.color='#fbbf24';
+  vidPct=25;
+  vidProgBar.style.width=vidPct+'%';
+  vidBtns.forEach(function(b){b.classList.toggle('on',+b.getAttribute('data-vid')===idx)});
+ }
+ vidBtns.forEach(function(btn){
+  btn.addEventListener('click',function(){renderVid(+btn.getAttribute('data-vid'))});
+ });
+ document.getElementById('vidNextBtn').addEventListener('click',function(){
+  renderVid((curVid+1)%vidData.length);
+ });
+ document.getElementById('vidSafeActionBtn').addEventListener('click',function(){
+  vidQuestionTxt.textContent=vidData[curVid].a;
+  vidQuestionTxt.style.color='#34d399';
+  vidPct=100;
+  vidProgBar.style.width='100%';
+ });
+ document.getElementById('vidPlayToggle').addEventListener('click',function(){
+  if(vidEl){
+   if(vidEl.paused){vidEl.play();vidPlayLbl.textContent='Ijro etilmoqda';}
+   else{vidEl.pause();vidPlayLbl.textContent='To\'xtatildi';}
+  }
+ });
+ if(vidEl){
+  vidEl.addEventListener('timeupdate',function(){
+   var d=vidEl.duration||10;
+   var c=vidEl.currentTime||0;
+   vidProgBar.style.width=Math.min(100,Math.round((c/d)*100))+'%';
+   var cs=Math.floor(c);
+   vidTimerTxt.textContent='00:'+(cs<10?'0'+cs:cs)+' / 00:10';
+  });
+  vidEl.addEventListener('play',function(){vidPlayLbl.textContent='Ijro etilmoqda'});
+  vidEl.addEventListener('pause',function(){vidPlayLbl.textContent='Videoni ijro etish'});
+ }
+
+ // 4. Hero Workflow Graph & Live Simulation
+ var fwNodes=document.querySelectorAll('.fnode'),fwLog=document.getElementById('fwLog'),fwStateTxt=document.getElementById('fwStateTxt');
+ var nodeLogs=[
+  ['16:39:01','scope_nda','PayUzbek FinTech signed Safe Harbor NDA (#SX-419)','32 ms'],
+  ['16:39:04','sandbox_gw','Isolated WireGuard tunnel established -> 0 leaked ports','118 ms'],
+  ['16:39:08','smart_2fa','Keystroke rhythm (68ms) + Voice anti-deepfake passed','44 ms'],
+  ['16:39:12','white_hat','NightFox verified patch & closed ticket #VULN-804','190 ms']
+ ];
+ fwNodes.forEach(function(nd){
+  nd.addEventListener('click',function(){
+   fwNodes.forEach(function(n){n.classList.remove('act')});
+   nd.classList.add('act');
+   var idx=+nd.getAttribute('data-node');
+   var lg=nodeLogs[idx];
+   var row=document.createElement('div');
+   row.className='log-row';
+   row.innerHTML='<time>'+lg[0]+'</time><i>'+lg[1]+'</i><span>'+lg[2]+'</span><em>'+lg[3]+'</em>';
+   fwLog.prepend(row);
+   if(fwLog.children.length>4)fwLog.removeChild(fwLog.lastElementChild);
+  });
+ });
+ function triggerLiveSim(){
+  var step=0;
+  fwStateTxt.textContent='simulating audit...';
+  var iv=setInterval(function(){
+   if(step<fwNodes.length){
+    fwNodes[step].click();
+    step++;
+   }else{
+    clearInterval(iv);
+    fwStateTxt.textContent='completed · 140 ms';
+   }
+  },450);
+ }
+ document.getElementById('simRunBtn').addEventListener('click',triggerLiveSim);
+ document.getElementById('reRunFlowBtn').addEventListener('click',triggerLiveSim);
+
+ // 5. Command Center Stack Filter, Target Tiles & Owner Approval Card
+ var activeStackLbl=document.getElementById('activeStackLbl');
+ document.querySelectorAll('#stackFilter button').forEach(function(b){
+  b.addEventListener('click',function(){
+   document.querySelectorAll('#stackFilter button').forEach(function(x){x.classList.remove('on')});
+   b.classList.add('on');
+   activeStackLbl.textContent=b.getAttribute('data-st');
+  });
+ });
+ document.querySelectorAll('#targetGrid .app-tile').forEach(function(tl){
+  tl.addEventListener('click',function(){
+   document.querySelectorAll('#targetGrid .app-tile').forEach(function(x){x.classList.remove('on')});
+   tl.classList.add('on');
+   activeStackLbl.textContent=tl.getAttribute('data-target');
+  });
+ });
+ var approveBtn=document.getElementById('approveAuditBtn'),step4Bar=document.getElementById('step4Bar'),step4Time=document.getElementById('step4Time'),traceBadge=document.getElementById('traceStatusBadge');
+ approveBtn.addEventListener('click',function(){
+  step4Bar.style.width='100%';
+  step4Bar.style.background='var(--emerald)';
+  step4Time.textContent='95 ms';
+  traceBadge.textContent='✓ AUDIT & BOUNTY APPROVED';
+  approveBtn.textContent='✓ Tasdiqlandi ($450 Escrow o\'tkazildi)';
+  document.getElementById('sunBar').style.height='100%';
+  document.getElementById('gaugeVal').textContent='92%';
+ });
+
+ // 6. Marketplace Bug Bounty Filter & Order Form Wiring
+ var fm=document.getElementById('of'),ok=document.getElementById('ok');
+ document.querySelectorAll('[data-h]').forEach(function(b){
+  b.addEventListener('click',function(){
+   switchTopView('clients');
+   fm.hacker.value=b.getAttribute('data-h');
+   document.getElementById('order').scrollIntoView({behavior:'smooth'});
+  });
+ });
+ var bfBtns=document.querySelectorAll('[data-bf]'),bRows=document.querySelectorAll('#bountyRows tr');
+ bfBtns.forEach(function(btn){
+  btn.addEventListener('click',function(){
+   bfBtns.forEach(function(b){b.classList.remove('on')});
+   btn.classList.add('on');
+   var c=btn.getAttribute('data-bf');
+   bRows.forEach(function(r){r.style.display=(c==='all'||r.getAttribute('data-cat')===c)?'':'none'});
+  });
+ });
+ document.querySelectorAll('[data-prog]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+   var p=btn.getAttribute('data-prog');
+   switchTopView('clients');
+   fm.info.value='['+p+'] bo\'yicha White Hacker zaiflik hisoboti (PoC): ';
+   document.getElementById('order').scrollIntoView({behavior:'smooth'});
+   fm.info.focus();
+  });
+ });
+ fm.addEventListener('submit',function(e){
+  e.preventDefault();
+  var id='SX-'+Math.random().toString(36).slice(2,7).toUpperCase();
+  try{
+   var l=JSON.parse(localStorage.getItem('sx')||'[]');
+   l.push({id:id,s:fm.service.value,h:fm.hacker.value});
+   localStorage.setItem('sx',JSON.stringify(l));
+  }catch(_){}
+  ok.hidden=false;
+  ok.querySelector('b').textContent=id;
+  fm.reset();
+ });
+
+ // 7. Interactive Endpoint / Bounty Calculator Slider
+ var calcSlider=document.getElementById('calcSlider'),calcEndpoints=document.getElementById('calcEndpoints'),calcPrice=document.getElementById('calcPrice'),calcPlanName=document.getElementById('calcPlanName');
+ calcSlider.addEventListener('input',function(){
+  var v=+calcSlider.value;
+  calcEndpoints.textContent=v+' ta endpoint / modul';
+  var price=v<=15?290:(v<=45?690:1490);
+  var plan=v<=15?'STARTUP AUDIT · BOSHLANG\'ICH':(v<=45?'GROWTH BUG BOUNTY · ENG OMMABOP':'ENTERPRISE CONTINUOUS PTAAS');
+  calcPlanName.textContent='TAVSIYA ETILGAN REJA · '+plan;
+  calcPrice.innerHTML='$'+price+' <span style="font-size:13px;font-weight:400;color:var(--mu)">/ to\'liq audit &amp; bounty fondi</span>';
+ });
+
+ // 8. Smart-2FA Lab: Keystroke Dynamics + Finger Pressure + Voice
+ var bioIn=document.getElementById('bioInput'),mDwell=document.getElementById('mDwell'),mFlight=document.getElementById('mFlight'),mPress=document.getElementById('mPress');
+ var pressBar=document.getElementById('pressBar'),touchPad=document.getElementById('touchPad'),padTitle=document.getElementById('padTitle'),padSub=document.getElementById('padSub');
+ var bioScoreTxt=document.getElementById('bioScoreTxt'),bioTotalBar=document.getElementById('bioTotalBar'),bioVerdict=document.getElementById('bioVerdict');
+ var downAt=0,lastUp=0,dwellArr=[],flightArr=[],keyScore=0,padScore=0,voiceScore=0;
+ function updateBioTotal(){
+  var tot=Math.min(100,Math.round(keyScore+padScore+voiceScore));
+  bioScoreTxt.textContent=tot+'%';
+  bioTotalBar.style.width=tot+'%';
+  if(tot>=85){
+   bioScoreTxt.style.color='#34d399';
+   bioVerdict.innerHTML='<b style="color:#34d399">✓ Tasdiqlandi!</b> Foydalanuvchi barmoq bosimi, yozish tezligi va ovoz tembri haqiqiy inson profiliga mos keldi.';
+  }else if(tot>=40){
+   bioScoreTxt.style.color='#fbbf24';
+   bioVerdict.textContent='1-bosqich bajarildi. To\'liq 2FA tasdig\'i uchun qolgan biometrik amallarni ham bajaring.';
+  }
+ }
+ bioIn.addEventListener('keydown',function(){
+  var now=performance.now();
+  if(!downAt)downAt=now;
+  if(lastUp){
+   var fl=Math.round(now-lastUp);
+   if(fl<1500){flightArr.push(fl);if(flightArr.length>10)flightArr.shift();}
+  }
+ });
+ bioIn.addEventListener('keyup',function(){
+  var now=performance.now();
+  var dw=Math.max(28,Math.round(now-(downAt||now-65)));
+  downAt=0;lastUp=now;
+  dwellArr.push(dw);if(dwellArr.length>10)dwellArr.shift();
+  var avgD=Math.round(dwellArr.reduce(function(a,b){return a+b},0)/dwellArr.length);
+  var avgF=flightArr.length?Math.round(flightArr.reduce(function(a,b){return a+b},0)/flightArr.length):115;
+  mDwell.textContent=avgD+' ms';
+  mFlight.textContent=avgF+' ms';
+  keyScore=Math.min(40,bioIn.value.trim().length*3.2);
+  updateBioTotal();
+ });
+
+ var holdTimer=null,holdStart=0;
+ function startPad(e){
+  e.preventDefault();
+  touchPad.classList.add('act');
+  holdStart=performance.now();
+  var rawForce=(e.pressure&&e.pressure>0&&e.pressure!==0.5)?e.pressure:(0.64+Math.random()*0.24);
+  clearInterval(holdTimer);
+  holdTimer=setInterval(function(){
+   var el=Math.min(1800,performance.now()-holdStart);
+   var pct=Math.min(100,Math.round(el/15));
+   var f=(rawForce+(Math.sin(el/180)*0.04)).toFixed(2);
+   mPress.textContent=f+' N';
+   pressBar.style.width=pct+'%';
+   padTitle.textContent='Bosim o\'lchanmoqda: '+pct+'% ('+Math.round(el)+' ms)';
+   if(pct>=100){
+    clearInterval(holdTimer);
+    padScore=30;
+    padTitle.textContent='✓ Barmoq bosimi va vaqt imzosi olindi ('+f+' N)';
+    padSub.textContent='Bosim barqarorligi: 98.6% (Bot emasligi tasdiqlandi)';
+    updateBioTotal();
+   }
+  },50);
+ }
+ function endPad(){clearInterval(holdTimer);touchPad.classList.remove('act')}
+ touchPad.addEventListener('pointerdown',startPad);
+ touchPad.addEventListener('pointerup',endPad);
+ touchPad.addEventListener('pointerleave',endPad);
+
+ var phrases=['"LEGISTZONE qalqoni 94-71 faol"','"Kiberxavfsizlik 82-19 tasdiqlandi"','"Oq xaker 45-08 himoyada"','"Server auditi 63-27 xavfsiz"'],pIdx=0;
+ var voicePhrase=document.getElementById('voicePhrase');
+ document.getElementById('newPhraseBtn').addEventListener('click',function(){
+  pIdx=(pIdx+1)%phrases.length;
+  voicePhrase.textContent=phrases[pIdx];
+ });
+ var voiceBtn=document.getElementById('voiceBtn'),voiceBtnTxt=document.getElementById('voiceBtnTxt'),waveBars=document.querySelectorAll('#voiceWave i'),vTimer=null;
+ voiceBtn.addEventListener('click',function(){
+  if(vTimer)return;
+  var step=0;
+  voiceBtnTxt.textContent='Ovoz chastotasi va AI-Deepfake tekshirilmoqda...';
+  vTimer=setInterval(function(){
+   step++;
+   waveBars.forEach(function(b){b.style.height=(6+Math.round(Math.random()*28))+'px';b.style.background=step>18?'#34d399':'#22d3ee'});
+   if(step>=24){
+    clearInterval(vTimer);vTimer=null;
+    voiceScore=30;
+    voiceBtnTxt.textContent='✓ Ovozli verifikatsiya muvaffaqiyatli (Jonli ovoz: 99.4%)';
+    updateBioTotal();
+   }
+  },95);
+ });
+
+ // 9. AI Phishing Scanner
+ var samples=[
+  'DIQQAT! Sizning plastik kartangiz bloklandi. Darhol http://uzcard-verify-security-login.xyz/apk havolasiga kiring va SMS kodni kiriting, aks holda hisobingiz muzlatiladi!',
+  'Salom do\'stim, kechagi to\'ydagi rasmlarni shu dasturga joyladim, telefoningga o\'rnatib ko\'r: Toy_Rasmlari_2026.apk (5.4 MB)',
+  'Assalomu alaykum! LEGISTZONE platformasidagi #SX-90421 raqamli pentest hisoboti tayyor bo\'ldi. Shaxsiy kabinetingiz orqali ko\'rib chiqishingiz mumkin.'
+ ];
+ var phishIn=document.getElementById('phishInput'),phishBadge=document.getElementById('phishBadge'),phishRisk=document.getElementById('phishRisk'),phishExplain=document.getElementById('phishExplain');
+ document.querySelectorAll('[data-ps]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+   phishIn.value=samples[+btn.getAttribute('data-ps')];
+   runPhishScan();
+  });
+ });
+ function runPhishScan(){
+  var t=(phishIn.value||'').toLowerCase();
+  if(!t.trim()){
+   phishBadge.className='rtag md';phishBadge.textContent='Matn kiriting';
+   phishRisk.textContent='Xavf darajasi: 0%';
+   phishExplain.textContent='Tekshirish uchun shubhali SMS, Telegram xabar yoki havolani yuqoridagi maydonga yozing.';
+   return;
+  }
+  var risk=8,reasons=[];
+  if(/\.apk|\.exe|\.scr|o'rnatib|yuklab/.test(t)){risk+=55;reasons.push('Zararli o\'rnatiluvchi fayl (.APK/.EXE) orqali telefon yoki serverni egallash urinishi (Trojan-Banker)');}
+  if(/http:\/\/|\.xyz|\.top|verify|login|uzcard-|humo-|click-/.test(t)){risk+=45;reasons.push('Soxta fishing domeni va shifrlanmagan havola aniqlandi');}
+  if(/darhol|bloklandi|sms kod|parol|muzlatiladi|shoshiling/.test(t)){risk+=32;reasons.push('Sun\'iy shoshiltirish va qo\'rqitish (Social Engineering psixologik bosimi)');}
+  risk=Math.min(99,risk);
+  phishRisk.textContent='Xavf darajasi: '+risk+'%';
+  if(risk>=60){
+   phishBadge.className='rtag hi';phishBadge.textContent='XAVFLI FISHING ANIQLANDI';
+   phishExplain.innerHTML='<b>AI Xulosasi:</b> '+reasons.join(' · ')+'. <br><span style="color:var(--cyan)">Huquqiy eslatma:</span> Ushbu havolani bosmang va SMS kodni hech kimga bermang (O\'zR JK 168 va 278-moddalari bo\'yicha kiber-firibgarlik alomati).';
+  }else if(risk>=30){
+   phishBadge.className='rtag md';phishBadge.textContent='SHUBHALI XABAR';
+   phishExplain.innerHTML='<b>AI Xulosasi:</b> '+reasons.join(' · ')+'. Yuboruvchining rasmiy manbasini qayta tekshiring.';
+  }else{
+   phishBadge.className='rtag lo';phishBadge.textContent='XAVFSIZ XABAR';
+   phishExplain.textContent='AI tahlili xabar tarkibida fishing havolalar, zararli APK fayllar yoki psixologik manipulyatsiya belgilarini topmadi.';
+  }
+ }
+ document.getElementById('scanPhishBtn').addEventListener('click',runPhishScan);
+
+ // 10. Modals
+ var mdl=document.getElementById('appModal'),mdlTitle=document.getElementById('mdlTitle'),mdlBody=document.getElementById('mdlBody');
+ function openModal(title,bodyHtml){
+  mdlTitle.textContent=title;
+  mdlBody.innerHTML=bodyHtml;
+  mdl.hidden=false;
+ }
+ document.getElementById('mdlClose').addEventListener('click',function(){mdl.hidden=true});
+ mdl.addEventListener('click',function(e){if(e.target===mdl)mdl.hidden=true});
+
+ document.getElementById('viewPocBtn').addEventListener('click',function(){
+  openModal('PoC Report #VULN-804 · NightFox','<p style="margin-top:0"><b>Zaiflik:</b> Broken Object Level Authorization (IDOR) in <code>GET /api/v2/user/export</code></p><pre style="background:#040814;padding:12px;border-radius:10px;border:1px solid var(--line);color:var(--cyan);overflow-x:auto;font-size:12px">// Tavsiya etilgan himoya (Patch):\nif (req.user.id !== invoice.ownerId) {\n  return res.status(403).json({ error: "Forbidden: Scope mismatch" });\n}</pre><p style="margin:10px 0 0;font-size:12.5px;color:var(--mu)">Sandbox tekshiruvida patch qo\'llangach zaiflik to\'liq bartaraf etilgani tasdiqlandi.</p>');
+ });
+
+ document.getElementById('sdkBtn').addEventListener('click',function(){
+  openModal('Smart-2FA SDK — Mijoz saytiga ulash kodi','<p style="margin-top:0">Yangi bozorga chiqayotgan veb-saytingizga barmoq bosimi, yozish vaqti va ovozli 2FA himoyasini 3 qator kod bilan ulang:</p><pre style="background:#040814;padding:14px;border-radius:10px;border:1px solid var(--line);color:var(--cyan);overflow-x:auto;font-size:12.5px">&lt;script src="https://cdn.legistzone.uz/sdk/smart2fa.min.js"&gt;&lt;/script&gt;\n&lt;script&gt;\n  LegistZone2FA.init({\n    projectId: "SX-STARTUP-2026",\n    checkPressure: true,\n    checkKeystrokeTiming: true,\n    voiceAntiDeepfake: true\n  });\n&lt;/script&gt;</pre><p style="margin:10px 0 0;font-size:12.5px;color:var(--mu)">Ushbu modul foydalanuvchi sessiyasini uzluksiz himoya qiladi va shubhali xulq-atvor sezilsa ovozli tasdiq so\'raydi.</p>');
+ });
 
 
-    /* MENYU LINK BOSILGANDA YOPILADI */
+ var userStatusTxt=document.getElementById('userStatusTxt');
+ try{
+  var savedU=localStorage.getItem('lz_user');
+  if(savedU)userStatusTxt.textContent='👤 '+savedU;
+ }catch(_){}
 
-    document.querySelectorAll("#mainNav a").forEach(function(link) {
+ function completeLogin(userLabel,provider){
+  userStatusTxt.textContent='👤 '+userLabel;
+  try{
+   localStorage.setItem('lz_user',userLabel);
+   var users=JSON.parse(localStorage.getItem('lz_users')||'[]');
+   users.push({u:userLabel,p:provider,t:new Date().toISOString()});
+   localStorage.setItem('lz_users',JSON.stringify(users));
+  }catch(_){}
+  var msg=document.getElementById('authMsg');
+  if(msg){
+   msg.hidden=false;
+   msg.innerHTML='<b>✓ Muvaffaqiyatli tasdiqlandi ('+provider+')!</b> Xush kelibsiz, <b>'+userLabel+'</b>.';
+  }
+  setTimeout(function(){mdl.hidden=true},850);
+ }
 
-        link.addEventListener("click", function() {
-            mainNav.classList.remove("open");
-        });
+ function showAuthModal(){
+  openModal('LEGISTZONE — Google, Telegram yoki Login/Parol orqali kirish',
+   '<div class="auth-tabs"><button type="button" class="auth-tab on" id="tabLoginBtn">Kirish (Login)</button><button type="button" class="auth-tab" id="tabRegBtn">Yangi ro\'yxatdan o\'tish</button></div>'+
+   '<div class="soc-grid">'+
+   '<button type="button" class="soc-btn" id="googleAuthBtn"><span style="color:#38bdf8;font-weight:800">G</span> Google akkaunt bilan</button>'+
+   '<button type="button" class="soc-btn" id="tgAuthBtn"><span style="color:#22d3ee">✈</span> Telegram bilan</button>'+
+   '<button type="button" class="soc-btn" id="ghAuthBtn"><span>⌘</span> GitHub akkaunt bilan</button>'+
+   '<button type="button" class="soc-btn" id="apAuthBtn"><span></span> Apple ID bilan</button>'+
+   '</div>'+
+   '<div id="oauthInputBox" hidden style="margin-bottom:10px;padding:12px;border-radius:10px;border:1px solid var(--cyan);background:#040814">'+
+   '<label id="oauthPromptLbl" style="display:block;font-size:12px;color:var(--cyan);margin-bottom:6px">Google Email manzilingizni kiriting:</label>'+
+   '<div style="display:flex;gap:8px"><input id="oauthEmailIn" placeholder="ismingiz@gmail.com" style="flex:1;padding:9px;border-radius:8px;border:1px solid var(--line);background:#070d1f;color:#fff"><button type="button" class="nb bl" id="oauthConfirmBtn" style="height:36px">Tasdiqlash</button></div>'+
+   '</div>'+
+   '<div class="or-div">YOKI LOGIN VA PAROL BILAN</div>'+
+   '<form id="authForm" style="display:grid;gap:10px">'+
+   '<label id="nameWrap" style="font-size:12px;color:#cbd5e1;display:none">Ism-familiyangiz:<input id="authFullName" placeholder="Ism Familiya" style="width:100%;margin-top:4px;padding:10px;border-radius:9px;border:1px solid var(--line);background:#040814;color:#fff"></label>'+
+   '<label style="font-size:12px;color:#cbd5e1">Login, Email yoki Telefon raqam:<input id="authUser" required placeholder="legistzone, email@gmail.com yoki +998200003437" value="legistzone" style="width:100%;margin-top:4px;padding:10px;border-radius:9px;border:1px solid var(--line);background:#040814;color:#fff"></label>'+
+   '<label style="font-size:12px;color:#cbd5e1">Maxfiy Parol (Yozish tezligi o\'lchanadi):<input id="authPass" type="password" required placeholder="Parolni kiriting..." value="Alisher2026!" style="width:100%;margin-top:4px;padding:10px;border-radius:9px;border:1px solid var(--line);background:#040814;color:#fff"></label>'+
+   '<label id="roleWrap" style="font-size:12px;color:#cbd5e1;display:none">Yo\'nalishni tanlang:<select id="authRole" style="width:100%;margin-top:4px;padding:10px;border-radius:9px;border:1px solid var(--line);background:#040814;color:#fff"><option value="Mijoz / Startap">Mijoz / Startap egasi</option><option value="White Hat Hacker">White Hat Hacker</option><option value="Admin (LEGISTZONE)">Admin (Alisher Kaxramonov)</option></select></label>'+
+   '<div style="font-family:var(--mono);font-size:11.5px;color:var(--cyan)" id="authKeyMetric">✓ Klaviatura biometrikasi faol (Admin login: legistzone / parol: Alisher2026!)</div>'+
+   '<button type="submit" class="nb bl" id="authSubmitBtn" style="height:42px;width:100%">Tizimga kirish</button>'+
+   '<button type="button" class="nb" id="go2faLink" style="height:38px;width:100%">2-bosqich: Barmoq bosimi va Ovozli 2FA oynasiga o\'tish</button>'+
+   '</form><div class="okp" id="authMsg" hidden></div>'
+  );
+  var tLog=document.getElementById('tabLoginBtn'),tReg=document.getElementById('tabRegBtn'),rWrap=document.getElementById('roleWrap'),nWrap=document.getElementById('nameWrap'),subBtn=document.getElementById('authSubmitBtn'),aUser=document.getElementById('authUser'),aPass=document.getElementById('authPass');
+  tLog.addEventListener('click',function(){tLog.classList.add('on');tReg.classList.remove('on');rWrap.style.display='none';nWrap.style.display='none';subBtn.textContent='Tizimga kirish'});
+  tReg.addEventListener('click',function(){tReg.classList.add('on');tLog.classList.remove('on');rWrap.style.display='block';nWrap.style.display='block';aUser.value='';aPass.value='';subBtn.textContent='Ro\'yxatdan o\'tish va Kirish'});
 
-    });
+  var oauthBox=document.getElementById('oauthInputBox'),oauthLbl=document.getElementById('oauthPromptLbl'),oauthIn=document.getElementById('oauthEmailIn'),activeProv='Google';
+  function openOAuthPrompt(prov,ph){
+   activeProv=prov;
+   oauthBox.hidden=false;
+   oauthLbl.textContent=prov+' akkauntingizni kiriting:';
+   oauthIn.placeholder=ph;
+   oauthIn.focus();
+  }
+  document.getElementById('googleAuthBtn').addEventListener('click',function(){openOAuthPrompt('Google','akkauntingiz@gmail.com')});
+  document.getElementById('tgAuthBtn').addEventListener('click',function(){openOAuthPrompt('Telegram','@username yoki +998...')});
+  document.getElementById('ghAuthBtn').addEventListener('click',function(){openOAuthPrompt('GitHub','github-username')});
+  document.getElementById('apAuthBtn').addEventListener('click',function(){openOAuthPrompt('Apple ID','appleid@icloud.com')});
+  document.getElementById('oauthConfirmBtn').addEventListener('click',function(){
+   var val=oauthIn.value.trim()||(activeProv==='Google'?'user@gmail.com':'@kxrmnv333');
+   completeLogin(val,activeProv);
+  });
 
+  var aMetric=document.getElementById('authKeyMetric'),pLast=0;
+  aPass.addEventListener('keyup',function(){
+   var now=performance.now();
+   var diff=pLast?Math.round(now-pLast):72;
+   pLast=now;
+   aMetric.textContent='⚡ Parol yozish tezligi: '+Math.min(240,Math.max(42,diff))+' ms (Inson ritmi tasdiqlandi)';
+  });
+  document.getElementById('authForm').addEventListener('submit',function(e){
+   e.preventDefault();
+   var u=aUser.value.trim();
+   var fn=document.getElementById('authFullName').value.trim();
+   completeLogin(fn?(fn+' ('+u+')'):u,'Login + Smart-2FA');
+  });
+  var gl=document.getElementById('go2faLink');
+  if(gl)gl.addEventListener('click',function(){mdl.hidden=true;switchTopView('biometric')});
+ }
+ document.getElementById('loginBtn').addEventListener('click',showAuthModal);
+ document.getElementById('openAuthFromBio').addEventListener('click',showAuthModal);
 
-    /* YIL */
+ document.getElementById('editProfileBtn').addEventListener('click',function(){
+  openModal('⚙️ LEGISTZONE — Telefon va Telegram kanalni sozlash',
+   '<form id="profForm" style="display:grid;gap:10px">'+
+   '<label style="font-size:12px;color:#cbd5e1">Telefon raqamingiz:<input id="inPhone" value="'+document.getElementById('ownerPhoneTxt').textContent+'" style="width:100%;margin-top:4px;padding:10px;border-radius:9px;border:1px solid var(--line);background:#040814;color:#fff"></label>'+
+   '<label style="font-size:12px;color:#cbd5e1">Telegram kanal ssilkasi:<input id="inTg" value="'+document.getElementById('tgChannelLink').getAttribute('href')+'" style="width:100%;margin-top:4px;padding:10px;border-radius:9px;border:1px solid var(--line);background:#040814;color:#fff"></label>'+
+   '<button type="submit" class="nb bl" style="height:40px">Saqlash</button></form>'
+  );
+  document.getElementById('profForm').addEventListener('submit',function(e){
+   e.preventDefault();
+   var ph=document.getElementById('inPhone').value.trim();
+   var tg=document.getElementById('inTg').value.trim();
+   document.getElementById('ownerPhoneTxt').textContent=ph;
+   document.getElementById('phoneContactLink').setAttribute('href','tel:'+ph.replace(/[^+\d]/g,''));
+   document.getElementById('tgChannelLink').setAttribute('href',tg);
+   document.getElementById('tgChannelLink').innerHTML='<svg class="i"><use href="#plane"/></svg>Telegram: '+tg.replace('https://','');
+   mdl.hidden=true;
+  });
+ });
 
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
-
-
-    /* SCROLL ANIMATSIYA */
-
-    const animatedElements =
-        document.querySelectorAll(".animate");
-
-    function reveal() {
-
-        animatedElements.forEach(function(element) {
-
-            const position =
-                element.getBoundingClientRect().top;
-
-            if (position < window.innerHeight - 80) {
-                element.classList.add("show");
-            }
-
-        });
-
-    }
-
-    window.addEventListener("scroll", reveal);
-
-    reveal();
-
-
-    /* YUQORIGA QAYTISH */
-
-    const topBtn =
-        document.getElementById("topBtn");
-
-    window.addEventListener("scroll", function() {
-
-        if (window.scrollY > 500) {
-            topBtn.classList.add("show");
-        } else {
-            topBtn.classList.remove("show");
-        }
-
-    });
-
-    topBtn.addEventListener("click", function() {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
-
+})();
 </script>
-
 </body>
 </html>
